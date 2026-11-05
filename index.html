@@ -3,160 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fedor Gerasimov | Федор Герасимов</title>
+    <meta name="description" content="Фёдор Герасимов — инженер, системный архитектор и разработчик. Опыт работы, проекты и контакты на 11 языках.">
+    <meta name="theme-color" content="#f4f6f8">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://musikfed.github.io/my_self/">
+    <title>Фёдор Герасимов — резюме · Fedor Gerasimov — résumé</title>
     <style>
         :root {
-            --bg-color: #f4f4f4;
-            --card-bg: #ffffff;
-            --text-main: #333333;
-            --text-light: #777777;
-            --accent-red: #d6001c; /* Красный HH */
-            --border-color: #e0e0e0;
-            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color-scheme: light;
+            --paper:#fff; --canvas:#f3f5f8; --ink:#202936; --muted:#657183;
+            --line:#e4e9ef; --blue:#1767ad; --blue-dark:#0b4e89; --red:#d51a35;
+            --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
         }
-        
-        body {
-            font-family: var(--font-main);
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.5;
-            margin: 0;
-            padding: 40px 20px;
+        *,*::before,*::after{box-sizing:border-box}
+        html{scroll-behavior:auto}
+        body{margin:0;background:var(--canvas);color:var(--ink);font:15px/1.7 var(--font);-webkit-font-smoothing:antialiased}
+        body::before{content:"";display:block;height:4px;background:var(--red)}
+        a{color:var(--blue);text-decoration:none;text-underline-offset:3px}
+        a:hover{text-decoration:underline}
+        a:focus-visible,select:focus-visible{outline:3px solid #7dbbf0;outline-offset:3px}
+        .container{width:min(100% - 40px,1000px);margin:30px auto 50px;background:var(--paper);border:1px solid var(--line);border-radius:13px;box-shadow:0 10px 38px rgba(29,46,67,.055);overflow:hidden}
+        .header-bar{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:20px 44px;border-bottom:1px solid var(--line);background:#fff}
+        .brand{display:flex;gap:13px;align-items:center;min-width:0}
+        .brand-mark{display:grid;place-items:center;flex:none;width:45px;height:45px;border-radius:10px;background:#202c3c;color:#fff;font-weight:800;letter-spacing:.04em;font-size:15px}
+        .brand-copy{display:flex;flex-direction:column;line-height:1.3}
+        .logo-text{font-size:15px;font-weight:750;letter-spacing:-.01em;color:#202936}
+        .brand-subtitle{color:var(--muted);font-size:12px;margin-top:4px}
+        .head-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:20px}
+        .head-actions a{font-size:14px;font-weight:600;white-space:nowrap}
+        .lang-wrap{display:flex;align-items:center;gap:8px}
+        .lang-label{font-size:12px;color:var(--muted)}
+        .lang-select{appearance:auto;min-height:42px;max-width:175px;border:1px solid #ccd5df;border-radius:7px;background:#fff;color:#202936;font:600 13px var(--font);padding:8px 9px;cursor:pointer}
+        .lang-content{display:none;padding:40px 54px 54px}
+        .lang-content.is-active{display:block}
+        .lang-content[hidden]{display:none!important}
+        .lang-content h1{font-size:clamp(29px,4vw,39px);line-height:1.2;letter-spacing:-.035em;font-weight:750;margin:0 0 7px;color:#172331}
+        .subtitle{font-size:15px;color:var(--muted);margin-bottom:26px}
+        .lang-content>p{max-width:830px;margin:0 0 15px;color:#354457;font-size:16px;line-height:1.8}
+        .lang-content h2{margin:37px 0 19px;padding-bottom:12px;border-bottom:1px solid var(--line);color:#1d2b39;font-size:21px;font-weight:700;letter-spacing:-.02em;line-height:1.35}
+        .lang-content ul{list-style:none;margin:0;padding:0}
+        .lang-content>ul:first-of-type{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+        .lang-content>ul:first-of-type>li{padding:16px 18px;background:#f8fafc;border:1px solid var(--line);border-radius:9px;overflow-wrap:anywhere}
+        .lang-content>ul:nth-of-type(2)>li{padding:20px 0;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+        .lang-content>ul:nth-of-type(2)>li:first-child{padding-top:5px}
+        .lang-content>ul:nth-of-type(2)>li:last-child{border-bottom:0}
+        .lang-content li{font-size:15px;line-height:1.75}
+        .lang-content li strong{font-weight:700;color:#223246}
+        .lang-content li em{font-style:normal;font-weight:600;color:#43546a}
+        .contacts{margin-top:28px;padding:20px 23px;background:#f8fafc;border:1px solid var(--line);border-radius:9px}
+        .contacts p{margin:8px 0;font-size:14px;overflow-wrap:anywhere}
+        .contacts strong{font-weight:650;color:#354457}
+        a.accent-link{color:var(--blue);font-weight:600}
+        a.accent-link:hover{color:var(--blue-dark)}
+        .site-footer{padding:17px 44px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+        @media(max-width:800px){
+            .container{width:min(100% - 24px,1000px);margin:15px auto 35px}
+            .header-bar{padding:17px 24px;align-items:flex-start;flex-wrap:wrap}
+            .head-actions{justify-content:flex-start;gap:14px}
+            .lang-content{padding:30px 27px 38px}
+            .site-footer{padding:17px 27px}
         }
-
-        /* Квадратный контейнер в стиле HH */
-        .container {
-            max-width: 850px;
-            margin: 0 auto;
-            background-color: var(--card-bg);
-            padding: 40px;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        @media(max-width:540px){
+            .header-bar{gap:15px}
+            .brand{width:100%}
+            .brand-subtitle{font-size:11px}
+            .head-actions{width:100%;gap:12px 17px}
+            .lang-wrap{width:100%;justify-content:space-between}
+            .lang-select{max-width:200px}
+            .lang-content{padding:29px 20px 35px}
+            .lang-content>ul:first-of-type{grid-template-columns:1fr}
+            .lang-content h2{font-size:19px}
+            .contacts{padding:15px 17px}
         }
-
-        /* Шапка с логотипом и переключателем */
-        .header-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 20px;
-            border-bottom: 2px solid var(--border-color);
-            margin-bottom: 30px;
+        @media print{
+            body{background:#fff;color:#000}
+            body::before,.head-actions,.site-footer{display:none!important}
+            .container{width:100%;margin:0;box-shadow:none;border:0;border-radius:0}
+            .header-bar{padding:12px 0}
+            .lang-content{padding:24px 0}
+            .lang-content>ul:first-of-type>li{break-inside:avoid}
+            .lang-content>ul:nth-of-type(2)>li{break-inside:avoid}
+            a{color:#000}
         }
-        
-        .logo-text {
-            font-weight: 700;
-            font-size: 18px;
-            color: #000;
-        }
-
-        /* Темный выпадающий список */
-        .lang-select {
-            appearance: none;
-            background-color: #1a1a1a;
-            color: #ffffff;
-            border: 1px solid #333;
-            padding: 8px 35px 8px 15px;
-            border-radius: 4px;
-            font-size: 14px;
-            font-family: var(--font-main);
-            cursor: pointer;
-            outline: none;
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-            background-repeat: no-repeat;
-            background-position: right 10px center;
-            background-size: 16px;
-        }
-        .lang-select option {
-            background-color: #1a1a1a;
-            color: #fff;
-        }
-
-        /* Скрываем все языки по умолчанию */
-        .lang-content { display: none; }
-        #ru:target, #en:target, #zh:target, #de:target, #hi:target, #fr:target, #fi:target, #ko:target, #ja:target, #it:target, #be:target { display: block; }
-        .lang-content:first-of-type { display: block; }
-        .lang-content:target ~ .lang-content:first-of-type { display: none; }
-
-        /* Типографика */
-        h1 {
-            font-size: 28px;
-            margin: 0 0 5px 0;
-            color: #000;
-            font-weight: 700;
-        }
-        .subtitle {
-            font-size: 16px;
-            color: var(--text-light);
-            margin-bottom: 25px;
-        }
-        h2 {
-            font-size: 20px;
-            margin: 30px 0 15px 0;
-            color: #000;
-            font-weight: 600;
-        }
-        p, li {
-            font-size: 15px;
-            margin-bottom: 12px;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        strong {
-            font-weight: 600;
-        }
-        
-        /* Красный акцент для ссылок (в стиле HH) */
-        a.accent-link {
-            color: var(--accent-red);
-            text-decoration: none;
-            font-weight: 500;
-        }
-        a.accent-link:hover {
-            text-decoration: underline;
-        }
-
-        /* Блок контактов */
-        .contacts {
-            background: #fafafa;
-            padding: 20px;
-            border-radius: 4px;
-            margin-top: 30px;
-            border-left: 4px solid var(--accent-red);
-        }
-        .contacts p { margin: 8px 0; }
-        
-        @media (max-width: 600px) {
-            .container { padding: 20px; }
-            .header-bar { flex-direction: column; align-items: flex-start; gap: 15px; }
-        }
+        @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important}}
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- Шапка -->
-    <div class="header-bar">
-        <div class="logo-text">Fedor | Федор</div>
-        <select class="lang-select" onchange="window.location.hash = this.value;">
-            <option value="ru">Русский</option>
-            <option value="en">English</option>
-            <option value="zh">简体中文</option>
-            <option value="de">Deutsch</option>
-            <option value="hi">हिन्दी</option>
-            <option value="fr">Français</option>
-            <option value="fi">Suomi</option>
-            <option value="ko">한국어</option>
-            <option value="ja">日本語</option>
-            <option value="it">Italiano</option>
-            <option value="be">Беларуская</option>
-        </select>
-    </div>
+    <header class="header-bar">
+        <div class="brand">
+            <div class="brand-mark" aria-hidden="true">FG</div>
+            <div class="brand-copy">
+                <span class="logo-text">Фёдор Герасимов / Fedor Gerasimov</span>
+                <span class="brand-subtitle" data-ui="caption">Инженерное портфолио и резюме</span>
+            </div>
+        </div>
+        <nav class="head-actions" aria-label="Navigation">
+            <a href="https://musikfed.github.io/view_my_prj/" data-ui="projects">Проекты</a>
+            <a href="https://github.com/musikfed" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <label class="lang-wrap" for="resume-language">
+                <span class="lang-label" data-ui="language">Язык резюме</span>
+                <select id="resume-language" class="lang-select" aria-label="Язык резюме">
+                    <option value="ru">Русский</option>
+                    <option value="en">English</option>
+                    <option value="zh">简体中文</option>
+                    <option value="de">Deutsch</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="fr">Français</option>
+                    <option value="fi">Suomi</option>
+                    <option value="ko">한국어</option>
+                    <option value="ja">日本語</option>
+                    <option value="it">Italiano</option>
+                    <option value="be">Беларуская</option>
+                </select>
+            </label>
+        </nav>
+    </header>
 
     <!-- ================= РУССКИЙ ================= -->
-    <div id="ru" class="lang-content">
+    <div id="ru" class="lang-content is-active">
         <h1>Федор Герасимов</h1>
         <div class="subtitle">42 года, г. Москва</div>
 
@@ -197,9 +163,9 @@
         </ul>
 
         <div class="contacts">
-            <p>👉 <strong>Сайт:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
-            <p>👉 <strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
-            <p>👉 <strong>Связь:</strong> Telegram <strong>@Feudorlab1</strong> · Email <strong>feudor.lab@yandex.ru</strong></p>
+            <p><strong>Сайт:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
+            <p><strong>Связь:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
         </div>
     </div>
 
@@ -245,9 +211,9 @@
         </ul>
 
         <div class="contacts">
-            <p>👉 <strong>Website:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
-            <p>👉 <strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
-            <p>👉 <strong>Contact:</strong> Telegram <strong>@Feudorlab1</strong> · Email <strong>feudor.lab@yandex.ru</strong></p>
+            <p><strong>Website:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
+            <p><strong>Contact:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
         </div>
     </div>
 
@@ -277,9 +243,9 @@
         </ul>
 
         <div class="contacts">
-            <p>👉 <strong>网站:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
-            <p>👉 <strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
-            <p>👉 <strong>联系方式:</strong> Telegram <strong>@Feudorlab1</strong> · Email <strong>feudor.lab@yandex.ru</strong></p>
+            <p><strong>网站:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
+            <p><strong>联系方式:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
         </div>
     </div>
 
@@ -309,9 +275,9 @@
         </ul>
 
         <div class="contacts">
-            <p>👉 <strong>Webseite:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
-            <p>👉 <strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
-            <p>👉 <strong>Kontakt:</strong> Telegram <strong>@Feudorlab1</strong> · Email <strong>feudor.lab@yandex.ru</strong></p>
+            <p><strong>Webseite:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
+            <p><strong>Kontakt:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
         </div>
     </div>
 
@@ -341,9 +307,9 @@
         </ul>
 
         <div class="contacts">
-            <p>👉 <strong>वेबसाइट:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
-            <p>👉 <strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
-            <p>👉 <strong>संपर्क:</strong> Telegram <strong>@Feudorlab1</strong> · Email <strong>feudor.lab@yandex.ru</strong></p>
+            <p><strong>वेबसाइट:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
+            <p><strong>संपर्क:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
         </div>
     </div>
 
@@ -373,9 +339,9 @@
         </ul>
 
         <div class="contacts">
-            <p>👉 <strong>Site web :</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
-            <p>👉 <strong>GitHub :</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
-            <p>👉 <strong>Contact :</strong> Telegram <strong>@Feudorlab1</strong> · Email <strong>feudor.lab@yandex.ru</strong></p>
+            <p><strong>Site web :</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
+            <p><strong>GitHub :</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
+            <p><strong>Contact :</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
         </div>
     </div>
 
@@ -405,9 +371,9 @@
         </ul>
 
         <div class="contacts">
-            <p>👉 <strong>Verkkosivusto:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
-            <p>👉 <strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
-            <p>👉 <strong>Yhteystiedot:</strong> Telegram <strong>@Feudorlab1</strong> · Email <strong>feudor.lab@yandex.ru</strong></p>
+            <p><strong>Verkkosivusto:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
+            <p><strong>Yhteystiedot:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
         </div>
     </div>
 
@@ -437,9 +403,9 @@
         </ul>
 
         <div class="contacts">
-            <p>👉 <strong>웹사이트:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
-            <p>👉 <strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
-            <p>👉 <strong>연락처:</strong> Telegram <strong>@Feudorlab1</strong> · Email <strong>feudor.lab@yandex.ru</strong></p>
+            <p><strong>웹사이트:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
+            <p><strong>연락처:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
         </div>
     </div>
 
@@ -469,9 +435,9 @@
         </ul>
 
         <div class="contacts">
-            <p>👉 <strong>ウェブサイト:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
-            <p>👉 <strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
-            <p>👉 <strong>連絡先:</strong> Telegram <strong>@Feudorlab1</strong> · Email <strong>feudor.lab@yandex.ru</strong></p>
+            <p><strong>ウェブサイト:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
+            <p><strong>連絡先:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
         </div>
     </div>
 
@@ -501,9 +467,9 @@
         </ul>
 
         <div class="contacts">
-            <p>👉 <strong>Sito web:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
-            <p>👉 <strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
-            <p>👉 <strong>Contatto:</strong> Telegram <strong>@Feudorlab1</strong> · Email <strong>feudor.lab@yandex.ru</strong></p>
+            <p><strong>Sito web:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
+            <p><strong>Contatto:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
         </div>
     </div>
 
@@ -533,13 +499,50 @@
         </ul>
 
         <div class="contacts">
-            <p>👉 <strong>Сайт:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
-            <p>👉 <strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
-            <p>👉 <strong>Сувязь:</strong> Telegram <strong>@Feudorlab1</strong> · Email <strong>feudor.lab@yandex.ru</strong></p>
+            <p><strong>Сайт:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
+            <p><strong>Сувязь:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
         </div>
     </div>
 
 </div>
-
+<footer class="site-footer" data-ui="foot">Персональное резюме · PEGINELAB</footer>
+<script>
+(() => {
+    "use strict";
+    const labels = {"ru":{"projects":"Проекты","language":"Язык резюме","caption":"Инженерное портфолио и резюме","foot":"Персональное резюме · PEGINELAB"},"en":{"projects":"Projects","language":"Resume language","caption":"Engineering portfolio and résumé","foot":"Personal résumé · PEGINELAB"},"zh":{"projects":"项目","language":"简历语言","caption":"工程项目与个人简历","foot":"个人简历 · PEGINELAB"},"de":{"projects":"Projekte","language":"Sprache des Lebenslaufs","caption":"Technikportfolio und Lebenslauf","foot":"Persönlicher Lebenslauf · PEGINELAB"},"hi":{"projects":"परियोजनाएँ","language":"रिज़्यूमे की भाषा","caption":"इंजीनियरिंग पोर्टफ़ोलियो और रिज़्यूमे","foot":"व्यक्तिगत रिज़्यूमे · PEGINELAB"},"fr":{"projects":"Projets","language":"Langue du CV","caption":"Portfolio technique et CV","foot":"CV personnel · PEGINELAB"},"fi":{"projects":"Projektit","language":"Ansioluettelon kieli","caption":"Tekninen portfolio ja ansioluettelo","foot":"Ansioluettelo · PEGINELAB"},"ko":{"projects":"프로젝트","language":"이력서 언어","caption":"엔지니어링 포트폴리오와 이력서","foot":"개인 이력서 · PEGINELAB"},"ja":{"projects":"プロジェクト","language":"履歴書の言語","caption":"技術ポートフォリオと経歴書","foot":"経歴書 · PEGINELAB"},"it":{"projects":"Progetti","language":"Lingua del CV","caption":"Portfolio tecnico e curriculum","foot":"Curriculum personale · PEGINELAB"},"be":{"projects":"Праекты","language":"Мова рэзюмэ","caption":"Інжынернае партфоліа і рэзюмэ","foot":"Асабістае рэзюмэ · PEGINELAB"}};
+    const select = document.getElementById("resume-language");
+    const sections = Array.from(document.querySelectorAll(".lang-content"));
+    const defaultLanguage = "ru";
+    function fromAddress() {
+        const code = decodeURIComponent(window.location.hash.slice(1)).toLowerCase();
+        return Object.prototype.hasOwnProperty.call(labels, code) ? code : defaultLanguage;
+    }
+    function applyLanguage() {
+        const language = fromAddress();
+        for (const section of sections) {
+            const active = section.id === language;
+            section.hidden = !active;
+            section.classList.toggle("is-active", active);
+        }
+        select.value = language;
+        document.documentElement.lang = language === "zh" ? "zh-Hans" : language;
+        for (const node of document.querySelectorAll("[data-ui]")) {
+            node.textContent = labels[language][node.dataset.ui] || labels.ru[node.dataset.ui];
+        }
+        document.title = (document.getElementById(language).querySelector("h1")?.textContent || "Fedor Gerasimov") + " — CV";
+    }
+    select.addEventListener("change", () => {
+        const url = new URL(window.location.href);
+        url.hash = select.value;
+        // pushState avoids jumping to a hidden section when changing language.
+        window.history.pushState(null, "", url);
+        applyLanguage();
+    });
+    window.addEventListener("hashchange", applyLanguage);
+    window.addEventListener("popstate", applyLanguage);
+    applyLanguage();
+})();
+</script>
 </body>
 </html>
