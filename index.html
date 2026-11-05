@@ -73,6 +73,29 @@ a.accent-link:hover{color:#731023}
 @media print{body{background:#fff;color:#000}body::before,.head-actions,.site-footer{display:none!important}.container{width:100%;margin:0;box-shadow:none;border:0;border-radius:0}.header-bar{padding:12px 0}.lang-content{padding:18px 0}.lang-content>ul:first-of-type>li,.lang-content>ul:nth-of-type(2)>li,.contacts-layout{break-inside:avoid}a{color:#111}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
+
+/* Sharp, natural-aspect illustrations: hair, fingertips and BOTH shoes visible */
+.portrait-wrap{width:176px;overflow:visible;border-radius:8px;background:#fff}
+.portrait-wrap::after{content:none!important;display:none!important}
+.portrait-illustration{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain;border-radius:8px}
+.resume-hero{grid-template-columns:176px minmax(0,1fr);gap:24px}
+.contacts-layout{grid-template-columns:minmax(0,1fr) 178px 180px;gap:12px;padding:18px 16px 14px 20px;align-items:end;background:#fff}
+.contact-figure{width:100%;max-width:178px;align-self:end;background:#fff}
+.call-me-motion{display:block;position:relative;width:100%;aspect-ratio:1/2;overflow:visible;background:#fff}
+.call-pose{position:absolute;inset:0;display:block;width:100%;height:100%;max-height:none;object-fit:contain;object-position:center bottom;transform:none;pointer-events:none}
+.call-pose-a{opacity:1;animation:callMePoseA 3.7s ease-in-out infinite}
+.call-pose-b{opacity:0;animation:callMePoseB 3.7s ease-in-out infinite}
+@keyframes callMePoseA{0%,27%,72%,100%{opacity:1}39%,60%{opacity:0}}
+@keyframes callMePoseB{0%,27%,72%,100%{opacity:0}39%,60%{opacity:1}}
+.qr-card{width:100%;padding:10px 8px 9px;background:#fff}
+.qr-card img{display:block;width:100%;height:auto;aspect-ratio:1/1;image-rendering:pixelated}
+.qr-caption{font-size:12px}
+@media(max-width:890px){.resume-hero{grid-template-columns:158px minmax(0,1fr);gap:19px}.portrait-wrap{width:158px}.contacts-layout{grid-template-columns:minmax(0,1fr) 153px 162px;gap:9px}.contact-figure{max-width:153px}}
+@media(max-width:650px){.resume-hero{grid-template-columns:125px minmax(0,1fr);gap:17px}.portrait-wrap{width:125px}.contacts-layout{grid-template-columns:minmax(0,1fr) 167px}.contact-figure{grid-column:1;grid-row:2;width:145px;max-width:145px}.qr-card{grid-column:2;grid-row:2;max-width:167px}}
+@media(max-width:460px){.resume-hero{grid-template-columns:1fr;gap:12px}.portrait-wrap{width:155px}.contacts-layout{grid-template-columns:minmax(0,1fr) 155px}.contact-figure{width:137px;max-width:137px}.qr-card{width:100%;max-width:155px}}
+@media print{.portrait-wrap{width:150px}.resume-hero{grid-template-columns:150px minmax(0,1fr)}.contacts-layout{grid-template-columns:minmax(0,1fr) 140px 160px}.contact-figure{max-width:140px}.qr-card{width:160px}.call-pose{animation:none!important}.call-pose-a{opacity:1}.call-pose-b{opacity:0}}
+@media(prefers-reduced-motion:reduce){.call-pose{animation:none!important}.call-pose-a{opacity:1}.call-pose-b{opacity:0}}
+
     </style>
 </head>
 <body>
@@ -111,7 +134,7 @@ a.accent-link:hover{color:#731023}
     <!-- ================= РУССКИЙ ================= -->
     <div id="ru" class="lang-content is-active">
         <div class="resume-hero">
-            <div class="portrait-wrap"><img class="portrait-illustration" src="./assets/author-portrait-previous.jpg" alt="" width="157" height="183" loading="eager" decoding="async"></div>
+            <div class="portrait-wrap"><img class="portrait-illustration" src="./assets/author-portrait-clean.jpg" alt="" width="776" height="1000" loading="eager" decoding="async"></div>
             <div class="resume-hero-copy">
         <h1>Федор Герасимов</h1>
         <div class="subtitle">42 года, г. Москва</div>
@@ -162,9 +185,9 @@ a.accent-link:hover{color:#731023}
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>Связь:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
             </div>
-            <div class="contact-figure"><img class="contact-illustration" src="./assets/author-contact-previous.jpg" alt="" width="106" height="169" loading="lazy" decoding="async"></div>
+            <div class="contact-figure"><span class="call-me-motion" role="img" aria-label="Анимированный жест «позвони мне»"><img class="call-pose call-pose-a" src="./assets/author-fullbody-call-me.jpg" alt="" aria-hidden="true" width="1024" height="2048" loading="lazy" decoding="async"><img class="call-pose call-pose-b" src="./assets/author-fullbody-call-me-motion.jpg" alt="" aria-hidden="true" width="1030" height="2048" loading="lazy" decoding="async"></span></div>
             <a class="qr-card" href="https://musikfed.github.io/view_my_prj/" target="_blank" rel="noopener noreferrer" aria-label="Все проекты PEGINELAB">
-                <img src="./assets/qr-peginelab.svg" alt="QR PEGINELAB" width="225" height="225" loading="lazy">
+                <img src="./assets/qr-peginelab-sharp.svg" alt="QR PEGINELAB" width="600" height="600" loading="lazy">
                 <span class="qr-caption">Все проекты PEGINELAB</span>
             </a>
         </div>
@@ -173,7 +196,7 @@ a.accent-link:hover{color:#731023}
     <!-- ================= ENGLISH ================= -->
     <div id="en" class="lang-content">
         <div class="resume-hero">
-            <div class="portrait-wrap"><img class="portrait-illustration" src="./assets/author-portrait-previous.jpg" alt="" width="157" height="183" loading="lazy" decoding="async"></div>
+            <div class="portrait-wrap"><img class="portrait-illustration" src="./assets/author-portrait-clean.jpg" alt="" width="776" height="1000" loading="lazy" decoding="async"></div>
             <div class="resume-hero-copy">
         <h1>Fedor Gerasimov</h1>
         <div class="subtitle">42 years old, Moscow</div>
@@ -224,9 +247,9 @@ a.accent-link:hover{color:#731023}
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>Contact:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
             </div>
-            <div class="contact-figure"><img class="contact-illustration" src="./assets/author-contact-previous.jpg" alt="" width="106" height="169" loading="lazy" decoding="async"></div>
+            <div class="contact-figure"><span class="call-me-motion" role="img" aria-label="Animated call-me hand gesture"><img class="call-pose call-pose-a" src="./assets/author-fullbody-call-me.jpg" alt="" aria-hidden="true" width="1024" height="2048" loading="lazy" decoding="async"><img class="call-pose call-pose-b" src="./assets/author-fullbody-call-me-motion.jpg" alt="" aria-hidden="true" width="1030" height="2048" loading="lazy" decoding="async"></span></div>
             <a class="qr-card" href="https://musikfed.github.io/view_my_prj/" target="_blank" rel="noopener noreferrer" aria-label="All PEGINELAB projects">
-                <img src="./assets/qr-peginelab.svg" alt="QR PEGINELAB" width="225" height="225" loading="lazy">
+                <img src="./assets/qr-peginelab-sharp.svg" alt="QR PEGINELAB" width="600" height="600" loading="lazy">
                 <span class="qr-caption">All PEGINELAB projects</span>
             </a>
         </div>
@@ -235,7 +258,7 @@ a.accent-link:hover{color:#731023}
     <!-- ================= 中文 ================= -->
     <div id="zh" class="lang-content">
         <div class="resume-hero">
-            <div class="portrait-wrap"><img class="portrait-illustration" src="./assets/author-portrait-previous.jpg" alt="" width="157" height="183" loading="lazy" decoding="async"></div>
+            <div class="portrait-wrap"><img class="portrait-illustration" src="./assets/author-portrait-clean.jpg" alt="" width="776" height="1000" loading="lazy" decoding="async"></div>
             <div class="resume-hero-copy">
         <h1>费奥多尔·格拉西莫夫</h1>
         <div class="subtitle">42岁, 莫斯科</div>
@@ -270,9 +293,9 @@ a.accent-link:hover{color:#731023}
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>联系方式:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
             </div>
-            <div class="contact-figure"><img class="contact-illustration" src="./assets/author-contact-previous.jpg" alt="" width="106" height="169" loading="lazy" decoding="async"></div>
+            <div class="contact-figure"><span class="call-me-motion" role="img" aria-label="动态的打电话手势"><img class="call-pose call-pose-a" src="./assets/author-fullbody-call-me.jpg" alt="" aria-hidden="true" width="1024" height="2048" loading="lazy" decoding="async"><img class="call-pose call-pose-b" src="./assets/author-fullbody-call-me-motion.jpg" alt="" aria-hidden="true" width="1030" height="2048" loading="lazy" decoding="async"></span></div>
             <a class="qr-card" href="https://musikfed.github.io/view_my_prj/" target="_blank" rel="noopener noreferrer" aria-label="PEGINELAB 全部项目">
-                <img src="./assets/qr-peginelab.svg" alt="QR PEGINELAB" width="225" height="225" loading="lazy">
+                <img src="./assets/qr-peginelab-sharp.svg" alt="QR PEGINELAB" width="600" height="600" loading="lazy">
                 <span class="qr-caption">PEGINELAB 全部项目</span>
             </a>
         </div>
@@ -281,7 +304,7 @@ a.accent-link:hover{color:#731023}
     <!-- ================= DEUTSCH ================= -->
     <div id="de" class="lang-content">
         <div class="resume-hero">
-            <div class="portrait-wrap"><img class="portrait-illustration" src="./assets/author-portrait-previous.jpg" alt="" width="157" height="183" loading="lazy" decoding="async"></div>
+            <div class="portrait-wrap"><img class="portrait-illustration" src="./assets/author-portrait-clean.jpg" alt="" width="776" height="1000" loading="lazy" decoding="async"></div>
             <div class="resume-hero-copy">
         <h1>Fedor Gerassimow</h1>
         <div class="subtitle">42 Jahre alt, Moskau</div>
@@ -316,9 +339,9 @@ a.accent-link:hover{color:#731023}
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>Kontakt:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
             </div>
-            <div class="contact-figure"><img class="contact-illustration" src="./assets/author-contact-previous.jpg" alt="" width="106" height="169" loading="lazy" decoding="async"></div>
+            <div class="contact-figure"><span class="call-me-motion" role="img" aria-label="Animierte Ruf-mich-an-Geste"><img class="call-pose call-pose-a" src="./assets/author-fullbody-call-me.jpg" alt="" aria-hidden="true" width="1024" height="2048" loading="lazy" decoding="async"><img class="call-pose call-pose-b" src="./assets/author-fullbody-call-me-motion.jpg" alt="" aria-hidden="true" width="1030" height="2048" loading="lazy" decoding="async"></span></div>
             <a class="qr-card" href="https://musikfed.github.io/view_my_prj/" target="_blank" rel="noopener noreferrer" aria-label="Alle PEGINELAB-Projekte">
-                <img src="./assets/qr-peginelab.svg" alt="QR PEGINELAB" width="225" height="225" loading="lazy">
+                <img src="./assets/qr-peginelab-sharp.svg" alt="QR PEGINELAB" width="600" height="600" loading="lazy">
                 <span class="qr-caption">Alle PEGINELAB-Projekte</span>
             </a>
         </div>
@@ -327,7 +350,7 @@ a.accent-link:hover{color:#731023}
     <!-- ================= हिन्दी ================= -->
     <div id="hi" class="lang-content">
         <div class="resume-hero">
-            <div class="portrait-wrap"><img class="portrait-illustration" src="./assets/author-portrait-previous.jpg" alt="" width="157" height="183" loading="lazy" decoding="async"></div>
+            <div class="portrait-wrap"><img class="portrait-illustration" src="./assets/author-portrait-clean.jpg" alt="" width="776" height="1000" loading="lazy" decoding="async"></div>
             <div class="resume-hero-copy">
         <h1>फ्योडोर गेरासिमोव</h1>
         <div class="subtitle">42 वर्ष, मॉस्को</div>
@@ -362,9 +385,9 @@ a.accent-link:hover{color:#731023}
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>संपर्क:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
             </div>
-            <div class="contact-figure"><img class="contact-illustration" src="./assets/author-contact-previous.jpg" alt="" width="106" height="169" loading="lazy" decoding="async"></div>
+            <div class="contact-figure"><span class="call-me-motion" role="img" aria-label="कॉल मी का एनिमेटेड इशारा"><img class="call-pose call-pose-a" src="./assets/author-fullbody-call-me.jpg" alt="" aria-hidden="true" width="1024" height="2048" loading="lazy" decoding="async"><img class="call-pose call-pose-b" src="./assets/author-fullbody-call-me-motion.jpg" alt="" aria-hidden="true" width="1030" height="2048" loading="lazy" decoding="async"></span></div>
             <a class="qr-card" href="https://musikfed.github.io/view_my_prj/" target="_blank" rel="noopener noreferrer" aria-label="सभी PEGINELAB प्रोजेक्ट">
-                <img src="./assets/qr-peginelab.svg" alt="QR PEGINELAB" width="225" height="225" loading="lazy">
+                <img src="./assets/qr-peginelab-sharp.svg" alt="QR PEGINELAB" width="600" height="600" loading="lazy">
                 <span class="qr-caption">सभी PEGINELAB प्रोजेक्ट</span>
             </a>
         </div>
@@ -373,7 +396,7 @@ a.accent-link:hover{color:#731023}
     <!-- ================= FRANÇAIS ================= -->
     <div id="fr" class="lang-content">
         <div class="resume-hero">
-            <div class="portrait-wrap"><img class="portrait-illustration" src="./assets/author-portrait-previous.jpg" alt="" width="157" height="183" loading="lazy" decoding="async"></div>
+            <div class="portrait-wrap"><img class="portrait-illustration" src="./assets/author-portrait-clean.jpg" alt="" width="776" height="1000" loading="lazy" decoding="async"></div>
             <div class="resume-hero-copy">
         <h1>Fedor Guerassimov</h1>
         <div class="subtitle">42 ans, Moscou</div>
@@ -408,9 +431,9 @@ a.accent-link:hover{color:#731023}
             <p><strong>GitHub :</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>Contact :</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
             </div>
-            <div class="contact-figure"><img class="contact-illustration" src="./assets/author-contact-previous.jpg" alt="" width="106" height="169" loading="lazy" decoding="async"></div>
+            <div class="contact-figure"><span class="call-me-motion" role="img" aria-label="Geste animé « appelle-moi »"><img class="call-pose call-pose-a" src="./assets/author-fullbody-call-me.jpg" alt="" aria-hidden="true" width="1024" height="2048" loading="lazy" decoding="async"><img class="call-pose call-pose-b" src="./assets/author-fullbody-call-me-motion.jpg" alt="" aria-hidden="true" width="1030" height="2048" loading="lazy" decoding="async"></span></div>
             <a class="qr-card" href="https://musikfed.github.io/view_my_prj/" target="_blank" rel="noopener noreferrer" aria-label="Tous les projets PEGINELAB">
-                <img src="./assets/qr-peginelab.svg" alt="QR PEGINELAB" width="225" height="225" loading="lazy">
+                <img src="./assets/qr-peginelab-sharp.svg" alt="QR PEGINELAB" width="600" height="600" loading="lazy">
                 <span class="qr-caption">Tous les projets PEGINELAB</span>
             </a>
         </div>
@@ -419,7 +442,7 @@ a.accent-link:hover{color:#731023}
     <!-- ================= SUOMI ================= -->
     <div id="fi" class="lang-content">
         <div class="resume-hero">
-            <div class="portrait-wrap"><img class="portrait-illustration" src="./assets/author-portrait-previous.jpg" alt="" width="157" height="183" loading="lazy" decoding="async"></div>
+            <div class="portrait-wrap"><img class="portrait-illustration" src="./assets/author-portrait-clean.jpg" alt="" width="776" height="1000" loading="lazy" decoding="async"></div>
             <div class="resume-hero-copy">
         <h1>Fedor Gerasimov</h1>
         <div class="subtitle">42-vuotias, Moskova</div>
@@ -454,9 +477,9 @@ a.accent-link:hover{color:#731023}
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>Yhteystiedot:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
             </div>
-            <div class="contact-figure"><img class="contact-illustration" src="./assets/author-contact-previous.jpg" alt="" width="106" height="169" loading="lazy" decoding="async"></div>
+            <div class="contact-figure"><span class="call-me-motion" role="img" aria-label="Animoitu soita minulle -ele"><img class="call-pose call-pose-a" src="./assets/author-fullbody-call-me.jpg" alt="" aria-hidden="true" width="1024" height="2048" loading="lazy" decoding="async"><img class="call-pose call-pose-b" src="./assets/author-fullbody-call-me-motion.jpg" alt="" aria-hidden="true" width="1030" height="2048" loading="lazy" decoding="async"></span></div>
             <a class="qr-card" href="https://musikfed.github.io/view_my_prj/" target="_blank" rel="noopener noreferrer" aria-label="Kaikki PEGINELAB-projektit">
-                <img src="./assets/qr-peginelab.svg" alt="QR PEGINELAB" width="225" height="225" loading="lazy">
+                <img src="./assets/qr-peginelab-sharp.svg" alt="QR PEGINELAB" width="600" height="600" loading="lazy">
                 <span class="qr-caption">Kaikki PEGINELAB-projektit</span>
             </a>
         </div>
@@ -465,7 +488,7 @@ a.accent-link:hover{color:#731023}
     <!-- ================= 한국어 ================= -->
     <div id="ko" class="lang-content">
         <div class="resume-hero">
-            <div class="portrait-wrap"><img class="portrait-illustration" src="./assets/author-portrait-previous.jpg" alt="" width="157" height="183" loading="lazy" decoding="async"></div>
+            <div class="portrait-wrap"><img class="portrait-illustration" src="./assets/author-portrait-clean.jpg" alt="" width="776" height="1000" loading="lazy" decoding="async"></div>
             <div class="resume-hero-copy">
         <h1>표도르 게라시모프</h1>
         <div class="subtitle">42세, 모스크바</div>
@@ -500,9 +523,9 @@ a.accent-link:hover{color:#731023}
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>연락처:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
             </div>
-            <div class="contact-figure"><img class="contact-illustration" src="./assets/author-contact-previous.jpg" alt="" width="106" height="169" loading="lazy" decoding="async"></div>
+            <div class="contact-figure"><span class="call-me-motion" role="img" aria-label="전화해 줘 손짓 애니메이션"><img class="call-pose call-pose-a" src="./assets/author-fullbody-call-me.jpg" alt="" aria-hidden="true" width="1024" height="2048" loading="lazy" decoding="async"><img class="call-pose call-pose-b" src="./assets/author-fullbody-call-me-motion.jpg" alt="" aria-hidden="true" width="1030" height="2048" loading="lazy" decoding="async"></span></div>
             <a class="qr-card" href="https://musikfed.github.io/view_my_prj/" target="_blank" rel="noopener noreferrer" aria-label="PEGINELAB 모든 프로젝트">
-                <img src="./assets/qr-peginelab.svg" alt="QR PEGINELAB" width="225" height="225" loading="lazy">
+                <img src="./assets/qr-peginelab-sharp.svg" alt="QR PEGINELAB" width="600" height="600" loading="lazy">
                 <span class="qr-caption">PEGINELAB 모든 프로젝트</span>
             </a>
         </div>
@@ -511,7 +534,7 @@ a.accent-link:hover{color:#731023}
     <!-- ================= 日本語 ================= -->
     <div id="ja" class="lang-content">
         <div class="resume-hero">
-            <div class="portrait-wrap"><img class="portrait-illustration" src="./assets/author-portrait-previous.jpg" alt="" width="157" height="183" loading="lazy" decoding="async"></div>
+            <div class="portrait-wrap"><img class="portrait-illustration" src="./assets/author-portrait-clean.jpg" alt="" width="776" height="1000" loading="lazy" decoding="async"></div>
             <div class="resume-hero-copy">
         <h1>フョードル・ゲラシモフ</h1>
         <div class="subtitle">42歳、モスクワ</div>
@@ -546,9 +569,9 @@ a.accent-link:hover{color:#731023}
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>連絡先:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
             </div>
-            <div class="contact-figure"><img class="contact-illustration" src="./assets/author-contact-previous.jpg" alt="" width="106" height="169" loading="lazy" decoding="async"></div>
+            <div class="contact-figure"><span class="call-me-motion" role="img" aria-label="「電話して」の動くジェスチャー"><img class="call-pose call-pose-a" src="./assets/author-fullbody-call-me.jpg" alt="" aria-hidden="true" width="1024" height="2048" loading="lazy" decoding="async"><img class="call-pose call-pose-b" src="./assets/author-fullbody-call-me-motion.jpg" alt="" aria-hidden="true" width="1030" height="2048" loading="lazy" decoding="async"></span></div>
             <a class="qr-card" href="https://musikfed.github.io/view_my_prj/" target="_blank" rel="noopener noreferrer" aria-label="PEGINELABの全プロジェクト">
-                <img src="./assets/qr-peginelab.svg" alt="QR PEGINELAB" width="225" height="225" loading="lazy">
+                <img src="./assets/qr-peginelab-sharp.svg" alt="QR PEGINELAB" width="600" height="600" loading="lazy">
                 <span class="qr-caption">PEGINELABの全プロジェクト</span>
             </a>
         </div>
@@ -557,7 +580,7 @@ a.accent-link:hover{color:#731023}
     <!-- ================= ITALIANO ================= -->
     <div id="it" class="lang-content">
         <div class="resume-hero">
-            <div class="portrait-wrap"><img class="portrait-illustration" src="./assets/author-portrait-previous.jpg" alt="" width="157" height="183" loading="lazy" decoding="async"></div>
+            <div class="portrait-wrap"><img class="portrait-illustration" src="./assets/author-portrait-clean.jpg" alt="" width="776" height="1000" loading="lazy" decoding="async"></div>
             <div class="resume-hero-copy">
         <h1>Fedor Gerasimov</h1>
         <div class="subtitle">42 anni, Mosca</div>
@@ -592,9 +615,9 @@ a.accent-link:hover{color:#731023}
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>Contatto:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
             </div>
-            <div class="contact-figure"><img class="contact-illustration" src="./assets/author-contact-previous.jpg" alt="" width="106" height="169" loading="lazy" decoding="async"></div>
+            <div class="contact-figure"><span class="call-me-motion" role="img" aria-label="Gesto animato « chiamami »"><img class="call-pose call-pose-a" src="./assets/author-fullbody-call-me.jpg" alt="" aria-hidden="true" width="1024" height="2048" loading="lazy" decoding="async"><img class="call-pose call-pose-b" src="./assets/author-fullbody-call-me-motion.jpg" alt="" aria-hidden="true" width="1030" height="2048" loading="lazy" decoding="async"></span></div>
             <a class="qr-card" href="https://musikfed.github.io/view_my_prj/" target="_blank" rel="noopener noreferrer" aria-label="Tutti i progetti PEGINELAB">
-                <img src="./assets/qr-peginelab.svg" alt="QR PEGINELAB" width="225" height="225" loading="lazy">
+                <img src="./assets/qr-peginelab-sharp.svg" alt="QR PEGINELAB" width="600" height="600" loading="lazy">
                 <span class="qr-caption">Tutti i progetti PEGINELAB</span>
             </a>
         </div>
@@ -603,7 +626,7 @@ a.accent-link:hover{color:#731023}
     <!-- ================= БЕЛАРУСКАЯ ================= -->
     <div id="be" class="lang-content">
         <div class="resume-hero">
-            <div class="portrait-wrap"><img class="portrait-illustration" src="./assets/author-portrait-previous.jpg" alt="" width="157" height="183" loading="lazy" decoding="async"></div>
+            <div class="portrait-wrap"><img class="portrait-illustration" src="./assets/author-portrait-clean.jpg" alt="" width="776" height="1000" loading="lazy" decoding="async"></div>
             <div class="resume-hero-copy">
         <h1>Фёдар Герасімаў</h1>
         <div class="subtitle">42 гады, г. Масква</div>
@@ -638,9 +661,9 @@ a.accent-link:hover{color:#731023}
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>Сувязь:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
             </div>
-            <div class="contact-figure"><img class="contact-illustration" src="./assets/author-contact-previous.jpg" alt="" width="106" height="169" loading="lazy" decoding="async"></div>
+            <div class="contact-figure"><span class="call-me-motion" role="img" aria-label="Анімаваны жэст «патэлефануй мне»"><img class="call-pose call-pose-a" src="./assets/author-fullbody-call-me.jpg" alt="" aria-hidden="true" width="1024" height="2048" loading="lazy" decoding="async"><img class="call-pose call-pose-b" src="./assets/author-fullbody-call-me-motion.jpg" alt="" aria-hidden="true" width="1030" height="2048" loading="lazy" decoding="async"></span></div>
             <a class="qr-card" href="https://musikfed.github.io/view_my_prj/" target="_blank" rel="noopener noreferrer" aria-label="Усе праекты PEGINELAB">
-                <img src="./assets/qr-peginelab.svg" alt="QR PEGINELAB" width="225" height="225" loading="lazy">
+                <img src="./assets/qr-peginelab-sharp.svg" alt="QR PEGINELAB" width="600" height="600" loading="lazy">
                 <span class="qr-caption">Усе праекты PEGINELAB</span>
             </a>
         </div>
