@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fedor Gerasimov | IT Engineer</title>
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-main: #222222;
+            --text-light: #666666;
+            --accent: #005bff;
+            --border-color: #e0e0e0;
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Стилизация шапки с переключателем */
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+        
+        .logo-text {
+            font-weight: 700;
+            font-size: 18px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Темный выпадающий список как на скрине */
+        .lang-select {
+            appearance: none;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            border: 1px solid #333;
+            padding: 8px 35px 8px 15px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: var(--font-main);
+            cursor: pointer;
+            outline: none;
+            /* Рисуем стрелочку вручную (чтобы было красиво) */
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 16px;
+            transition: 0.2s;
+        }
+        .lang-select:hover {
+            background-color: #2a2a2a;
+        }
+        .lang-select option {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 10px;
+        }
+
+        /* Скрываем все языки по умолчанию */
+        .lang-content { display: none; }
+        
+        /* Показываем язык на основе :target */
+        #ru:target, #en:target, #zh:target, #de:target, #hi:target, #fr:target, #fi:target, #ko:target, #ja:target, #it:target, #be:target { display: block; }
+        
+        /* По умолчанию показываем русский */
+        .lang-content:first-of-type { display: block; }
+        .lang-content:target ~ .lang-content:first-of-type { display: none; }
+
+        /* Типографика */
+        h1 { font-size: 28px; margin: 0 0 5px 0; color: #000; }
+        .subtitle { font-size: 16px; color: var(--text-light); margin-bottom: 25px; }
+        h2 { font-size: 20px; margin: 30px 0 15px 0; color: #000; border-bottom: 1px solid var(--border-color); padding-bottom: 5px; }
+        p, li { font-size: 15px; margin-bottom: 10px; }
+        ul { padding-left: 20px; }
+        
+        .contacts {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border-left: 4px solid var(--accent);
+        }
+        .contacts p { margin: 8px 0; }
+        a.accent-link { color: var(--accent); text-decoration: none; font-weight: 500; }
+        a.accent-link:hover { text-decoration: underline; }
+        
+        @media (max-width: 600px) {
+            h1 { font-size: 24px; }
+            .container { padding: 20px 15px; }
+            .header-bar { flex-direction: column; align-items: flex-start; gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Шапка с логотипом и выпадающим списком -->
+    <div class="header-bar">
+        <div class="logo-text">musikfed / my_self</div>
+        <select class="lang-select" onchange="window.location.hash = this.value;">
+            <option value="ru">Русский</option>
+            <option value="en">English</option>
+            <option value="zh">简体中文</option>
+            <option value="de">Deutsch</option>
+            <option value="hi">हिन्दी</option>
+            <option value="fr">Français</option>
+            <option value="fi">Suomi</option>
+            <option value="ko">한국어</option>
+            <option value="ja">日本語</option>
+            <option value="it">Italiano</option>
+            <option value="be">Беларуская</option>
+        </select>
+    </div>
+
+    <!-- ================= РУССКИЙ ================= -->
+    <div id="ru" class="lang-content">
+        <h1>Фёдор Герасимов</h1>
+        <div class="subtitle">IT-инженер / Архитектор систем / Unlimited (musikfed)</div>
+
+        <p>42 года, Москва. Инженер-полимат с 20-летним опытом: от низкоуровневой разработки (C/C++, Rust, ESP32) и системного администрирования (Linux, KVM, Postfix) до локальных AI-решений (Ollama, RAG).</p>
+        <p>Смотрю на IT как на систему. Умею как паять, так и писать архитектуру. Автор патента на фреймворк автоматизации <strong>PiTools</strong> (св-во №2026610793).</p>
+
+        <h2>Ключевые проекты</h2>
+        <ul>
+            <li><strong>AI & Books (ACHEWIW):</strong> Локальная издательская мастерская (FastAPI, SQLite, Ollama).</li>
+            <li><strong>Operating Systems:</strong> Собственная ОС (Irila Baikal) на Rust с UEFI-загрузчиком.</li>
+            <li><strong>Infrastructure:</strong> Почтовый сервер MonoPost (Postfix, React), CI/CD, Docker.</li>
+            <li><strong>Embedded:</strong> Робот Hombo3 (ESP32-S3) с AI, драйвера, работа с кешем процессора.</li>
+        </ul>
+
+        <h2>Опыт работы</h2>
+        <ul>
+            <li><strong>РТ-ИНФОРМ (Ростех)</strong> — Ведущий сисадмин (2023–2025). Миграция 150+ серверов на Astra Linux и PostgreSQL.</li>
+            <li><strong>Минэнерго России</strong> — Главный эксперт / Администратор 1С (2022–2023).</li>
+            <li><strong>Росатом (Билибинская АЭС)</strong> — Инженер электроник (2020–2021).</li>
+            <li><strong>МВД России</strong> — Старший инженер ИТ и защиты информации (2007–2020).</li>
+        </ul>
+
+        <div class="contacts">
+            <p>👉 <strong>Портфолио (20 проектов):</strong> <a href="https://musikfed.github.io/view_my_prj/" class="accent-link">view_my_prj</a></p>
+            <p>👉 <strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
+            <p>👉 <strong>Связь:</strong> Telegram <strong>@Feudorlab1</strong> · Email <strong>feudor.lab@yandex.ru</strong></p>
+        </div>
+    </div>
+
+    <!-- ================= ENGLISH ================= -->
+    <div id="en" class="lang-content">
+        <h1>Fedor Gerasimov</h1>
+        <div class="subtitle">IT Engineer / Systems Architect / Unlimited (musikfed)</div>
+
+        <p>42 years old, Moscow. Polyglot engineer with 20 years of experience: from low-level development (C/C++, Rust, ESP32) and system administration (Linux, KVM, Postfix) to local AI solutions (Ollama, RAG).</p>
+        <p>I view IT as a system. I can both solder and design architecture. Author of the <strong>PiTools</strong> automation framework patent (No. 2026610793).</p>
+
+        <h2>Key Projects</h2>
+        <ul>
+            <li><strong>AI & Books (ACHEWIW):</strong> Local AI book studio (FastAPI, SQLite, Ollama).</li>
+            <li><strong>Operating Systems:</strong> Custom OS (Irila Baikal) in Rust with UEFI bootloader.</li>
+            <li><strong>Infrastructure:</strong> Mail server MonoPost (Postfix, React), CI/CD, Docker.</li>
+            <li><strong>Embedded:</strong> Robot Hombo3 (ESP32-S3) with AI, drivers, CPU cache optimization.</li>
+        </ul>
+
+        <h2>Experience</h2>
+        <ul>
+            <li><strong>RT-Inform (Rostec)</strong> — Lead Sysadmin (2023–2025). Migrated 150+ servers to Astra Linux & PostgreSQL.</li>
+            <li><strong>Ministry of Energy of Russia</strong> — Chief Expert / 1C Admin (2022–2023).</li>
+            <li><strong>Rosatom (Bilibino NPP)</strong> — Electronics Engineer (2020–2021).</li>
+            <li><strong>MVD of Russia</strong> — Senior IT & InfoSec Engineer (2007–2020).</li>
+        </ul>
+
+        <div class="contacts">
+            <p>👉 <strong>Portfolio (20 projects):</strong> <a href="https://musikfed.github.io/view_my_prj/" class="accent-link">view_my_prj</a></p>
+            <p>👉 <strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
+            <p>👉 <strong>Contact:</strong> Telegram <strong>@Feudorlab1</strong> · Email <strong>feudor.lab@yandex.ru</strong></p>
+        </div>
+    </div>
+
+    <!-- ================= 中文 ================= -->
+    <div id="zh" class="lang-content">
+        <h1>费奥多尔·格拉西莫夫</h1>
+        <div class="subtitle">IT工程师 / 系统架构师 / Unlimited (musikfed)</div>
+
+        <p>42岁，莫斯科。拥有20年经验的多面手工程师：从底层开发（C/C++、Rust、ESP32）和系统管理（Linux、KVM、Postfix）到本地AI解决方案（Ollama、RAG）。</p>
+        <p>我将IT视为一个系统。我既能焊接，也能编写架构。自动化框架 <strong>PiTools</strong> 专利的作者。</p>
+
+        <h2>关键项目</h2>
+        <ul>
+            <li><strong>AI & Books (ACHEWIW):</strong> 本地AI书籍工作室（FastAPI、SQLite、Ollama）。</li>
+            <li><strong>Operating Systems:</strong> 使用Rust和UEFI引导程序的自定义操作系统（Irila Baikal）。</li>
+            <li><strong>Infrastructure:</strong> 邮件服务器 MonoPost (Postfix, React), CI/CD, Docker。</li>
+            <li><strong>Embedded:</strong> 机器人 Hombo3 (ESP32-S3)，带AI和驱动程序。</li>
+        </ul>
+
+        <h2>工作经验</h2>
+        <ul>
+            <li><strong>RT-Inform (Rostec)</strong> — 首席系统管理员 (2023–2025)。迁移了150多台服务器。</li>
+            <li><strong>俄罗斯能源部</strong> — 首席专家 (2022–2023)。</li>
+            <li><strong>Rosatom (比利比诺核电站)</strong> — 电子工程师 (2020–2021)。</li>
+            <li><strong>俄罗斯内务部</strong> — 高级IT与信息安全工程师 (2007–2020)。</li>
+        </ul>
+
+        <div class="contacts">
+            <p>👉 <strong>作品集 (20个项目):</strong> <a href="https://musikfed.github.io/view_my_prj/" class="accent-link">view_my_prj</a></p>
+            <p>👉 <strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
+            <p>👉 <strong>联系方式:</strong> Telegram <strong>@Feudorlab1</strong> · Email <strong>feudor.lab@yandex.ru</strong></p>
+        </div>
+    </div>
+
+    <!-- ================= DEUTSCH ================= -->
+    <div id="de" class="lang-content">
+        <h1>Fedor Gerassimow</h1>
+        <div class="subtitle">IT-Ingenieur / Systemarchitekt / Unlimited (musikfed)</div>
+
+        <p>42 Jahre alt, Moskau. Polymath-Ingenieur mit 20 Jahren Erfahrung: von der Low-Level-Entwicklung (C/C++, Rust, ESP32) und Systemadministration (Linux, KVM, Postfix) bis hin zu lokalen KI-Lösungen (Ollama, RAG).</p>
+        <p>Ich betrachte IT als ein System. Ich kann sowohl löten als auch Architektur schreiben. Autor des Patents für das Automatisierungsframework <strong>PiTools</strong>.</p>
+
+        <h2>Wichtige Projekte</h2>
+        <ul>
+            <li><strong>AI & Books (ACHEWIW):</strong> Lokales KI-Buchstudio (FastAPI, SQLite, Ollama).</li>
+            <li><strong>Operating Systems:</strong> Eigenes Betriebssystem (Irila Baikal) in Rust mit UEFI-Bootloader.</li>
+            <li><strong>Infrastruktur:</strong> Mailserver MonoPost (Postfix, React), CI/CD, Docker.</li>
+            <li><strong>Embedded:</strong> Roboter Hombo3 (ESP32-S3) mit KI, Treibern.</li>
+        </ul>
+
+        <h2>Berufserfahrung</h2>
+        <ul>
+            <li><strong>RT-Inform (Rostec)</strong> — Lead Sysadmin (2023–2025). Migration von 150+ Servern.</li>
+            <li><strong>Energieministerium Russlands</strong> — Chief Expert (2022–2023).</li>
+            <li><strong>Rosatom (Kernkraftwerk Bilibino)</strong> — Elektronikingenieur (2020–2021).</li>
+            <li><strong>MVD Russlands</strong> — Senior IT & InfoSec Engineer (2007–2020).</li>
+        </ul>
+
+        <div class="contacts">
+            <p>👉 <strong>Portfolio (20 Projekte):</strong> <a href="https://musikfed.github.io/view_my_prj/" class="accent-link">view_my_prj</a></p>
+            <p>👉 <strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
+            <p>👉 <strong>Kontakt:</strong> Telegram <strong>@Feudorlab1</strong> · Email <strong>feudor.lab@yandex.ru</strong></p>
+        </div>
+    </div>
+
+    <!-- ================= हिन्दी ================= -->
+    <div id="hi" class="lang-content">
+        <h1>फ्योडोर गेरासिमोव</h1>
+        <div class="subtitle">आईटी इंजीनियर / सिस्टम आर्किटेक्ट / Unlimited (musikfed)</div>
+
+        <p>42 वर्ष, मॉस्को। 20 साल के अनुभव के साथ बहु-प्रतिभाशाली इंजीनियर: निम्न-स्तरीय विकास (C/C++, Rust, ESP32) और सिस्टम प्रशासन (Linux, KVM, Postfix) से लेकर स्थानीय AI समाधान (Ollama, RAG) तक।</p>
+        <p>मैं आईटी को एक प्रणाली के रूप में देखता हूं। मैं टांका लगाना और आर्किटेक्चर लिखना दोनों जानता हूं। स्वचालन ढांचे <strong>PiTools</strong> के पेटेंट के लेखक।</p>
+
+        <h2>मुख्य परियोजनाएं</h2>
+        <ul>
+            <li><strong>AI & Books (ACHEWIW):</strong> स्थानीय AI पुस्तक स्टूडियो (FastAPI, SQLite, Ollama)।</li>
+            <li><strong>Operating Systems:</strong> Rust में UEFI बूटलोडर के साथ कस्टम OS (Irila Baikal)।</li>
+            <li><strong>Infrastructure:</strong> मेल सर्वर MonoPost (Postfix, React), CI/CD, Docker।</li>
+            <li><strong>Embedded:</strong> AI के साथ रोबोट Hombo3 (ESP32-S3)।</li>
+        </ul>
+
+        <h2>कार्य अनुभव</h2>
+        <ul>
+            <li><strong>RT-Inform (Rostec)</strong> — प्रमुख सिस्टम एडमिन (2023–2025)। 150+ सर्वर माइग्रेट किए।</li>
+            <li><strong>रूस का ऊर्जा मंत्रालय</strong> — मुख्य विशेषज्ञ (2022–2023)।</li>
+            <li><strong>रोसाटॉम (बिलिबिनो एनपीपी)</strong> — इलेक्ट्रॉनिक्स इंजीनियर (2020–2021)।</li>
+            <li><strong>रूस का MVD</strong> — वरिष्ठ आईटी और सूचना सुरक्षा इंजीनियर (2007–2020)।</li>
+        </ul>
+
+        <div class="contacts">
+            <p>👉 <strong>पोर्टफोलियो (20 परियोजनाएं):</strong> <a href="https://musikfed.github.io/view_my_prj/" class="accent-link">view_my_prj</a></p>
+            <p>👉 <strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
+            <p>👉 <strong>संपर्क:</strong> Telegram <strong>@Feudorlab1</strong> · Email <strong>feudor.lab@yandex.ru</strong></p>
+        </div>
+    </div>
+
+    <!-- ================= FRANÇAIS ================= -->
+    <div id="fr" class="lang-content">
+        <h1>Fedor Guerassimov</h1>
+        <div class="subtitle">Ingénieur IT / Architecte Systèmes / Unlimited (musikfed)</div>
+
+        <p>42 ans, Moscou. Ingénieur polymathe avec 20 ans d'expérience : du développement bas niveau (C/C++, Rust, ESP32) et de l'administration système (Linux, KVM, Postfix) aux solutions d'IA locales (Ollama, RAG).</p>
+        <p>Je vois l'IT comme un système. Je sais à la fois souder et concevoir des architectures. Auteur du brevet du framework d'automatisation <strong>PiTools</strong>.</p>
+
+        <h2>Projets clés</h2>
+        <ul>
+            <li><strong>AI & Books (ACHEWIW):</strong> Studio de livres IA local (FastAPI, SQLite, Ollama).</li>
+            <li><strong>Operating Systems:</strong> OS personnalisé (Irila Baikal) en Rust avec bootloader UEFI.</li>
+            <li><strong>Infrastructure :</strong> Serveur mail MonoPost (Postfix, React), CI/CD, Docker.</li>
+            <li><strong>Embedded :</strong> Robot Hombo3 (ESP32-S3) avec IA, pilotes.</li>
+        </ul>
+
+        <h2>Expérience</h2>
+        <ul>
+            <li><strong>RT-Inform (Rostec)</strong> — Lead Sysadmin (2023–2025). Migration de 150+ serveurs.</li>
+            <li><strong>Ministère de l'Énergie de Russie</strong> — Expert en chef (2022–2023).</li>
+            <li><strong>Rosatom (Centrale de Bilibino)</strong> — Ingénieur électronique (2020–2021).</li>
+            <li><strong>MVD de Russie</strong> — Ingénieur IT & Sécurité (2007–2020).</li>
+        </ul>
+
+        <div class="contacts">
+            <p>👉 <strong>Portfolio (20 projets) :</strong> <a href="https://musikfed.github.io/view_my_prj/" class="accent-link">view_my_prj</a></p>
+            <p>👉 <strong>GitHub :</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
+            <p>👉 <strong>Contact :</strong> Telegram <strong>@Feudorlab1</strong> · Email <strong>feudor.lab@yandex.ru</strong></p>
+        </div>
+    </div>
+
+    <!-- ================= SUOMI ================= -->
+    <div id="fi" class="lang-content">
+        <h1>Fedor Gerasimov</h1>
+        <div class="subtitle">IT-insinööri / Järjestelmäarkkitehti / Unlimited (musikfed)</div>
+
+        <p>42-vuotias, Moskova. Monipuolinen insinööri, jolla on 20 vuoden kokemus: matalan tason kehityksestä (C/C++, Rust, ESP32) ja järjestelmänvalvonnasta (Linux, KVM, Postfix) paikallisiin tekoälyratkaisuihin (Ollama, RAG).</p>
+        <p>Näen IT:n järjestelmänä. Osaan sekä juottaa että suunnitella arkkitehtuuria. Automaatiokehyksen <strong>PiTools</strong> patentin haltija.</p>
+
+        <h2>Avainprojektit</h2>
+        <ul>
+            <li><strong>AI & Books (ACHEWIW):</strong> Paikallinen AI-kirjastudio (FastAPI, SQLite, Ollama).</li>
+            <li><strong>Operating Systems:</strong> Oma käyttöjärjestelmä (Irila Baikal) Rustilla ja UEFI-käynnistyslataajalla.</li>
+            <li><strong>Infrastruktuuri:</strong> Sähköpostipalvelin MonoPost (Postfix, React), CI/CD, Docker.</li>
+            <li><strong>Embedded:</strong> Robotti Hombo3 (ESP32-S3) tekoälyllä ja ajureilla.</li>
+        </ul>
+
+        <h2>Työkokemus</h2>
+        <ul>
+            <li><strong>RT-Inform (Rostec)</strong> — Johtava järjestelmänvalvoja (2023–2025). Yli 150 palvelimen migraatio.</li>
+            <li><strong>Venäjän energiaministeriö</strong> — Pääasiantuntija (2022–2023).</li>
+            <li><strong>Rosatom (Bilibinon ydinvoimala)</strong> — Elektroniikkainsinööri (2020–2021).</li>
+            <li><strong>Venäjän sisäministeriö</strong> — Vanhempi IT- ja tietoturvainsinööri (2007–2020).</li>
+        </ul>
+
+        <div class="contacts">
+            <p>👉 <strong>Portfolio (20 projektia):</strong> <a href="https://musikfed.github.io/view_my_prj/" class="accent-link">view_my_prj</a></p>
+            <p>👉 <strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
+            <p>👉 <strong>Yhteystiedot:</strong> Telegram <strong>@Feudorlab1</strong> · Email <strong>feudor.lab@yandex.ru</strong></p>
+        </div>
+    </div>
+
+    <!-- ================= 한국어 ================= -->
+    <div id="ko" class="lang-content">
+        <h1>표도르 게라시모프</h1>
+        <div class="subtitle">IT 엔지니어 / 시스템 아키텍트 / Unlimited (musikfed)</div>
+
+        <p>42세, 모스크바. 20년 경력의 다재다능한 엔지니어: 저수준 개발(C/C++, Rust, ESP32) 및 시스템 관리(Linux, KVM, Postfix)부터 로컬 AI 솔루션(Ollama, RAG)까지.</p>
+        <p>저는 IT를 하나의 시스템으로 봅니다. 납땜도 할 수 있고 아키텍처도 설계할 수 있습니다. 자동화 프레임워크 <strong>PiTools</strong> 특허 보유자.</p>
+
+        <h2>주요 프로젝트</h2>
+        <ul>
+            <li><strong>AI & Books (ACHEWIW):</strong> 로컬 AI 도서 스튜디오 (FastAPI, SQLite, Ollama).</li>
+            <li><strong>Operating Systems:</strong> Rust와 UEFI 부트로더를 사용한 자체 OS (Irila Baikal).</li>
+            <li><strong>Infrastructure:</strong> 메일 서버 MonoPost (Postfix, React), CI/CD, Docker.</li>
+            <li><strong>Embedded:</strong> AI가 탑재된 로봇 Hombo3 (ESP32-S3), 드라이버.</li>
+        </ul>
+
+        <h2>경력</h2>
+        <ul>
+            <li><strong>RT-Inform (Rostec)</strong> — 수석 시스템 관리자 (2023–2025). 150개 이상의 서버 마이그레이션.</li>
+            <li><strong>러시아 에너지부</strong> — 수석 전문가 (2022–2023).</li>
+            <li><strong>Rosatom (빌리비노 원자력 발전소)</strong> — 전자 엔지니어 (2020–2021).</li>
+            <li><strong>러시아 내무부</strong> — 선임 IT 및 정보 보안 엔지니어 (2007–2020).</li>
+        </ul>
+
+        <div class="contacts">
+            <p>👉 <strong>포트폴리오 (20개 프로젝트):</strong> <a href="https://musikfed.github.io/view_my_prj/" class="accent-link">view_my_prj</a></p>
+            <p>👉 <strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
+            <p>👉 <strong>연락처:</strong> Telegram <strong>@Feudorlab1</strong> · Email <strong>feudor.lab@yandex.ru</strong></p>
+        </div>
+    </div>
+
+    <!-- ================= 日本語 ================= -->
+    <div id="ja" class="lang-content">
+        <h1>フョードル・ゲラシモフ</h1>
+        <div class="subtitle">ITエンジニア / システムアーキテクト / Unlimited (musikfed)</div>
+
+        <p>42歳、モスクワ。20年の経験を持つ多才なエンジニア：低レベル開発（C/C++、Rust、ESP32）やシステム管理（Linux、KVM、Postfix）から、ローカルAIソリューション（Ollama、RAG）まで。</p>
+        <p>私はITを一つのシステムとして見ています。はんだ付けもアーキテクチャの設計もできます。自動化フレームワーク <strong>PiTools</strong> の特許保有者。</p>
+
+        <h2>主要プロジェクト</h2>
+        <ul>
+            <li><strong>AI & Books (ACHEWIW):</strong> ローカルAI書籍スタジオ（FastAPI、SQLite、Ollama）。</li>
+            <li><strong>Operating Systems:</strong> RustとUEFIブートローダーによる独自OS（Irila Baikal）。</li>
+            <li><strong>Infrastructure:</strong> メールサーバー MonoPost (Postfix, React)、CI/CD、Docker。</li>
+            <li><strong>Embedded:</strong> AIを搭載したロボット Hombo3 (ESP32-S3)、ドライバー。</li>
+        </ul>
+
+        <h2>職務経歴</h2>
+        <ul>
+            <li><strong>RT-Inform (Rostec)</strong> — リードシステム管理者 (2023–2025)。150以上のサーバーを移行。</li>
+            <li><strong>ロシアエネルギー省</strong> — チーフエキスパート (2022–2023)。</li>
+            <li><strong>ロスアトム (ビリビノ原子力発電所)</strong> — 電子エンジニア (2020–2021)。</li>
+            <li><strong>ロシア内務省</strong> — シニアIT・情報セキュリティエンジニア (2007–2020)。</li>
+        </ul>
+
+        <div class="contacts">
+            <p>👉 <strong>ポートフォリオ (20プロジェクト):</strong> <a href="https://musikfed.github.io/view_my_prj/" class="accent-link">view_my_prj</a></p>
+            <p>👉 <strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
+            <p>👉 <strong>連絡先:</strong> Telegram <strong>@Feudorlab1</strong> · Email <strong>feudor.lab@yandex.ru</strong></p>
+        </div>
+    </div>
+
+    <!-- ================= ITALIANO ================= -->
+    <div id="it" class="lang-content">
+        <h1>Fedor Gerasimov</h1>
+        <div class="subtitle">Ingegnere IT / Architetto di Sistemi / Unlimited (musikfed)</div>
+
+        <p>42 anni, Mosca. Ingegnere poliedrico con 20 anni di esperienza: dallo sviluppo a basso livello (C/C++, Rust, ESP32) e amministrazione di sistema (Linux, KVM, Postfix) alle soluzioni AI locali (Ollama, RAG).</p>
+        <p>Vedo l'IT come un sistema. So sia saldare che progettare architetture. Autore del brevetto del framework di automazione <strong>PiTools</strong>.</p>
+
+        <h2>Progetti Chiave</h2>
+        <ul>
+            <li><strong>AI & Books (ACHEWIW):</strong> Studio locale di libri AI (FastAPI, SQLite, Ollama).</li>
+            <li><strong>Operating Systems:</strong> OS personalizzato (Irila Baikal) in Rust con bootloader UEFI.</li>
+            <li><strong>Infrastructure:</strong> Server mail MonoPost (Postfix, React), CI/CD, Docker.</li>
+            <li><strong>Embedded:</strong> Robot Hombo3 (ESP32-S3) con AI, driver.</li>
+        </ul>
+
+        <h2>Esperienza</h2>
+        <ul>
+            <li><strong>RT-Inform (Rostec)</strong> — Lead Sysadmin (2023–2025). Migrazione di oltre 150 server.</li>
+            <li><strong>Ministero dell'Energia russo</strong> — Capo Esperto (2022–2023).</li>
+            <li><strong>Rosatom (Centrale di Bilibino)</strong> — Ingegnere Elettronico (2020–2021).</li>
+            <li><strong>MVD russo</strong> —
