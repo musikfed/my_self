@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fedor Gerasimov | IT Engineer</title>
+    <title>Fedor Gerasimov | Федор Герасимов</title>
     <style>
         :root {
-            --bg-color: #ffffff;
-            --text-main: #222222;
-            --text-light: #666666;
-            --accent: #005bff;
+            --bg-color: #f4f4f4;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #777777;
+            --accent-red: #d6001c; /* Красный HH */
             --border-color: #e0e0e0;
             --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
@@ -18,31 +19,36 @@
             font-family: var(--font-main);
             background-color: var(--bg-color);
             color: var(--text-main);
-            line-height: 1.6;
+            line-height: 1.5;
             margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 850px;
-            margin: 0 auto;
             padding: 40px 20px;
         }
 
-        /* Стилизация шапки с переключателем */
+        /* Квадратный контейнер в стиле HH */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            padding: 40px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px; /* Слегка скругленные углы, почти квадрат */
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        /* Шапка с логотипом и переключателем */
         .header-bar {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding-bottom: 20px;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 2px solid var(--border-color);
             margin-bottom: 30px;
         }
         
         .logo-text {
             font-weight: 700;
             font-size: 18px;
-            letter-spacing: 0.5px;
+            color: #000;
         }
 
         /* Темный выпадающий список как на скрине */
@@ -52,58 +58,78 @@
             color: #ffffff;
             border: 1px solid #333;
             padding: 8px 35px 8px 15px;
-            border-radius: 6px;
+            border-radius: 4px;
             font-size: 14px;
             font-family: var(--font-main);
             cursor: pointer;
             outline: none;
-            /* Рисуем стрелочку вручную (чтобы было красиво) */
             background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
             background-repeat: no-repeat;
             background-position: right 10px center;
             background-size: 16px;
-            transition: 0.2s;
-        }
-        .lang-select:hover {
-            background-color: #2a2a2a;
         }
         .lang-select option {
             background-color: #1a1a1a;
             color: #fff;
-            padding: 10px;
         }
 
         /* Скрываем все языки по умолчанию */
         .lang-content { display: none; }
-        
-        /* Показываем язык на основе :target */
         #ru:target, #en:target, #zh:target, #de:target, #hi:target, #fr:target, #fi:target, #ko:target, #ja:target, #it:target, #be:target { display: block; }
-        
-        /* По умолчанию показываем русский */
         .lang-content:first-of-type { display: block; }
         .lang-content:target ~ .lang-content:first-of-type { display: none; }
 
         /* Типографика */
-        h1 { font-size: 28px; margin: 0 0 5px 0; color: #000; }
-        .subtitle { font-size: 16px; color: var(--text-light); margin-bottom: 25px; }
-        h2 { font-size: 20px; margin: 30px 0 15px 0; color: #000; border-bottom: 1px solid var(--border-color); padding-bottom: 5px; }
-        p, li { font-size: 15px; margin-bottom: 10px; }
-        ul { padding-left: 20px; }
+        h1 {
+            font-size: 28px;
+            margin: 0 0 5px 0;
+            color: #000;
+            font-weight: 700;
+        }
+        .subtitle {
+            font-size: 16px;
+            color: var(--text-light);
+            margin-bottom: 25px;
+        }
+        h2 {
+            font-size: 20px;
+            margin: 30px 0 15px 0;
+            color: #000;
+            font-weight: 600;
+        }
+        p, li {
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        strong {
+            font-weight: 600;
+        }
         
+        /* Красный акцент для ссылок (в стиле HH) */
+        a.accent-link {
+            color: var(--accent-red);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        a.accent-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Блок контактов */
         .contacts {
-            background: #f9f9f9;
+            background: #fafafa;
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 4px;
             margin-top: 30px;
-            border-left: 4px solid var(--accent);
+            border-left: 4px solid var(--accent-red);
         }
         .contacts p { margin: 8px 0; }
-        a.accent-link { color: var(--accent); text-decoration: none; font-weight: 500; }
-        a.accent-link:hover { text-decoration: underline; }
         
         @media (max-width: 600px) {
-            h1 { font-size: 24px; }
-            .container { padding: 20px 15px; }
+            .container { padding: 20px; }
             .header-bar { flex-direction: column; align-items: flex-start; gap: 15px; }
         }
     </style>
@@ -111,9 +137,9 @@
 <body>
 
 <div class="container">
-    <!-- Шапка с логотипом и выпадающим списком -->
+    <!-- Шапка -->
     <div class="header-bar">
-        <div class="logo-text">musikfed / my_self</div>
+        <div class="logo-text">Fedor | Федор</div>
         <select class="lang-select" onchange="window.location.hash = this.value;">
             <option value="ru">Русский</option>
             <option value="en">English</option>
@@ -131,18 +157,18 @@
 
     <!-- ================= РУССКИЙ ================= -->
     <div id="ru" class="lang-content">
-        <h1>Фёдор Герасимов</h1>
-        <div class="subtitle">IT-инженер / Архитектор систем / Unlimited (musikfed)</div>
+        <h1>Федор Герасимов</h1>
+        <div class="subtitle">42 года, г. Москва</div>
 
-        <p>42 года, Москва. Инженер-полимат с 20-летним опытом: от низкоуровневой разработки (C/C++, Rust, ESP32) и системного администрирования (Linux, KVM, Postfix) до локальных AI-решений (Ollama, RAG).</p>
-        <p>Смотрю на IT как на систему. Умею как паять, так и писать архитектуру. Автор патента на фреймворк автоматизации <strong>PiTools</strong> (св-во №2026610793).</p>
+        <p>IT-инженер с 20-летним опытом: от низкоуровневой разработки (C/C++, Rust, ESP32) и системного администрирования (Linux, KVM, Postfix) до локальных AI-решений (Ollama, RAG).</p>
+        <p>Автор патента на фреймворк автоматизации <strong>PiTools</strong> (св-во №2026610793).</p>
 
         <h2>Ключевые проекты</h2>
         <ul>
             <li><strong>AI & Books (ACHEWIW):</strong> Локальная издательская мастерская (FastAPI, SQLite, Ollama).</li>
             <li><strong>Operating Systems:</strong> Собственная ОС (Irila Baikal) на Rust с UEFI-загрузчиком.</li>
             <li><strong>Infrastructure:</strong> Почтовый сервер MonoPost (Postfix, React), CI/CD, Docker.</li>
-            <li><strong>Embedded:</strong> Робот Hombo3 (ESP32-S3) с AI, драйвера, работа с кешем процессора.</li>
+            <li><strong>Embedded:</strong> Робот Hombo3 (ESP32-S3) с AI, драйвера.</li>
         </ul>
 
         <h2>Опыт работы</h2>
@@ -154,7 +180,7 @@
         </ul>
 
         <div class="contacts">
-            <p>👉 <strong>Портфолио (20 проектов):</strong> <a href="https://musikfed.github.io/view_my_prj/" class="accent-link">view_my_prj</a></p>
+            <p>👉 <strong>Сайт:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
             <p>👉 <strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p>👉 <strong>Связь:</strong> Telegram <strong>@Feudorlab1</strong> · Email <strong>feudor.lab@yandex.ru</strong></p>
         </div>
@@ -163,17 +189,17 @@
     <!-- ================= ENGLISH ================= -->
     <div id="en" class="lang-content">
         <h1>Fedor Gerasimov</h1>
-        <div class="subtitle">IT Engineer / Systems Architect / Unlimited (musikfed)</div>
+        <div class="subtitle">42 years old, Moscow</div>
 
-        <p>42 years old, Moscow. Polyglot engineer with 20 years of experience: from low-level development (C/C++, Rust, ESP32) and system administration (Linux, KVM, Postfix) to local AI solutions (Ollama, RAG).</p>
-        <p>I view IT as a system. I can both solder and design architecture. Author of the <strong>PiTools</strong> automation framework patent (No. 2026610793).</p>
+        <p>IT engineer with 20 years of experience: from low-level development (C/C++, Rust, ESP32) and system administration (Linux, KVM, Postfix) to local AI solutions (Ollama, RAG).</p>
+        <p>Author of the <strong>PiTools</strong> automation framework patent (No. 2026610793).</p>
 
         <h2>Key Projects</h2>
         <ul>
             <li><strong>AI & Books (ACHEWIW):</strong> Local AI book studio (FastAPI, SQLite, Ollama).</li>
             <li><strong>Operating Systems:</strong> Custom OS (Irila Baikal) in Rust with UEFI bootloader.</li>
             <li><strong>Infrastructure:</strong> Mail server MonoPost (Postfix, React), CI/CD, Docker.</li>
-            <li><strong>Embedded:</strong> Robot Hombo3 (ESP32-S3) with AI, drivers, CPU cache optimization.</li>
+            <li><strong>Embedded:</strong> Robot Hombo3 (ESP32-S3) with AI, drivers.</li>
         </ul>
 
         <h2>Experience</h2>
@@ -185,7 +211,7 @@
         </ul>
 
         <div class="contacts">
-            <p>👉 <strong>Portfolio (20 projects):</strong> <a href="https://musikfed.github.io/view_my_prj/" class="accent-link">view_my_prj</a></p>
+            <p>👉 <strong>Website:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
             <p>👉 <strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p>👉 <strong>Contact:</strong> Telegram <strong>@Feudorlab1</strong> · Email <strong>feudor.lab@yandex.ru</strong></p>
         </div>
@@ -194,10 +220,10 @@
     <!-- ================= 中文 ================= -->
     <div id="zh" class="lang-content">
         <h1>费奥多尔·格拉西莫夫</h1>
-        <div class="subtitle">IT工程师 / 系统架构师 / Unlimited (musikfed)</div>
+        <div class="subtitle">42岁, 莫斯科</div>
 
-        <p>42岁，莫斯科。拥有20年经验的多面手工程师：从底层开发（C/C++、Rust、ESP32）和系统管理（Linux、KVM、Postfix）到本地AI解决方案（Ollama、RAG）。</p>
-        <p>我将IT视为一个系统。我既能焊接，也能编写架构。自动化框架 <strong>PiTools</strong> 专利的作者。</p>
+        <p>拥有20年经验的IT工程师：从底层开发（C/C++、Rust、ESP32）和系统管理（Linux、KVM、Postfix）到本地AI解决方案（Ollama、RAG）。</p>
+        <p>自动化框架 <strong>PiTools</strong> 专利的作者。</p>
 
         <h2>关键项目</h2>
         <ul>
@@ -216,7 +242,7 @@
         </ul>
 
         <div class="contacts">
-            <p>👉 <strong>作品集 (20个项目):</strong> <a href="https://musikfed.github.io/view_my_prj/" class="accent-link">view_my_prj</a></p>
+            <p>👉 <strong>网站:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
             <p>👉 <strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p>👉 <strong>联系方式:</strong> Telegram <strong>@Feudorlab1</strong> · Email <strong>feudor.lab@yandex.ru</strong></p>
         </div>
@@ -225,10 +251,10 @@
     <!-- ================= DEUTSCH ================= -->
     <div id="de" class="lang-content">
         <h1>Fedor Gerassimow</h1>
-        <div class="subtitle">IT-Ingenieur / Systemarchitekt / Unlimited (musikfed)</div>
+        <div class="subtitle">42 Jahre alt, Moskau</div>
 
-        <p>42 Jahre alt, Moskau. Polymath-Ingenieur mit 20 Jahren Erfahrung: von der Low-Level-Entwicklung (C/C++, Rust, ESP32) und Systemadministration (Linux, KVM, Postfix) bis hin zu lokalen KI-Lösungen (Ollama, RAG).</p>
-        <p>Ich betrachte IT als ein System. Ich kann sowohl löten als auch Architektur schreiben. Autor des Patents für das Automatisierungsframework <strong>PiTools</strong>.</p>
+        <p>IT-Ingenieur mit 20 Jahren Erfahrung: von der Low-Level-Entwicklung (C/C++, Rust, ESP32) und Systemadministration (Linux, KVM, Postfix) bis hin zu lokalen KI-Lösungen (Ollama, RAG).</p>
+        <p>Autor des Patents für das Automatisierungsframework <strong>PiTools</strong>.</p>
 
         <h2>Wichtige Projekte</h2>
         <ul>
@@ -247,7 +273,7 @@
         </ul>
 
         <div class="contacts">
-            <p>👉 <strong>Portfolio (20 Projekte):</strong> <a href="https://musikfed.github.io/view_my_prj/" class="accent-link">view_my_prj</a></p>
+            <p>👉 <strong>Webseite:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
             <p>👉 <strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p>👉 <strong>Kontakt:</strong> Telegram <strong>@Feudorlab1</strong> · Email <strong>feudor.lab@yandex.ru</strong></p>
         </div>
@@ -256,10 +282,10 @@
     <!-- ================= हिन्दी ================= -->
     <div id="hi" class="lang-content">
         <h1>फ्योडोर गेरासिमोव</h1>
-        <div class="subtitle">आईटी इंजीनियर / सिस्टम आर्किटेक्ट / Unlimited (musikfed)</div>
+        <div class="subtitle">42 वर्ष, मॉस्को</div>
 
-        <p>42 वर्ष, मॉस्को। 20 साल के अनुभव के साथ बहु-प्रतिभाशाली इंजीनियर: निम्न-स्तरीय विकास (C/C++, Rust, ESP32) और सिस्टम प्रशासन (Linux, KVM, Postfix) से लेकर स्थानीय AI समाधान (Ollama, RAG) तक।</p>
-        <p>मैं आईटी को एक प्रणाली के रूप में देखता हूं। मैं टांका लगाना और आर्किटेक्चर लिखना दोनों जानता हूं। स्वचालन ढांचे <strong>PiTools</strong> के पेटेंट के लेखक।</p>
+        <p>20 साल के अनुभव के साथ आईटी इंजीनियर: निम्न-स्तरीय विकास (C/C++, Rust, ESP32) और सिस्टम प्रशासन (Linux, KVM, Postfix) से लेकर स्थानीय AI समाधान (Ollama, RAG) तक।</p>
+        <p>स्वचालन ढांचे <strong>PiTools</strong> के पेटेंट के लेखक।</p>
 
         <h2>मुख्य परियोजनाएं</h2>
         <ul>
@@ -278,7 +304,7 @@
         </ul>
 
         <div class="contacts">
-            <p>👉 <strong>पोर्टफोलियो (20 परियोजनाएं):</strong> <a href="https://musikfed.github.io/view_my_prj/" class="accent-link">view_my_prj</a></p>
+            <p>👉 <strong>वेबसाइट:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
             <p>👉 <strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p>👉 <strong>संपर्क:</strong> Telegram <strong>@Feudorlab1</strong> · Email <strong>feudor.lab@yandex.ru</strong></p>
         </div>
@@ -287,10 +313,10 @@
     <!-- ================= FRANÇAIS ================= -->
     <div id="fr" class="lang-content">
         <h1>Fedor Guerassimov</h1>
-        <div class="subtitle">Ingénieur IT / Architecte Systèmes / Unlimited (musikfed)</div>
+        <div class="subtitle">42 ans, Moscou</div>
 
-        <p>42 ans, Moscou. Ingénieur polymathe avec 20 ans d'expérience : du développement bas niveau (C/C++, Rust, ESP32) et de l'administration système (Linux, KVM, Postfix) aux solutions d'IA locales (Ollama, RAG).</p>
-        <p>Je vois l'IT comme un système. Je sais à la fois souder et concevoir des architectures. Auteur du brevet du framework d'automatisation <strong>PiTools</strong>.</p>
+        <p>Ingénieur IT avec 20 ans d'expérience : du développement bas niveau (C/C++, Rust, ESP32) et de l'administration système (Linux, KVM, Postfix) aux solutions d'IA locales (Ollama, RAG).</p>
+        <p>Auteur du brevet du framework d'automatisation <strong>PiTools</strong>.</p>
 
         <h2>Projets clés</h2>
         <ul>
@@ -309,7 +335,7 @@
         </ul>
 
         <div class="contacts">
-            <p>👉 <strong>Portfolio (20 projets) :</strong> <a href="https://musikfed.github.io/view_my_prj/" class="accent-link">view_my_prj</a></p>
+            <p>👉 <strong>Site web :</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
             <p>👉 <strong>GitHub :</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p>👉 <strong>Contact :</strong> Telegram <strong>@Feudorlab1</strong> · Email <strong>feudor.lab@yandex.ru</strong></p>
         </div>
@@ -318,10 +344,10 @@
     <!-- ================= SUOMI ================= -->
     <div id="fi" class="lang-content">
         <h1>Fedor Gerasimov</h1>
-        <div class="subtitle">IT-insinööri / Järjestelmäarkkitehti / Unlimited (musikfed)</div>
+        <div class="subtitle">42-vuotias, Moskova</div>
 
-        <p>42-vuotias, Moskova. Monipuolinen insinööri, jolla on 20 vuoden kokemus: matalan tason kehityksestä (C/C++, Rust, ESP32) ja järjestelmänvalvonnasta (Linux, KVM, Postfix) paikallisiin tekoälyratkaisuihin (Ollama, RAG).</p>
-        <p>Näen IT:n järjestelmänä. Osaan sekä juottaa että suunnitella arkkitehtuuria. Automaatiokehyksen <strong>PiTools</strong> patentin haltija.</p>
+        <p>IT-insinööri, jolla on 20 vuoden kokemus: matalan tason kehityksestä (C/C++, Rust, ESP32) ja järjestelmänvalvonnasta (Linux, KVM, Postfix) paikallisiin tekoälyratkaisuihin (Ollama, RAG).</p>
+        <p>Automaatiokehyksen <strong>PiTools</strong> patentin haltija.</p>
 
         <h2>Avainprojektit</h2>
         <ul>
@@ -340,7 +366,7 @@
         </ul>
 
         <div class="contacts">
-            <p>👉 <strong>Portfolio (20 projektia):</strong> <a href="https://musikfed.github.io/view_my_prj/" class="accent-link">view_my_prj</a></p>
+            <p>👉 <strong>Verkkosivusto:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
             <p>👉 <strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p>👉 <strong>Yhteystiedot:</strong> Telegram <strong>@Feudorlab1</strong> · Email <strong>feudor.lab@yandex.ru</strong></p>
         </div>
@@ -349,10 +375,10 @@
     <!-- ================= 한국어 ================= -->
     <div id="ko" class="lang-content">
         <h1>표도르 게라시모프</h1>
-        <div class="subtitle">IT 엔지니어 / 시스템 아키텍트 / Unlimited (musikfed)</div>
+        <div class="subtitle">42세, 모스크바</div>
 
-        <p>42세, 모스크바. 20년 경력의 다재다능한 엔지니어: 저수준 개발(C/C++, Rust, ESP32) 및 시스템 관리(Linux, KVM, Postfix)부터 로컬 AI 솔루션(Ollama, RAG)까지.</p>
-        <p>저는 IT를 하나의 시스템으로 봅니다. 납땜도 할 수 있고 아키텍처도 설계할 수 있습니다. 자동화 프레임워크 <strong>PiTools</strong> 특허 보유자.</p>
+        <p>20년 경력의 IT 엔지니어: 저수준 개발(C/C++, Rust, ESP32) 및 시스템 관리(Linux, KVM, Postfix)부터 로컬 AI 솔루션(Ollama, RAG)까지.</p>
+        <p>자동화 프레임워크 <strong>PiTools</strong> 특허 보유자.</p>
 
         <h2>주요 프로젝트</h2>
         <ul>
@@ -371,7 +397,7 @@
         </ul>
 
         <div class="contacts">
-            <p>👉 <strong>포트폴리오 (20개 프로젝트):</strong> <a href="https://musikfed.github.io/view_my_prj/" class="accent-link">view_my_prj</a></p>
+            <p>👉 <strong>웹사이트:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
             <p>👉 <strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p>👉 <strong>연락처:</strong> Telegram <strong>@Feudorlab1</strong> · Email <strong>feudor.lab@yandex.ru</strong></p>
         </div>
@@ -380,10 +406,10 @@
     <!-- ================= 日本語 ================= -->
     <div id="ja" class="lang-content">
         <h1>フョードル・ゲラシモフ</h1>
-        <div class="subtitle">ITエンジニア / システムアーキテクト / Unlimited (musikfed)</div>
+        <div class="subtitle">42歳、モスクワ</div>
 
-        <p>42歳、モスクワ。20年の経験を持つ多才なエンジニア：低レベル開発（C/C++、Rust、ESP32）やシステム管理（Linux、KVM、Postfix）から、ローカルAIソリューション（Ollama、RAG）まで。</p>
-        <p>私はITを一つのシステムとして見ています。はんだ付けもアーキテクチャの設計もできます。自動化フレームワーク <strong>PiTools</strong> の特許保有者。</p>
+        <p>20年の経験を持つITエンジニア：低レベル開発（C/C++、Rust、ESP32）やシステム管理（Linux、KVM、Postfix）から、ローカルAIソリューション（Ollama、RAG）まで。</p>
+        <p>自動化フレームワーク <strong>PiTools</strong> の特許保有者。</p>
 
         <h2>主要プロジェクト</h2>
         <ul>
@@ -402,7 +428,7 @@
         </ul>
 
         <div class="contacts">
-            <p>👉 <strong>ポートフォリオ (20プロジェクト):</strong> <a href="https://musikfed.github.io/view_my_prj/" class="accent-link">view_my_prj</a></p>
+            <p>👉 <strong>ウェブサイト:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
             <p>👉 <strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p>👉 <strong>連絡先:</strong> Telegram <strong>@Feudorlab1</strong> · Email <strong>feudor.lab@yandex.ru</strong></p>
         </div>
@@ -411,10 +437,10 @@
     <!-- ================= ITALIANO ================= -->
     <div id="it" class="lang-content">
         <h1>Fedor Gerasimov</h1>
-        <div class="subtitle">Ingegnere IT / Architetto di Sistemi / Unlimited (musikfed)</div>
+        <div class="subtitle">42 anni, Mosca</div>
 
-        <p>42 anni, Mosca. Ingegnere poliedrico con 20 anni di esperienza: dallo sviluppo a basso livello (C/C++, Rust, ESP32) e amministrazione di sistema (Linux, KVM, Postfix) alle soluzioni AI locali (Ollama, RAG).</p>
-        <p>Vedo l'IT come un sistema. So sia saldare che progettare architetture. Autore del brevetto del framework di automazione <strong>PiTools</strong>.</p>
+        <p>Ingegnere IT con 20 anni di esperienza: dallo sviluppo a basso livello (C/C++, Rust, ESP32) e amministrazione di sistema (Linux, KVM, Postfix) alle soluzioni AI locali (Ollama, RAG).</p>
+        <p>Autore del brevetto del framework di automazione <strong>PiTools</strong>.</p>
 
         <h2>Progetti Chiave</h2>
         <ul>
@@ -429,4 +455,32 @@
             <li><strong>RT-Inform (Rostec)</strong> — Lead Sysadmin (2023–2025). Migrazione di oltre 150 server.</li>
             <li><strong>Ministero dell'Energia russo</strong> — Capo Esperto (2022–2023).</li>
             <li><strong>Rosatom (Centrale di Bilibino)</strong> — Ingegnere Elettronico (2020–2021).</li>
-            <li><strong>MVD russo</strong> —
+            <li><strong>MVD russo</strong> — Ingegnere IT & Sicurezza (2007–2020).</li>
+        </ul>
+
+        <div class="contacts">
+            <p>👉 <strong>Sito web:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
+            <p>👉 <strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
+            <p>👉 <strong>Contatto:</strong> Telegram <strong>@Feudorlab1</strong> · Email <strong>feudor.lab@yandex.ru</strong></p>
+        </div>
+    </div>
+
+    <!-- ================= БЕЛАРУСКАЯ ================= -->
+    <div id="be" class="lang-content">
+        <h1>Фёдар Герасімаў</h1>
+        <div class="subtitle">42 гады, г. Масква</div>
+
+        <p>IT-інжынер з 20-гадовым вопытам: ад нізкаўзроўневай распрацоўкі (C/C++, Rust, ESP32) і сістэмнага адміністравання (Linux, KVM, Postfix) да лакальных AI-рашэнняў (Ollama, RAG).</p>
+        <p>Аўтар патэнта на фрэймворк аўтаматызацыі <strong>PiTools</strong> (пасведчанне №2026610793).</p>
+
+        <h2>Ключавыя праекты</h2>
+        <ul>
+            <li><strong>AI & Books (ACHEWIW):</strong> Лакальная выдавецкая майстэрня (FastAPI, SQLite, Ollama).</li>
+            <li><strong>Operating Systems:</strong> Уласная АС (Irila Baikal) на Rust з UEFI-загрузчыкам.</li>
+            <li><strong>Infrastructure:</strong> Паштовы сервер MonoPost (Postfix, React), CI/CD, Docker.</li>
+            <li><strong>Embedded:</strong> Робат Hombo3 (ESP32-S3) з AI, драйвера.</li>
+        </ul>
+
+        <h2>Вопыт працы</h2>
+        <ul>
+            <li><strong>РТ-ІНФАРМ (Ростэх)</strong> — Вядучы сісадмін (2023–2025). Міграцыя 150+ сервераў на
