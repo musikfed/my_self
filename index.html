@@ -26,12 +26,12 @@
 
         /* Квадратный контейнер в стиле HH */
         .container {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
             background-color: var(--card-bg);
             padding: 40px;
             border: 1px solid var(--border-color);
-            border-radius: 4px; /* Слегка скругленные углы, почти квадрат */
+            border-radius: 4px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
 
@@ -51,7 +51,7 @@
             color: #000;
         }
 
-        /* Темный выпадающий список как на скрине */
+        /* Темный выпадающий список */
         .lang-select {
             appearance: none;
             background-color: #1a1a1a;
@@ -99,7 +99,7 @@
         }
         p, li {
             font-size: 15px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
         ul {
             padding-left: 20px;
@@ -173,10 +173,27 @@
 
         <h2>Опыт работы</h2>
         <ul>
-            <li><strong>РТ-ИНФОРМ (Ростех)</strong> — Ведущий сисадмин (2023–2025). Миграция 150+ серверов на Astra Linux и PostgreSQL.</li>
-            <li><strong>Минэнерго России</strong> — Главный эксперт / Администратор 1С (2022–2023).</li>
-            <li><strong>Росатом (Билибинская АЭС)</strong> — Инженер электроник (2020–2021).</li>
-            <li><strong>МВД России</strong> — Старший инженер ИТ и защиты информации (2007–2020).</li>
+            <li>
+                <strong>Частная практика / IT-проекты</strong> — AI-инженер / Архитектор (2025 – наст. время, Москва).
+                Проектирование и разработка прикладных AI/LLM-решений (локальный запуск моделей, RAG, AI-агенты, интеграция с API и внутренними сервисами). Развертывание AI-инфраструктуры на локальных GPU (Docker, Linux), настройка мониторинга и безопасного доступа. Создание инструментов автоматизации (Python/Bash). 
+                <em>Ключевой результат:</em> разработал и зарегистрировал в Роспатенте фреймворк автоматизации <strong>PiTools</strong> (св-во №2026610793).
+            </li>
+            <li>
+                <strong>РТ-ИНФОРМ (Ростех)</strong> — Ведущий системный администратор (2023–2025, Москва).
+                Миграция высоконагруженной платформы 1С (ERP, КОРП) на Astra Linux и PostgreSQL в рамках импортозамещения. Автоматизация процессов деплоя и мониторинга (Bash, Python, PowerShell).
+                <em>Ключевой результат:</em> обеспечена бесперебойная работа 150+ серверов и 40 000+ пользователей в трехконтурной среде (DEV/TEST/PROD) без остановки бизнес-процессов.
+            </li>
+            <li>
+                <strong>Минэнерго России (ФГБУ РЭА)</strong> — Главный эксперт / Администратор 1С (2022–2023, Москва).
+                Проектирование инфраструктуры 1С на PostgreSQL и MS SQL. Настройка виртуализированных и контейнеризированных сред (Hyper-V, KVM, Docker). Обеспечение безопасности данных (обезличивание, 152-ФЗ).
+            </li>
+            <li>
+                <strong>Росатом (Билибинская АЭС)</strong> — Инженер электроник / Служба безопасности (2020–2021, Билибино).
+                Развитие и модернизация комплекса физической защиты (серверы, СХД, СКУД, видеонаблюдение). Проектирование дополнительных веток охраны и оповещения. Подготовка ТЗ и контроль подрядчиков.
+            </li>
+            <li><strong>МВД России</strong> — Старший инженер ИТ, связи и защиты информации (2007–2020, Улан-Удэ). 
+                Проектирование и ввод в эксплуатацию региональной системы видеофиксации <strong>«Безопасный город»</strong>. Проектирование цифровой радиосвязи и интеграция с аналоговыми системами. Развитие серверной, сетевой и защищённой телекоммуникационной инфраструктуры на <strong>1500+ пользователей</strong>. Руководство командой 3–5 специалистов, подготовка ТЗ и контроль внедрения. Ввод в эксплуатацию и проверка СВТ, <strong>СКЗИ</strong> и категорирование помещений. Полный цикл ведомственного документооборота (включая документы ограниченного доступа); аудит ИБ в составе КРО, контроль НСД.
+            </li>
         </ul>
 
         <div class="contacts">
@@ -204,10 +221,27 @@
 
         <h2>Experience</h2>
         <ul>
-            <li><strong>RT-Inform (Rostec)</strong> — Lead Sysadmin (2023–2025). Migrated 150+ servers to Astra Linux & PostgreSQL.</li>
-            <li><strong>Ministry of Energy of Russia</strong> — Chief Expert / 1C Admin (2022–2023).</li>
-            <li><strong>Rosatom (Bilibino NPP)</strong> — Electronics Engineer (2020–2021).</li>
-            <li><strong>MVD of Russia</strong> — Senior IT & InfoSec Engineer (2007–2020).</li>
+            <li>
+                <strong>Private Practice / IT Projects</strong> — AI Engineer / Architect (2025 – Present, Moscow).
+                Designing and developing applied AI/LLM solutions (local model deployment, RAG, AI agents, API integration). Deploying AI infrastructure on local GPUs (Docker, Linux), setting up monitoring and secure access. Creating automation tools (Python/Bash).
+                <em>Key result:</em> Developed and registered the <strong>PiTools</strong> automation framework patent (No. 2026610793).
+            </li>
+            <li>
+                <strong>RT-Inform (Rostec)</strong> — Lead Systems Administrator (2023–2025, Moscow).
+                Migrated a high-load 1C platform (ERP) to Astra Linux and PostgreSQL as part of import substitution. Automated deployment and monitoring processes.
+                <em>Key result:</em> Ensured uninterrupted operation for 150+ servers and 40,000+ users across a multi-environment (DEV/TEST/PROD) without business downtime.
+            </li>
+            <li>
+                <strong>Ministry of Energy of Russia</strong> — Chief Expert / 1C Administrator (2022–2023, Moscow).
+                Designed 1C infrastructure on PostgreSQL and MS SQL. Configured virtualized and containerized environments (Hyper-V, KVM, Docker). Ensured data security (anonymization, compliance).
+            </li>
+            <li>
+                <strong>Rosatom (Bilibino NPP)</strong> — Electronics Engineer / Security Service (2020–2021, Bilibino).
+                Developed and modernized the physical protection complex (servers, storage, access control, CCTV). Designed additional security branches. Managed contractors and technical specifications.
+            </li>
+            <li><strong>MVD of Russia</strong> — Senior IT & InfoSec Engineer (2007–2020, Ulan-Ude). 
+                Designed and commissioned the regional video surveillance system <strong>"Safe City"</strong>. Designed digital radio communications and integrated them with analog systems. Developed secure telecom infrastructure for <strong>1500+ users</strong>. Led a team of 3-5 specialists, prepared technical specifications, and managed implementation. Commissioned and verified hardware, <strong>cryptographic tools (CIPF)</strong>, and facility categorization. Managed full cycle of restricted-access documentation; conducted InfoSec audits and unauthorized access control.
+            </li>
         </ul>
 
         <div class="contacts">
@@ -235,10 +269,11 @@
 
         <h2>工作经验</h2>
         <ul>
-            <li><strong>RT-Inform (Rostec)</strong> — 首席系统管理员 (2023–2025)。迁移了150多台服务器。</li>
-            <li><strong>俄罗斯能源部</strong> — 首席专家 (2022–2023)。</li>
-            <li><strong>Rosatom (比利比诺核电站)</strong> — 电子工程师 (2020–2021)。</li>
-            <li><strong>俄罗斯内务部</strong> — 高级IT与信息安全工程师 (2007–2020)。</li>
+            <li><strong>私人执业 / IT项目</strong> — AI工程师 / 架构师 (2025 – 至今, 莫斯科)。设计AI/LLM解决方案（本地部署、RAG、代理）。在GPU上部署AI基础设施（Docker、Linux）。<em>成果：</em>获得 <strong>PiTools</strong> 框架专利（编号2026610793）。</li>
+            <li><strong>RT-Inform (Rostec)</strong> — 首席系统管理员 (2023–2025)。将1C迁移至Astra Linux和PostgreSQL。<em>成果：</em>确保150多台服务器和4万多名用户的不间断运行。</li>
+            <li><strong>俄罗斯能源部</strong> — 首席专家 / 1C管理员 (2022–2023)。PostgreSQL/MS SQL基础设施，Docker，数据安全。</li>
+            <li><strong>Rosatom (比利比诺核电站)</strong> — 电子工程师 (2020–2021)。物理防护综合体，门禁控制，视频监控。</li>
+            <li><strong>俄罗斯内务部</strong> — 高级IT与信息安全工程师 (2007–2020, 乌兰乌德)。设计并投入运行区域视频监控系统<strong>“安全城市”</strong>。设计数字无线电通信并与模拟系统集成。为<strong>1500多名用户</strong>开发安全的电信基础设施。领导3-5人的团队，准备技术规范并管理实施。投入运行并验证硬件、<strong>密码学工具 (CIPF)</strong> 和设施分类。管理受限访问文件的全生命周期；进行信息安全审计和非授权访问控制。</li>
         </ul>
 
         <div class="contacts">
@@ -266,10 +301,11 @@
 
         <h2>Berufserfahrung</h2>
         <ul>
-            <li><strong>RT-Inform (Rostec)</strong> — Lead Sysadmin (2023–2025). Migration von 150+ Servern.</li>
-            <li><strong>Energieministerium Russlands</strong> — Chief Expert (2022–2023).</li>
-            <li><strong>Rosatom (Kernkraftwerk Bilibino)</strong> — Elektronikingenieur (2020–2021).</li>
-            <li><strong>MVD Russlands</strong> — Senior IT & InfoSec Engineer (2007–2020).</li>
+            <li><strong>Privatpraxis / IT-Projekte</strong> — KI-Ingenieur / Architekt (2025 – Gegenwart, Moskau). Entwicklung von KI/LLM-Lösungen (lokaler Einsatz, RAG, Agenten). KI-Infrastruktur auf GPUs (Docker, Linux). <em>Ergebnis:</em> Patent für das <strong>PiTools</strong>-Framework (Nr. 2026610793).</li>
+            <li><strong>RT-Inform (Rostec)</strong> — Lead Sysadmin (2023–2025). Migration von 1C auf Astra Linux und PostgreSQL. <em>Ergebnis:</em> unterbrechungsfreier Betrieb für 150+ Server und 40.000+ Benutzer.</li>
+            <li><strong>Energieministerium Russlands</strong> — Chief Expert / 1C Admin (2022–2023). PostgreSQL/MS SQL-Infrastruktur, Docker, Datensicherheit.</li>
+            <li><strong>Rosatom (Kernkraftwerk Bilibino)</strong> — Elektronikingenieur (2020–2021). Komplexe physischer Schutz, Zutrittskontrolle, Videoüberwachung.</li>
+            <li><strong>MVD Russlands</strong> — Senior IT & InfoSec Engineer (2007–2020, Ulan-Ude). Entwurf und Inbetriebnahme des regionalen Videoüberwachungssystems <strong>„Safe City“</strong>. Entwurf der digitalen Funkkommunikation und Integration in analoge Systeme. Aufbau einer sicheren Telekommunikationsinfrastruktur für <strong>1500+ Benutzer</strong>. Leitung eines Teams von 3-5 Spezialisten, Erstellung von Spezifikationen und Steuerung der Implementierung. Inbetriebnahme und Prüfung von Hardware, <strong>kryptografischen Werkzeugen (CIPF)</strong> und Kategorisierung von Räumen. Verwaltung von Dokumenten mit eingeschränktem Zugriff; InfoSec-Audits und Kontrolle des unbefugten Zugriffs.</li>
         </ul>
 
         <div class="contacts">
@@ -297,10 +333,11 @@
 
         <h2>कार्य अनुभव</h2>
         <ul>
-            <li><strong>RT-Inform (Rostec)</strong> — प्रमुख सिस्टम एडमिन (2023–2025)। 150+ सर्वर माइग्रेट किए।</li>
-            <li><strong>रूस का ऊर्जा मंत्रालय</strong> — मुख्य विशेषज्ञ (2022–2023)।</li>
-            <li><strong>रोसाटॉम (बिलिबिनो एनपीपी)</strong> — इलेक्ट्रॉनिक्स इंजीनियर (2020–2021)।</li>
-            <li><strong>रूस का MVD</strong> — वरिष्ठ आईटी और सूचना सुरक्षा इंजीनियर (2007–2020)।</li>
+            <li><strong>निजी अभ्यास / आईटी परियोजनाएं</strong> — AI इंजीनियर / आर्किटेक्ट (2025 – वर्तमान, मॉस्को)। AI/LLM समाधानों का डिजाइन (स्थानीय तैनाती, RAG, एजेंट)। GPU पर AI अवसंरचना (Docker, Linux)। <em>परिणाम:</em> <strong>PiTools</strong> फ्रेमवर्क के लिए पेटेंट (सं. 2026610793)।</li>
+            <li><strong>RT-Inform (Rostec)</strong> — प्रमुख सिस्टम एडमिन (2023–2025)। 1C को Astra Linux और PostgreSQL में माइग्रेट किया। <em>परिणाम:</em> 150+ सर्वर और 40,000+ उपयोगकर्ताओं के लिए निर्बाध संचालन।</li>
+            <li><strong>रूस का ऊर्जा मंत्रालय</strong> — मुख्य विशेषज्ञ / 1C एडमिन (2022–2023)। PostgreSQL/MS SQL अवसंरचना, Docker, डेटा सुरक्षा।</li>
+            <li><strong>रोसाटॉम (बिलिबिनो एनपीपी)</strong> — इलेक्ट्रॉनिक्स इंजीनियर (2020–2021)। भौतिक सुरक्षा परिसर, एक्सेस कंट्रोल, सीसीटीवी।</li>
+            <li><strong>रूस का MVD</strong> — वरिष्ठ आईटी और सूचना सुरक्षा इंजीनियर (2007–2020, उलान-उडे)। क्षेत्रीय वीडियो निगरानी प्रणाली <strong>"सेफ सिटी"</strong> का डिजाइन और कमीशनिंग। डिजिटल रेडियो संचार का डिजाइन और एनालॉग प्रणालियों के साथ एकीकरण। <strong>1500+ उपयोगकर्ताओं</strong> के लिए सुरक्षित टेलीकॉम बुनियादी ढांचे का विकास। 3-5 विशेषज्ञों की टीम का नेतृत्व, तकनीकी विशिष्टताओं की तैयारी और कार्यान्वयन की निगरानी। हार्डवेयर, <strong>क्रिप्टोग्राफिक टूल्स (CIPF)</strong> और सुविधा वर्गीकरण का कमीशनिंग और सत्यापन। प्रतिबंधित-पहुंच दस्तावेज़ों का पूर्ण जीवनचक्र प्रबंधन; सूचना सुरक्षा ऑडिट और अनधिकृत पहुंच नियंत्रण।</li>
         </ul>
 
         <div class="contacts">
@@ -328,10 +365,11 @@
 
         <h2>Expérience</h2>
         <ul>
-            <li><strong>RT-Inform (Rostec)</strong> — Lead Sysadmin (2023–2025). Migration de 150+ serveurs.</li>
-            <li><strong>Ministère de l'Énergie de Russie</strong> — Expert en chef (2022–2023).</li>
-            <li><strong>Rosatom (Centrale de Bilibino)</strong> — Ingénieur électronique (2020–2021).</li>
-            <li><strong>MVD de Russie</strong> — Ingénieur IT & Sécurité (2007–2020).</li>
+            <li><strong>Pratique privée / Projets IT</strong> — Ingénieur IA / Architecte (2025 – Présent, Moscou). Conception de solutions IA/LLM (déploiement local, RAG, agents). Infrastructure IA sur GPU (Docker, Linux). <em>Résultat :</em> brevet pour le framework <strong>PiTools</strong> (N° 2026610793).</li>
+            <li><strong>RT-Inform (Rostec)</strong> — Lead Sysadmin (2023–2025). Migration de 1C vers Astra Linux et PostgreSQL. <em>Résultat :</em> fonctionnement ininterrompu pour 150+ serveurs et 40 000+ utilisateurs.</li>
+            <li><strong>Ministère de l'Énergie de Russie</strong> — Expert en chef / Admin 1C (2022–2023). Infrastructure PostgreSQL/MS SQL, Docker, sécurité des données.</li>
+            <li><strong>Rosatom (Centrale de Bilibino)</strong> — Ingénieur électronique (2020–2021). Complexe de protection physique, contrôle d'accès, vidéosurveillance.</li>
+            <li><strong>MVD de Russie</strong> — Ingénieur IT & Sécurité (2007–2020, Oulan-Oudé). Conception et mise en service du système régional de vidéosurveillance <strong>« Safe City »</strong>. Conception des communications radio numériques et intégration avec les systèmes analogiques. Développement d'une infrastructure télécom sécurisée pour <strong>1500+ utilisateurs</strong>. Gestion d'une équipe de 3 à 5 spécialistes, préparation des cahiers des charges et contrôle du déploiement. Mise en service et vérification du matériel, des <strong>outils cryptographiques (CIPF)</strong> et du classement des locaux. Gestion du cycle complet des documents à accès restreint ; audits de sécurité et contrôle des accès non autorisés.</li>
         </ul>
 
         <div class="contacts">
@@ -359,10 +397,11 @@
 
         <h2>Työkokemus</h2>
         <ul>
-            <li><strong>RT-Inform (Rostec)</strong> — Johtava järjestelmänvalvoja (2023–2025). Yli 150 palvelimen migraatio.</li>
-            <li><strong>Venäjän energiaministeriö</strong> — Pääasiantuntija (2022–2023).</li>
-            <li><strong>Rosatom (Bilibinon ydinvoimala)</strong> — Elektroniikkainsinööri (2020–2021).</li>
-            <li><strong>Venäjän sisäministeriö</strong> — Vanhempi IT- ja tietoturvainsinööri (2007–2020).</li>
+            <li><strong>Yksityinen praktiikka / IT-projektit</strong> — AI-insinööri / Arkkitehti (2025 – Nykyinen, Moskova). AI/LLM-ratkaisujen suunnittelu (paikallinen käyttöönotto, RAG, agentit). AI-infrastruktuuri GPU:lla (Docker, Linux). <em>Tulos:</em> patentti <strong>PiTools</strong>-kehykselle (Nro 2026610793).</li>
+            <li><strong>RT-Inform (Rostec)</strong> — Johtava järjestelmänvalvoja (2023–2025). 1C:n migraatio Astra Linuxiin ja PostgreSQL:ään. <em>Tulos:</em> keskeytymätön toiminta yli 150 palvelimelle ja 40 000+ käyttäjälle.</li>
+            <li><strong>Venäjän energiaministeriö</strong> — Pääasiantuntija / 1C-ylläpitäjä (2022–2023). PostgreSQL/MS SQL -infrastruktuuri, Docker, tietoturva.</li>
+            <li><strong>Rosatom (Bilibinon ydinvoimala)</strong> — Elektroniikkainsinööri (2020–2021). Fyysisen suojan kompleksi, kulunvalvonta, valvontakamerat.</li>
+            <li><strong>Venäjän sisäministeriö</strong> — Vanhempi IT- ja tietoturvainsinööri (2007–2020, Ulan-Ude). Alueellisen videovalvontajärjestelmän <strong>"Safe City"</strong> suunnittelu ja käyttöönotto. Digitaalisen radioviestinnän suunnittelu ja integrointi analogisiin järjestelmiin. Turvallisen televiestintäinfrastruktuurin kehittäminen <strong>yli 1500 käyttäjälle</strong>. 3–5 hengen tiimin johtaminen, teknisten eritelmien valmistelu ja käyttöönoton valvonta. Laitteistojen, <strong>salausvälineiden (CIPF)</strong> ja tilojen luokittelun käyttöönotto ja tarkastus. Rajoitetun pääsyn asiakirjojen koko elinkaaren hallinta; tietoturva-auditoinnit ja luvattoman pääsyn valvonta.</li>
         </ul>
 
         <div class="contacts">
@@ -390,10 +429,11 @@
 
         <h2>경력</h2>
         <ul>
-            <li><strong>RT-Inform (Rostec)</strong> — 수석 시스템 관리자 (2023–2025). 150개 이상의 서버 마이그레이션.</li>
-            <li><strong>러시아 에너지부</strong> — 수석 전문가 (2022–2023).</li>
-            <li><strong>Rosatom (빌리비노 원자력 발전소)</strong> — 전자 엔지니어 (2020–2021).</li>
-            <li><strong>러시아 내무부</strong> — 선임 IT 및 정보 보안 엔지니어 (2007–2020).</li>
+            <li><strong>개인 실무 / IT 프로젝트</strong> — AI 엔지니어 / 아키텍트 (2025 – 현재, 모스크바). AI/LLM 솔루션 설계 (로컬 배포, RAG, 에이전트). GPU 기반 AI 인프라 (Docker, Linux). <em>결과:</em> <strong>PiTools</strong> 프레임워크 특허 (번호 2026610793).</li>
+            <li><strong>RT-Inform (Rostec)</strong> — 수석 시스템 관리자 (2023–2025). 1C를 Astra Linux 및 PostgreSQL로 마이그레이션. <em>결과:</em> 150개 이상의 서버와 40,000명 이상의 사용자에 대한 중단 없는 운영 보장.</li>
+            <li><strong>러시아 에너지부</strong> — 수석 전문가 / 1C 관리자 (2022–2023). PostgreSQL/MS SQL 인프라, Docker, 데이터 보안.</li>
+            <li><strong>Rosatom (빌리비노 원자력 발전소)</strong> — 전자 엔지니어 (2020–2021). 물리적 방호 단지, 출입 통제, CCTV.</li>
+            <li><strong>러시아 내무부</strong> — 선임 IT 및 정보 보안 엔지니어 (2007–2020, 울란우데). 지역 영상 감시 시스템 <strong>"세이프 시티"</strong> 설계 및 시운전. 디지털 무선 통신 설계 및 아날로그 시스템과의 통합. <strong>1500명 이상의 사용자</strong>를 위한 보안 통신 인프라 개발. 3-5명의 전문가 팀 리드, 기술 사양 준비 및 구현 관리. 하드웨어, <strong>암호화 도구(CIPF)</strong> 및 시설 분류의 시운전 및 검증. 제한된 접근 문서의 전체 수명 주기 관리; 정보 보안 감사 및 무단 접근 통제.</li>
         </ul>
 
         <div class="contacts">
@@ -421,10 +461,11 @@
 
         <h2>職務経歴</h2>
         <ul>
-            <li><strong>RT-Inform (Rostec)</strong> — リードシステム管理者 (2023–2025)。150以上のサーバーを移行。</li>
-            <li><strong>ロシアエネルギー省</strong> — チーフエキスパート (2022–2023)。</li>
-            <li><strong>ロスアトム (ビリビノ原子力発電所)</strong> — 電子エンジニア (2020–2021)。</li>
-            <li><strong>ロシア内務省</strong> — シニアIT・情報セキュリティエンジニア (2007–2020)。</li>
+            <li><strong>プライベートプラクティス / ITプロジェクト</strong> — AIエンジニア / アーキテクト (2025 – 現在, モスクワ). AI/LLMソリューションの設計（ローカル展開、RAG、エージェント）。GPU上のAIインフラ（Docker、Linux）。<em>実績：</em><strong>PiTools</strong>フレームワークの特許（番号2026610793）。</li>
+            <li><strong>RT-Inform (Rostec)</strong> — リードシステム管理者 (2023–2025). 1CをAstra LinuxとPostgreSQLに移行。<em>実績：</em>150以上のサーバーと40,000人以上のユーザーへの中断のない運用を確保。</li>
+            <li><strong>ロシアエネルギー省</strong> — チーフエキスパート / 1C管理者 (2022–2023). PostgreSQL/MS SQLインフラ、Docker、データセキュリティ。</li>
+            <li><strong>ロスアトム (ビリビノ原子力発電所)</strong> — 電子エンジニア (2020–2021). 物理的防護複合施設、アクセス制御、CCTV。</li>
+            <li><strong>ロシア内務省</strong> — シニアIT・情報セキュリティエンジニア (2007–2020, ウラン・ウデ). 地域ビデオ監視システム<strong>「セーフシティ」</strong>の設計と試運転。デジタル無線通信の設計とアナログシステムとの統合。<strong>1500人以上のユーザー</strong>向けの安全な通信インフラの開発。3〜5名の専門家チームのリード、技術仕様書の作成、導入管理。ハードウェア、<strong>暗号化ツール（CIPF）</strong>、施設の分類の試運転と検証。制限付きアクセス文書の全ライフサイクル管理、情報セキュリティ監査、不正アクセス制御。</li>
         </ul>
 
         <div class="contacts">
@@ -452,10 +493,11 @@
 
         <h2>Esperienza</h2>
         <ul>
-            <li><strong>RT-Inform (Rostec)</strong> — Lead Sysadmin (2023–2025). Migrazione di oltre 150 server.</li>
-            <li><strong>Ministero dell'Energia russo</strong> — Capo Esperto (2022–2023).</li>
-            <li><strong>Rosatom (Centrale di Bilibino)</strong> — Ingegnere Elettronico (2020–2021).</li>
-            <li><strong>MVD russo</strong> — Ingegnere IT & Sicurezza (2007–2020).</li>
+            <li><strong>Pratica Privata / Progetti IT</strong> — Ingegnere AI / Architetto (2025 – Presente, Mosca). Progettazione di soluzioni AI/LLM (distribuzione locale, RAG, agenti). Infrastruttura AI su GPU (Docker, Linux). <em>Risultato:</em> brevetto per il framework <strong>PiTools</strong> (N. 2026610793).</li>
+            <li><strong>RT-Inform (Rostec)</strong> — Lead Sysadmin (2023–2025). Migrazione di 1C su Astra Linux e PostgreSQL. <em>Risultato:</em> funzionamento ininterrotto per oltre 150 server e 40.000+ utenti.</li>
+            <li><strong>Ministero dell'Energia russo</strong> — Capo Esperto / Admin 1C (2022–2023). Infrastruttura PostgreSQL/MS SQL, Docker, sicurezza dei dati.</li>
+            <li><strong>Rosatom (Centrale di Bilibino)</strong> — Ingegnere Elettronico (2020–2021). Complesso di protezione fisica, controllo accessi, videosorveglianza.</li>
+            <li><strong>MVD russo</strong> — Ingegnere IT & Sicurezza (2007–2020, Ulan-Ude). Progettazione e messa in servizio del sistema regionale di videosorveglianza <strong>"Safe City"</strong>. Progettazione di comunicazioni radio digitali e integrazione con sistemi analogici. Sviluppo di infrastrutture telecom sicure per <strong>oltre 1500 utenti</strong>. Gestione di un team di 3-5 specialisti, preparazione di specifiche tecniche e controllo dell'implementazione. Messa in servizio e verifica di hardware, <strong>strumenti crittografici (CIPF)</strong> e classificazione delle strutture. Gestione del ciclo di vita completo dei documenti ad accesso limitato; audit di sicurezza e controllo degli accessi non autorizzati.</li>
         </ul>
 
         <div class="contacts">
@@ -483,4 +525,21 @@
 
         <h2>Вопыт працы</h2>
         <ul>
-            <li><strong>РТ-ІНФАРМ (Ростэх)</strong> — Вядучы сісадмін (2023–2025). Міграцыя 150+ сервераў на
+            <li><strong>Прыватная практыка / IT-праекты</strong> — AI-інжынер / Архітэктар (2025 – цяпер, Масква). Праектаванне AI/LLM-рашэнняў (лакальны запуск, RAG, агенты). Разгортванне AI-інфраструктуры на GPU (Docker, Linux). <em>Вынік:</em> патэнт на фрэймворк <strong>PiTools</strong> (№2026610793).</li>
+            <li><strong>РТ-ІНФАРМ (Ростэх)</strong> — Вядучы сісадмін (2023–2025). Міграцыя 1С на Astra Linux і PostgreSQL. <em>Вынік:</em> бесперабойная праца 150+ сервераў і 40 000+ карыстальнікаў.</li>
+            <li><strong>Мінэнерга Расіі</strong> — Галоўны эксперт / Адміністратар 1С (2022–2023). Інфраструктура на PostgreSQL/MS SQL, Docker, бяспека даных.</li>
+            <li><strong>Расатам (Білібінская АЭС)</strong> — Інжынер электронік (2020–2021). Комплекс фізічнай аховы, СКУД, відэаназіранне.</li>
+            <li><strong>МУС Расіі</strong> — Старшы інжынер ІТ, сувязі і аховы інфармацыі (2007–2020, Улан-Удэ). Праектаванне і ўвод у эксплуатацыю рэгіянальнай сістэмы відэафіксацыі <strong>«Бяспечны горад»</strong>. Праектаванне лічбавай радыёсувязі і інтэграцыя з аналагавымі сістэмамі. Развіццё сервернай, сеткавай і абароненай тэлекамунікацыйнай інфраструктуры на <strong>1500+ карыстальнікаў</strong>. Кіраванне камандай 3–5 спецыялістаў, падрыхтоўка ТЗ і кантроль ўкаранення. Увод у эксплуатацыю і праверка СВТ, <strong>СКЗІ</strong> і катэгарызаванне памяшканняў. Поўны цыкл ведамаснага дакументаабароту (уключаючы дакументы абмежаванага доступу); аўдыт ІБ у складзе КРО, кантроль НСД.</li>
+        </ul>
+
+        <div class="contacts">
+            <p>👉 <strong>Сайт:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
+            <p>👉 <strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
+            <p>👉 <strong>Сувязь:</strong> Telegram <strong>@Feudorlab1</strong> · Email <strong>feudor.lab@yandex.ru</strong></p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
