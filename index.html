@@ -527,6 +527,8 @@
         }
         select.value = language;
         document.documentElement.lang = language === "zh" ? "zh-Hans" : language;
+        const projectsLink = document.querySelector('a[data-ui="projects"]');
+        if (projectsLink) projectsLink.href = "https://musikfed.github.io/view_my_prj/" + (language === "ru" ? "" : "?lang=" + encodeURIComponent(language));
         for (const node of document.querySelectorAll("[data-ui]")) {
             node.textContent = labels[language][node.dataset.ui] || labels.ru[node.dataset.ui];
         }
