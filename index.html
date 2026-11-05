@@ -4,113 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Фёдор Герасимов — инженер, системный архитектор и разработчик. Опыт работы, проекты и контакты на 11 языках.">
-    <meta name="theme-color" content="#f4f6f8">
+    <meta name="theme-color" content="#c61029">
     <meta name="robots" content="index,follow">
     <link rel="canonical" href="https://musikfed.github.io/my_self/">
     <title>Фёдор Герасимов — резюме · Fedor Gerasimov — résumé</title>
     <style>
-        :root {
-            color-scheme: light;
-            --paper:#fff; --canvas:#f3f5f8; --ink:#202936; --muted:#657183;
-            --line:#e4e9ef; --blue:#bd1427; --blue-dark:#89101e; --red:#c90c21;
-            --font:Arial,Helvetica,sans-serif;
-        }
-        *,*::before,*::after{box-sizing:border-box}
-        html{scroll-behavior:auto}
-        body{margin:0;background:var(--canvas);color:var(--ink);font:15px/1.7 var(--font);-webkit-font-smoothing:antialiased}
-        body::before{content:"";display:block;height:4px;background:var(--red)}
-        a{color:var(--blue);text-decoration:none;text-underline-offset:3px}
-        a:hover{text-decoration:underline}
-        a:focus-visible,select:focus-visible{outline:3px solid #7dbbf0;outline-offset:3px}
-        .container{width:min(100% - 40px,1000px);margin:30px auto 50px;background:var(--paper);border:1px solid var(--line);border-radius:13px;box-shadow:0 10px 38px rgba(29,46,67,.055);overflow:hidden}
-        .header-bar{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:20px 44px;border-bottom:1px solid var(--line);background:#fff}
-        .brand{display:flex;gap:13px;align-items:center;min-width:0}
-        .brand-mark{display:grid;place-items:center;flex:none;width:45px;height:45px;border-radius:10px;background:#202c3c;color:#fff;font-weight:800;letter-spacing:.04em;font-size:15px}
-        .brand-copy{display:flex;flex-direction:column;line-height:1.3}
-        .logo-text{font-size:15px;font-weight:750;letter-spacing:-.01em;color:#202936}
-        .brand-subtitle{color:var(--muted);font-size:12px;margin-top:4px}
-        .head-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:20px}
-        .head-actions a{font-size:14px;font-weight:600;white-space:nowrap}
-        .lang-wrap{display:flex;align-items:center;gap:8px}
-        .lang-label{font-size:12px;color:var(--muted)}
-        .lang-select{appearance:auto;min-height:42px;max-width:175px;border:1px solid #ccd5df;border-radius:7px;background:#fff;color:#202936;font:600 13px var(--font);padding:8px 9px;cursor:pointer}
-        .lang-content{display:none;padding:40px 54px 54px}
-        .lang-content.is-active{display:block}
-        .lang-content[hidden]{display:none!important}
-        .lang-content h1{font-size:clamp(29px,4vw,39px);line-height:1.2;letter-spacing:-.035em;font-weight:750;margin:0 0 7px;color:#172331}
-        .subtitle{font-size:15px;color:var(--muted);margin-bottom:26px}
-        .lang-content>p{max-width:830px;margin:0 0 15px;color:#354457;font-size:16px;line-height:1.8}
-        .lang-content h2{margin:37px 0 19px;padding-bottom:12px;border-bottom:1px solid var(--line);color:#1d2b39;font-size:21px;font-weight:700;letter-spacing:-.02em;line-height:1.35}
-        .lang-content ul{list-style:none;margin:0;padding:0}
-        .lang-content>ul:first-of-type{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-        .lang-content>ul:first-of-type>li{padding:16px 18px;background:#f8fafc;border:1px solid var(--line);border-radius:9px;overflow-wrap:anywhere}
-        .lang-content>ul:nth-of-type(2)>li{padding:20px 0;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
-        .lang-content>ul:nth-of-type(2)>li:first-child{padding-top:5px}
-        .lang-content>ul:nth-of-type(2)>li:last-child{border-bottom:0}
-        .lang-content li{font-size:15px;line-height:1.75}
-        .lang-content li strong{font-weight:700;color:#223246}
-        .lang-content li em{font-style:normal;font-weight:600;color:#43546a}
-        .contacts{margin-top:28px;padding:20px 23px;background:#f8fafc;border:1px solid var(--line);border-radius:9px}
-        .contacts p{margin:8px 0;font-size:14px;overflow-wrap:anywhere}
-        .contacts strong{font-weight:650;color:#354457}
-        a.accent-link{color:var(--blue);font-weight:600}
-        a.accent-link:hover{color:var(--blue-dark)}
-        .site-footer{padding:17px 44px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
-        @media(max-width:800px){
-            .container{width:min(100% - 24px,1000px);margin:15px auto 35px}
-            .header-bar{padding:17px 24px;align-items:flex-start;flex-wrap:wrap}
-            .head-actions{justify-content:flex-start;gap:14px}
-            .lang-content{padding:30px 27px 38px}
-            .site-footer{padding:17px 27px}
-        }
-        @media(max-width:540px){
-            .header-bar{gap:15px}
-            .brand{width:100%}
-            .brand-subtitle{font-size:11px}
-            .head-actions{width:100%;gap:12px 17px}
-            .lang-wrap{width:100%;justify-content:space-between}
-            .lang-select{max-width:200px}
-            .lang-content{padding:29px 20px 35px}
-            .lang-content>ul:first-of-type{grid-template-columns:1fr}
-            .lang-content h2{font-size:19px}
-            .contacts{padding:15px 17px}
-        }
-        @media print{
-            body{background:#fff;color:#000}
-            body::before,.head-actions,.site-footer{display:none!important}
-            .container{width:100%;margin:0;box-shadow:none;border:0;border-radius:0}
-            .header-bar{padding:12px 0}
-            .lang-content{padding:24px 0}
-            .lang-content>ul:first-of-type>li{break-inside:avoid}
-            .lang-content>ul:nth-of-type(2)>li{break-inside:avoid}
-            a{color:#000}
-        }
-        @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important}}
 
-        /* Illustration-led, restrained resume rather than a poster */
-        .brand-mark{width:70px;height:70px;border-radius:12px;background:#c80b20;font:800 30px/1 Arial,Helvetica,sans-serif;letter-spacing:-.08em;box-shadow:0 3px 9px rgba(130,10,24,.12)}
-        .brand-mark::first-letter{letter-spacing:-.1em}
-        .logo-text{font-family:Arial,Helvetica,sans-serif;font-size:16px}
-        .container{border-color:#e3e3e5;box-shadow:0 12px 30px rgba(22,23,26,.05)}
-        .head-actions a{color:#aa1326}
-        .head-actions a:hover{color:#181818}
-        .lang-content h1,.lang-content h2{color:#151515;font-family:Arial,Helvetica,sans-serif}
-        .lang-content h2{border-bottom-color:#d9d9dc}
-        .lang-content li strong{color:#191919}
-        .lang-content>ul:first-of-type>li,.contacts{background:#fafafa;border-color:#e8e8e8}
-        .resume-hero{display:grid;grid-template-columns:minmax(145px,205px) minmax(0,1fr);gap:30px;align-items:start;margin:0 0 22px}
-        .portrait-illustration{width:100%;height:auto;aspect-ratio:400/488;object-fit:cover;object-position:center top;display:block;border:1px solid #ededed;border-radius:11px;background:#f9f8f5}
-        .resume-hero-copy{min-width:0}
-        .resume-hero-copy p{color:#354457;font-size:15px;line-height:1.8;margin:0 0 15px}
-        .resume-hero-copy h1{margin-top:2px}
-        .contact-scene{clear:both}
-        .contacts-layout{display:grid;grid-template-columns:minmax(0,1fr) 215px;gap:12px;align-items:end;margin-top:26px}
-        .contacts-layout .contacts{margin:0 0 6px;align-self:center}
-        .contact-illustration{display:block;max-width:100%;width:100%;height:auto;max-height:300px;object-fit:contain;object-position:center bottom}
-        @media(max-width:800px){.resume-hero{grid-template-columns:155px minmax(0,1fr);gap:20px}.contacts-layout{grid-template-columns:minmax(0,1fr) 150px}}
-        @media(max-width:540px){.brand-mark{width:62px;height:62px;font-size:27px}.resume-hero{grid-template-columns:1fr;gap:16px}.portrait-illustration{width:170px;max-width:65%}.contacts-layout{grid-template-columns:minmax(0,1fr) 106px;gap:0}.contacts-layout .contacts{padding:12px}.contact-illustration{max-height:230px}.lang-content{padding:24px 20px 35px}}
-        @media(max-width:380px){.contacts-layout{grid-template-columns:1fr}.contact-illustration{width:140px;margin-left:auto}}
-        @media print{.portrait-illustration{width:160px}.resume-hero{grid-template-columns:165px 1fr}.contact-illustration{max-height:180px}}
+:root{color-scheme:light;--red:#c61029;--red-dark:#981126;--black:#191c21;--text:#29323b;--muted:#667382;--line:#e5e8ed;--paper:#fff;--base:#f4f5f7;--font:Arial,Helvetica,sans-serif}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--base);font:16px/1.68 var(--font);color:var(--text);-webkit-font-smoothing:antialiased}
+body::before{content:"";display:block;height:4px;background:var(--red)}
+a{color:#9e1528;text-decoration:none;text-underline-offset:3px}
+a:hover{text-decoration:underline}
+a:focus-visible,select:focus-visible{outline:3px solid #eb6576;outline-offset:3px}
+.container{width:min(calc(100% - 28px),970px);margin:22px auto 40px;background:var(--paper);border:1px solid #e8e9eb;border-radius:13px;box-shadow:0 10px 34px rgba(28,34,42,.045);overflow:hidden}
+.header-bar{padding:19px 34px;display:flex;align-items:center;justify-content:space-between;gap:22px;border-bottom:1px solid var(--line);background:#fff}
+.brand{display:flex;align-items:center;gap:16px;min-width:0}
+.brand-mark{display:grid;place-items:center;flex:none;width:64px;height:64px;border-radius:11px;background:var(--red);font:800 30px/1 Arial,Helvetica,sans-serif;color:#fff;letter-spacing:-.075em}
+.brand-copy{display:flex;flex-direction:column;gap:4px;min-width:0}
+.logo-text{font:700 16px/1.4 Arial,Helvetica,sans-serif;color:var(--black)}
+.brand-subtitle{font-size:12px;line-height:1.35;color:var(--muted)}
+.head-actions{display:flex;align-items:center;justify-content:flex-end;gap:16px;flex-wrap:wrap}
+.head-actions>a{font:700 14px Arial,Helvetica,sans-serif;color:#a31226}
+.lang-wrap{display:flex;align-items:center;gap:8px}
+.lang-label{font-size:12px;color:var(--muted)}
+.lang-select{max-width:159px;min-height:42px;border:1px solid #d5d8dd;border-radius:7px;background:#fff;color:var(--black);font:600 13px Arial,Helvetica,sans-serif;padding:8px;cursor:pointer}
+.lang-content{display:none;padding:34px 48px 44px}
+.lang-content.is-active{display:block}
+.lang-content[hidden]{display:none!important}
+.resume-hero{display:grid;grid-template-columns:157px minmax(0,1fr);gap:27px;align-items:start;margin:0 0 27px}
+.portrait-wrap{width:157px;position:relative;align-self:start;overflow:hidden;border-radius:7px;background:#fff}
+.portrait-illustration{width:100%;height:auto;aspect-ratio:157/183;object-fit:cover;display:block}
+.portrait-wrap::after{content:"";position:absolute;left:0;top:0;width:31px;height:5px;background:#fff}
+.resume-hero-copy{min-width:0;padding-top:7px}
+.lang-content h1{color:#191b1f;font-size:clamp(29px,3.8vw,36px);line-height:1.22;letter-spacing:-.02em;margin:0 0 9px;font-weight:750}
+.subtitle{color:var(--muted);font-size:14px;margin:0 0 16px}
+.resume-hero-copy p{max-width:740px;margin:0 0 13px;font-size:15px;line-height:1.78;color:#34404c}
+.resume-hero-copy strong{color:var(--black)}
+.lang-content h2{position:relative;margin:35px 0 17px;padding:0 0 12px 14px;border-bottom:1px solid #dce1e6;color:var(--black);font:700 20px/1.35 Arial,Helvetica,sans-serif}
+.lang-content h2::before{content:"";position:absolute;left:0;top:2px;height:24px;width:4px;border-radius:2px;background:var(--red)}
+.lang-content ul{list-style:none;padding:0;margin:0}
+.lang-content>ul:first-of-type{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.lang-content>ul:first-of-type>li{padding:15px 17px;background:#f8f9fa;border:1px solid #e6e9ec;border-radius:8px;font-size:14px;line-height:1.62;overflow-wrap:anywhere}
+.lang-content>ul:first-of-type>li strong{color:#a81229}
+.lang-content>ul:nth-of-type(2)>li{font-size:15px;line-height:1.77;padding:18px 0 18px 15px;border-bottom:1px solid #e4e7eb;border-left:3px solid #edf0f3;margin-left:1px;overflow-wrap:anywhere}
+.lang-content>ul:nth-of-type(2)>li:first-child{padding-top:2px}
+.lang-content>ul:nth-of-type(2)>li:last-child{border-bottom:none}
+.lang-content li strong{color:var(--black);font-weight:700}
+.lang-content li em{font-style:normal;color:#9e1528;font-weight:700}
+.contacts-layout{display:grid;grid-template-columns:minmax(0,1fr) 106px 155px;align-items:end;gap:12px;margin-top:31px;padding:18px 15px 9px 20px;border:1px solid #e5e7ea;border-top:3px solid var(--red);border-radius:9px;background:#f8f9fa}
+.contacts{min-width:0;align-self:center}
+.contacts-title{font:700 19px/1.3 Arial,Helvetica,sans-serif;color:var(--black);margin:0 0 12px}
+.contacts p{font-size:14px;line-height:1.7;overflow-wrap:anywhere;margin:7px 0}
+.contacts strong{color:#272e35}
+a.accent-link{font-weight:600;color:#9e1528}
+a.accent-link:hover{color:#731023}
+.contact-figure{align-self:end;justify-self:center;max-width:106px}
+.contact-illustration{display:block;width:100%;height:auto;max-height:190px;object-fit:contain;object-position:bottom}
+.qr-card{align-self:center;display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center;color:#262930;text-decoration:none;border:1px solid #e4e5e8;border-radius:8px;background:#fff;padding:7px 6px 8px}
+.qr-card:hover{text-decoration:none;border-color:var(--red)}
+.qr-card img{display:block;width:100%;height:auto;aspect-ratio:1/1;image-rendering:pixelated}
+.qr-caption{font:700 11px/1.3 Arial,Helvetica,sans-serif;color:#31343b}
+.site-footer{padding:15px 34px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+@media(max-width:890px){.header-bar{padding:17px 25px;flex-wrap:wrap}.head-actions{justify-content:flex-start}.lang-content{padding:29px 30px 38px}.contacts-layout{grid-template-columns:minmax(0,1fr) 95px 138px;gap:9px}}
+@media(max-width:650px){.resume-hero{grid-template-columns:120px minmax(0,1fr);gap:18px}.portrait-wrap{width:120px}.resume-hero-copy{padding-top:0}.lang-content h1{font-size:28px}.lang-content>ul:first-of-type{grid-template-columns:1fr}.contacts-layout{grid-template-columns:minmax(0,1fr) 126px;align-items:center}.contacts{grid-column:1 / -1}.contact-figure{grid-column:1;grid-row:2;justify-self:start;max-width:110px}.qr-card{grid-column:2;grid-row:2}}
+@media(max-width:460px){.container{width:min(calc(100% - 16px),970px);margin:9px auto 24px}.header-bar{padding:13px 17px;gap:13px}.brand{gap:11px}.brand-mark{width:57px;height:57px;font-size:27px}.logo-text{font-size:13px}.brand-subtitle{font-size:11px}.head-actions{width:100%;gap:12px}.lang-wrap{width:100%;justify-content:space-between}.lang-content{padding:24px 18px 30px}.resume-hero{grid-template-columns:1fr;gap:12px}.portrait-wrap{width:132px}.lang-content h1{font-size:29px}.lang-content h2{font-size:19px;margin-top:30px}.contacts-layout{padding:15px 14px 12px}}
+@media print{body{background:#fff;color:#000}body::before,.head-actions,.site-footer{display:none!important}.container{width:100%;margin:0;box-shadow:none;border:0;border-radius:0}.header-bar{padding:12px 0}.lang-content{padding:18px 0}.lang-content>ul:first-of-type>li,.lang-content>ul:nth-of-type(2)>li,.contacts-layout{break-inside:avoid}a{color:#111}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
     </style>
 </head>
 <body>
@@ -149,7 +111,7 @@
     <!-- ================= РУССКИЙ ================= -->
     <div id="ru" class="lang-content is-active">
         <div class="resume-hero">
-            <img class="portrait-illustration" src="./assets/author-cartoon-portrait.jpg" alt="" width="400" height="488" loading="eager" decoding="async">
+            <div class="portrait-wrap"><img class="portrait-illustration" src="./assets/author-portrait-previous.jpg" alt="" width="157" height="183" loading="eager" decoding="async"></div>
             <div class="resume-hero-copy">
         <h1>Федор Герасимов</h1>
         <div class="subtitle">42 года, г. Москва</div>
@@ -195,18 +157,23 @@
 
         <div class="contacts-layout">
             <div class="contacts">
-            <p><strong>Сайт:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
+                <h3 class="contacts-title">Контакты</h3>
+                <p><strong>Сайт:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>Связь:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
-        </div>
-            <img class="contact-illustration" src="./assets/author-cartoon-contact.jpg" alt="" width="720" height="960" loading="lazy" decoding="async">
+            </div>
+            <div class="contact-figure"><img class="contact-illustration" src="./assets/author-contact-previous.jpg" alt="" width="106" height="169" loading="lazy" decoding="async"></div>
+            <a class="qr-card" href="https://musikfed.github.io/view_my_prj/" target="_blank" rel="noopener noreferrer" aria-label="Все проекты PEGINELAB">
+                <img src="./assets/qr-peginelab.svg" alt="QR PEGINELAB" width="225" height="225" loading="lazy">
+                <span class="qr-caption">Все проекты PEGINELAB</span>
+            </a>
         </div>
     </div>
 
     <!-- ================= ENGLISH ================= -->
     <div id="en" class="lang-content">
         <div class="resume-hero">
-            <img class="portrait-illustration" src="./assets/author-cartoon-portrait.jpg" alt="" width="400" height="488" loading="lazy" decoding="async">
+            <div class="portrait-wrap"><img class="portrait-illustration" src="./assets/author-portrait-previous.jpg" alt="" width="157" height="183" loading="lazy" decoding="async"></div>
             <div class="resume-hero-copy">
         <h1>Fedor Gerasimov</h1>
         <div class="subtitle">42 years old, Moscow</div>
@@ -252,18 +219,23 @@
 
         <div class="contacts-layout">
             <div class="contacts">
-            <p><strong>Website:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
+                <h3 class="contacts-title">Contacts</h3>
+                <p><strong>Website:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>Contact:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
-        </div>
-            <img class="contact-illustration" src="./assets/author-cartoon-contact.jpg" alt="" width="720" height="960" loading="lazy" decoding="async">
+            </div>
+            <div class="contact-figure"><img class="contact-illustration" src="./assets/author-contact-previous.jpg" alt="" width="106" height="169" loading="lazy" decoding="async"></div>
+            <a class="qr-card" href="https://musikfed.github.io/view_my_prj/" target="_blank" rel="noopener noreferrer" aria-label="All PEGINELAB projects">
+                <img src="./assets/qr-peginelab.svg" alt="QR PEGINELAB" width="225" height="225" loading="lazy">
+                <span class="qr-caption">All PEGINELAB projects</span>
+            </a>
         </div>
     </div>
 
     <!-- ================= 中文 ================= -->
     <div id="zh" class="lang-content">
         <div class="resume-hero">
-            <img class="portrait-illustration" src="./assets/author-cartoon-portrait.jpg" alt="" width="400" height="488" loading="lazy" decoding="async">
+            <div class="portrait-wrap"><img class="portrait-illustration" src="./assets/author-portrait-previous.jpg" alt="" width="157" height="183" loading="lazy" decoding="async"></div>
             <div class="resume-hero-copy">
         <h1>费奥多尔·格拉西莫夫</h1>
         <div class="subtitle">42岁, 莫斯科</div>
@@ -293,18 +265,23 @@
 
         <div class="contacts-layout">
             <div class="contacts">
-            <p><strong>网站:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
+                <h3 class="contacts-title">联系方式</h3>
+                <p><strong>网站:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>联系方式:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
-        </div>
-            <img class="contact-illustration" src="./assets/author-cartoon-contact.jpg" alt="" width="720" height="960" loading="lazy" decoding="async">
+            </div>
+            <div class="contact-figure"><img class="contact-illustration" src="./assets/author-contact-previous.jpg" alt="" width="106" height="169" loading="lazy" decoding="async"></div>
+            <a class="qr-card" href="https://musikfed.github.io/view_my_prj/" target="_blank" rel="noopener noreferrer" aria-label="PEGINELAB 全部项目">
+                <img src="./assets/qr-peginelab.svg" alt="QR PEGINELAB" width="225" height="225" loading="lazy">
+                <span class="qr-caption">PEGINELAB 全部项目</span>
+            </a>
         </div>
     </div>
 
     <!-- ================= DEUTSCH ================= -->
     <div id="de" class="lang-content">
         <div class="resume-hero">
-            <img class="portrait-illustration" src="./assets/author-cartoon-portrait.jpg" alt="" width="400" height="488" loading="lazy" decoding="async">
+            <div class="portrait-wrap"><img class="portrait-illustration" src="./assets/author-portrait-previous.jpg" alt="" width="157" height="183" loading="lazy" decoding="async"></div>
             <div class="resume-hero-copy">
         <h1>Fedor Gerassimow</h1>
         <div class="subtitle">42 Jahre alt, Moskau</div>
@@ -334,18 +311,23 @@
 
         <div class="contacts-layout">
             <div class="contacts">
-            <p><strong>Webseite:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
+                <h3 class="contacts-title">Kontakte</h3>
+                <p><strong>Webseite:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>Kontakt:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
-        </div>
-            <img class="contact-illustration" src="./assets/author-cartoon-contact.jpg" alt="" width="720" height="960" loading="lazy" decoding="async">
+            </div>
+            <div class="contact-figure"><img class="contact-illustration" src="./assets/author-contact-previous.jpg" alt="" width="106" height="169" loading="lazy" decoding="async"></div>
+            <a class="qr-card" href="https://musikfed.github.io/view_my_prj/" target="_blank" rel="noopener noreferrer" aria-label="Alle PEGINELAB-Projekte">
+                <img src="./assets/qr-peginelab.svg" alt="QR PEGINELAB" width="225" height="225" loading="lazy">
+                <span class="qr-caption">Alle PEGINELAB-Projekte</span>
+            </a>
         </div>
     </div>
 
     <!-- ================= हिन्दी ================= -->
     <div id="hi" class="lang-content">
         <div class="resume-hero">
-            <img class="portrait-illustration" src="./assets/author-cartoon-portrait.jpg" alt="" width="400" height="488" loading="lazy" decoding="async">
+            <div class="portrait-wrap"><img class="portrait-illustration" src="./assets/author-portrait-previous.jpg" alt="" width="157" height="183" loading="lazy" decoding="async"></div>
             <div class="resume-hero-copy">
         <h1>फ्योडोर गेरासिमोव</h1>
         <div class="subtitle">42 वर्ष, मॉस्को</div>
@@ -375,18 +357,23 @@
 
         <div class="contacts-layout">
             <div class="contacts">
-            <p><strong>वेबसाइट:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
+                <h3 class="contacts-title">संपर्क</h3>
+                <p><strong>वेबसाइट:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>संपर्क:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
-        </div>
-            <img class="contact-illustration" src="./assets/author-cartoon-contact.jpg" alt="" width="720" height="960" loading="lazy" decoding="async">
+            </div>
+            <div class="contact-figure"><img class="contact-illustration" src="./assets/author-contact-previous.jpg" alt="" width="106" height="169" loading="lazy" decoding="async"></div>
+            <a class="qr-card" href="https://musikfed.github.io/view_my_prj/" target="_blank" rel="noopener noreferrer" aria-label="सभी PEGINELAB प्रोजेक्ट">
+                <img src="./assets/qr-peginelab.svg" alt="QR PEGINELAB" width="225" height="225" loading="lazy">
+                <span class="qr-caption">सभी PEGINELAB प्रोजेक्ट</span>
+            </a>
         </div>
     </div>
 
     <!-- ================= FRANÇAIS ================= -->
     <div id="fr" class="lang-content">
         <div class="resume-hero">
-            <img class="portrait-illustration" src="./assets/author-cartoon-portrait.jpg" alt="" width="400" height="488" loading="lazy" decoding="async">
+            <div class="portrait-wrap"><img class="portrait-illustration" src="./assets/author-portrait-previous.jpg" alt="" width="157" height="183" loading="lazy" decoding="async"></div>
             <div class="resume-hero-copy">
         <h1>Fedor Guerassimov</h1>
         <div class="subtitle">42 ans, Moscou</div>
@@ -416,18 +403,23 @@
 
         <div class="contacts-layout">
             <div class="contacts">
-            <p><strong>Site web :</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
+                <h3 class="contacts-title">Contacts</h3>
+                <p><strong>Site web :</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
             <p><strong>GitHub :</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>Contact :</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
-        </div>
-            <img class="contact-illustration" src="./assets/author-cartoon-contact.jpg" alt="" width="720" height="960" loading="lazy" decoding="async">
+            </div>
+            <div class="contact-figure"><img class="contact-illustration" src="./assets/author-contact-previous.jpg" alt="" width="106" height="169" loading="lazy" decoding="async"></div>
+            <a class="qr-card" href="https://musikfed.github.io/view_my_prj/" target="_blank" rel="noopener noreferrer" aria-label="Tous les projets PEGINELAB">
+                <img src="./assets/qr-peginelab.svg" alt="QR PEGINELAB" width="225" height="225" loading="lazy">
+                <span class="qr-caption">Tous les projets PEGINELAB</span>
+            </a>
         </div>
     </div>
 
     <!-- ================= SUOMI ================= -->
     <div id="fi" class="lang-content">
         <div class="resume-hero">
-            <img class="portrait-illustration" src="./assets/author-cartoon-portrait.jpg" alt="" width="400" height="488" loading="lazy" decoding="async">
+            <div class="portrait-wrap"><img class="portrait-illustration" src="./assets/author-portrait-previous.jpg" alt="" width="157" height="183" loading="lazy" decoding="async"></div>
             <div class="resume-hero-copy">
         <h1>Fedor Gerasimov</h1>
         <div class="subtitle">42-vuotias, Moskova</div>
@@ -457,18 +449,23 @@
 
         <div class="contacts-layout">
             <div class="contacts">
-            <p><strong>Verkkosivusto:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
+                <h3 class="contacts-title">Yhteystiedot</h3>
+                <p><strong>Verkkosivusto:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>Yhteystiedot:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
-        </div>
-            <img class="contact-illustration" src="./assets/author-cartoon-contact.jpg" alt="" width="720" height="960" loading="lazy" decoding="async">
+            </div>
+            <div class="contact-figure"><img class="contact-illustration" src="./assets/author-contact-previous.jpg" alt="" width="106" height="169" loading="lazy" decoding="async"></div>
+            <a class="qr-card" href="https://musikfed.github.io/view_my_prj/" target="_blank" rel="noopener noreferrer" aria-label="Kaikki PEGINELAB-projektit">
+                <img src="./assets/qr-peginelab.svg" alt="QR PEGINELAB" width="225" height="225" loading="lazy">
+                <span class="qr-caption">Kaikki PEGINELAB-projektit</span>
+            </a>
         </div>
     </div>
 
     <!-- ================= 한국어 ================= -->
     <div id="ko" class="lang-content">
         <div class="resume-hero">
-            <img class="portrait-illustration" src="./assets/author-cartoon-portrait.jpg" alt="" width="400" height="488" loading="lazy" decoding="async">
+            <div class="portrait-wrap"><img class="portrait-illustration" src="./assets/author-portrait-previous.jpg" alt="" width="157" height="183" loading="lazy" decoding="async"></div>
             <div class="resume-hero-copy">
         <h1>표도르 게라시모프</h1>
         <div class="subtitle">42세, 모스크바</div>
@@ -498,18 +495,23 @@
 
         <div class="contacts-layout">
             <div class="contacts">
-            <p><strong>웹사이트:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
+                <h3 class="contacts-title">연락처</h3>
+                <p><strong>웹사이트:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>연락처:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
-        </div>
-            <img class="contact-illustration" src="./assets/author-cartoon-contact.jpg" alt="" width="720" height="960" loading="lazy" decoding="async">
+            </div>
+            <div class="contact-figure"><img class="contact-illustration" src="./assets/author-contact-previous.jpg" alt="" width="106" height="169" loading="lazy" decoding="async"></div>
+            <a class="qr-card" href="https://musikfed.github.io/view_my_prj/" target="_blank" rel="noopener noreferrer" aria-label="PEGINELAB 모든 프로젝트">
+                <img src="./assets/qr-peginelab.svg" alt="QR PEGINELAB" width="225" height="225" loading="lazy">
+                <span class="qr-caption">PEGINELAB 모든 프로젝트</span>
+            </a>
         </div>
     </div>
 
     <!-- ================= 日本語 ================= -->
     <div id="ja" class="lang-content">
         <div class="resume-hero">
-            <img class="portrait-illustration" src="./assets/author-cartoon-portrait.jpg" alt="" width="400" height="488" loading="lazy" decoding="async">
+            <div class="portrait-wrap"><img class="portrait-illustration" src="./assets/author-portrait-previous.jpg" alt="" width="157" height="183" loading="lazy" decoding="async"></div>
             <div class="resume-hero-copy">
         <h1>フョードル・ゲラシモフ</h1>
         <div class="subtitle">42歳、モスクワ</div>
@@ -539,18 +541,23 @@
 
         <div class="contacts-layout">
             <div class="contacts">
-            <p><strong>ウェブサイト:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
+                <h3 class="contacts-title">連絡先</h3>
+                <p><strong>ウェブサイト:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>連絡先:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
-        </div>
-            <img class="contact-illustration" src="./assets/author-cartoon-contact.jpg" alt="" width="720" height="960" loading="lazy" decoding="async">
+            </div>
+            <div class="contact-figure"><img class="contact-illustration" src="./assets/author-contact-previous.jpg" alt="" width="106" height="169" loading="lazy" decoding="async"></div>
+            <a class="qr-card" href="https://musikfed.github.io/view_my_prj/" target="_blank" rel="noopener noreferrer" aria-label="PEGINELABの全プロジェクト">
+                <img src="./assets/qr-peginelab.svg" alt="QR PEGINELAB" width="225" height="225" loading="lazy">
+                <span class="qr-caption">PEGINELABの全プロジェクト</span>
+            </a>
         </div>
     </div>
 
     <!-- ================= ITALIANO ================= -->
     <div id="it" class="lang-content">
         <div class="resume-hero">
-            <img class="portrait-illustration" src="./assets/author-cartoon-portrait.jpg" alt="" width="400" height="488" loading="lazy" decoding="async">
+            <div class="portrait-wrap"><img class="portrait-illustration" src="./assets/author-portrait-previous.jpg" alt="" width="157" height="183" loading="lazy" decoding="async"></div>
             <div class="resume-hero-copy">
         <h1>Fedor Gerasimov</h1>
         <div class="subtitle">42 anni, Mosca</div>
@@ -580,18 +587,23 @@
 
         <div class="contacts-layout">
             <div class="contacts">
-            <p><strong>Sito web:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
+                <h3 class="contacts-title">Contatti</h3>
+                <p><strong>Sito web:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>Contatto:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
-        </div>
-            <img class="contact-illustration" src="./assets/author-cartoon-contact.jpg" alt="" width="720" height="960" loading="lazy" decoding="async">
+            </div>
+            <div class="contact-figure"><img class="contact-illustration" src="./assets/author-contact-previous.jpg" alt="" width="106" height="169" loading="lazy" decoding="async"></div>
+            <a class="qr-card" href="https://musikfed.github.io/view_my_prj/" target="_blank" rel="noopener noreferrer" aria-label="Tutti i progetti PEGINELAB">
+                <img src="./assets/qr-peginelab.svg" alt="QR PEGINELAB" width="225" height="225" loading="lazy">
+                <span class="qr-caption">Tutti i progetti PEGINELAB</span>
+            </a>
         </div>
     </div>
 
     <!-- ================= БЕЛАРУСКАЯ ================= -->
     <div id="be" class="lang-content">
         <div class="resume-hero">
-            <img class="portrait-illustration" src="./assets/author-cartoon-portrait.jpg" alt="" width="400" height="488" loading="lazy" decoding="async">
+            <div class="portrait-wrap"><img class="portrait-illustration" src="./assets/author-portrait-previous.jpg" alt="" width="157" height="183" loading="lazy" decoding="async"></div>
             <div class="resume-hero-copy">
         <h1>Фёдар Герасімаў</h1>
         <div class="subtitle">42 гады, г. Масква</div>
@@ -621,11 +633,16 @@
 
         <div class="contacts-layout">
             <div class="contacts">
-            <p><strong>Сайт:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
+                <h3 class="contacts-title">Кантакты</h3>
+                <p><strong>Сайт:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>Сувязь:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
-        </div>
-            <img class="contact-illustration" src="./assets/author-cartoon-contact.jpg" alt="" width="720" height="960" loading="lazy" decoding="async">
+            </div>
+            <div class="contact-figure"><img class="contact-illustration" src="./assets/author-contact-previous.jpg" alt="" width="106" height="169" loading="lazy" decoding="async"></div>
+            <a class="qr-card" href="https://musikfed.github.io/view_my_prj/" target="_blank" rel="noopener noreferrer" aria-label="Усе праекты PEGINELAB">
+                <img src="./assets/qr-peginelab.svg" alt="QR PEGINELAB" width="225" height="225" loading="lazy">
+                <span class="qr-caption">Усе праекты PEGINELAB</span>
+            </a>
         </div>
     </div>
 
