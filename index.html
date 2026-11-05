@@ -12,8 +12,8 @@
         :root {
             color-scheme: light;
             --paper:#fff; --canvas:#f3f5f8; --ink:#202936; --muted:#657183;
-            --line:#e4e9ef; --blue:#1767ad; --blue-dark:#0b4e89; --red:#d51a35;
-            --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+            --line:#e4e9ef; --blue:#bd1427; --blue-dark:#89101e; --red:#c90c21;
+            --font:Arial,Helvetica,sans-serif;
         }
         *,*::before,*::after{box-sizing:border-box}
         html{scroll-behavior:auto}
@@ -86,6 +86,31 @@
             a{color:#000}
         }
         @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important}}
+
+        /* Illustration-led, restrained resume rather than a poster */
+        .brand-mark{width:70px;height:70px;border-radius:12px;background:#c80b20;font:800 30px/1 Arial,Helvetica,sans-serif;letter-spacing:-.08em;box-shadow:0 3px 9px rgba(130,10,24,.12)}
+        .brand-mark::first-letter{letter-spacing:-.1em}
+        .logo-text{font-family:Arial,Helvetica,sans-serif;font-size:16px}
+        .container{border-color:#e3e3e5;box-shadow:0 12px 30px rgba(22,23,26,.05)}
+        .head-actions a{color:#aa1326}
+        .head-actions a:hover{color:#181818}
+        .lang-content h1,.lang-content h2{color:#151515;font-family:Arial,Helvetica,sans-serif}
+        .lang-content h2{border-bottom-color:#d9d9dc}
+        .lang-content li strong{color:#191919}
+        .lang-content>ul:first-of-type>li,.contacts{background:#fafafa;border-color:#e8e8e8}
+        .resume-hero{display:grid;grid-template-columns:minmax(145px,205px) minmax(0,1fr);gap:30px;align-items:start;margin:0 0 22px}
+        .portrait-illustration{width:100%;height:auto;aspect-ratio:400/488;object-fit:cover;object-position:center top;display:block;border:1px solid #ededed;border-radius:11px;background:#f9f8f5}
+        .resume-hero-copy{min-width:0}
+        .resume-hero-copy p{color:#354457;font-size:15px;line-height:1.8;margin:0 0 15px}
+        .resume-hero-copy h1{margin-top:2px}
+        .contact-scene{clear:both}
+        .contacts-layout{display:grid;grid-template-columns:minmax(0,1fr) 215px;gap:12px;align-items:end;margin-top:26px}
+        .contacts-layout .contacts{margin:0 0 6px;align-self:center}
+        .contact-illustration{display:block;max-width:100%;width:100%;height:auto;max-height:300px;object-fit:contain;object-position:center bottom}
+        @media(max-width:800px){.resume-hero{grid-template-columns:155px minmax(0,1fr);gap:20px}.contacts-layout{grid-template-columns:minmax(0,1fr) 150px}}
+        @media(max-width:540px){.brand-mark{width:62px;height:62px;font-size:27px}.resume-hero{grid-template-columns:1fr;gap:16px}.portrait-illustration{width:170px;max-width:65%}.contacts-layout{grid-template-columns:minmax(0,1fr) 106px;gap:0}.contacts-layout .contacts{padding:12px}.contact-illustration{max-height:230px}.lang-content{padding:24px 20px 35px}}
+        @media(max-width:380px){.contacts-layout{grid-template-columns:1fr}.contact-illustration{width:140px;margin-left:auto}}
+        @media print{.portrait-illustration{width:160px}.resume-hero{grid-template-columns:165px 1fr}.contact-illustration{max-height:180px}}
     </style>
 </head>
 <body>
@@ -123,11 +148,17 @@
 
     <!-- ================= РУССКИЙ ================= -->
     <div id="ru" class="lang-content is-active">
+        <div class="resume-hero">
+            <img class="portrait-illustration" src="./assets/author-cartoon-portrait.jpg" alt="" width="400" height="488" loading="eager" decoding="async">
+            <div class="resume-hero-copy">
         <h1>Федор Герасимов</h1>
         <div class="subtitle">42 года, г. Москва</div>
 
         <p>IT-инженер с 20-летним опытом: от низкоуровневой разработки (C/C++, Rust, ESP32) и системного администрирования (Linux, KVM, Postfix) до локальных AI-решений (Ollama, RAG).</p>
         <p>Автор патента на фреймворк автоматизации <strong>PiTools</strong> (св-во №2026610793).</p>
+            </div>
+        </div>
+
 
         <h2>Ключевые проекты</h2>
         <ul>
@@ -162,20 +193,29 @@
             </li>
         </ul>
 
-        <div class="contacts">
+        <div class="contacts-layout">
+            <div class="contacts">
             <p><strong>Сайт:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>Связь:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
+        </div>
+            <img class="contact-illustration" src="./assets/author-cartoon-contact.jpg" alt="" width="720" height="960" loading="lazy" decoding="async">
         </div>
     </div>
 
     <!-- ================= ENGLISH ================= -->
     <div id="en" class="lang-content">
+        <div class="resume-hero">
+            <img class="portrait-illustration" src="./assets/author-cartoon-portrait.jpg" alt="" width="400" height="488" loading="lazy" decoding="async">
+            <div class="resume-hero-copy">
         <h1>Fedor Gerasimov</h1>
         <div class="subtitle">42 years old, Moscow</div>
 
         <p>IT engineer with 20 years of experience: from low-level development (C/C++, Rust, ESP32) and system administration (Linux, KVM, Postfix) to local AI solutions (Ollama, RAG).</p>
         <p>Author of the <strong>PiTools</strong> automation framework patent (No. 2026610793).</p>
+            </div>
+        </div>
+
 
         <h2>Key Projects</h2>
         <ul>
@@ -210,20 +250,29 @@
             </li>
         </ul>
 
-        <div class="contacts">
+        <div class="contacts-layout">
+            <div class="contacts">
             <p><strong>Website:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>Contact:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
+        </div>
+            <img class="contact-illustration" src="./assets/author-cartoon-contact.jpg" alt="" width="720" height="960" loading="lazy" decoding="async">
         </div>
     </div>
 
     <!-- ================= 中文 ================= -->
     <div id="zh" class="lang-content">
+        <div class="resume-hero">
+            <img class="portrait-illustration" src="./assets/author-cartoon-portrait.jpg" alt="" width="400" height="488" loading="lazy" decoding="async">
+            <div class="resume-hero-copy">
         <h1>费奥多尔·格拉西莫夫</h1>
         <div class="subtitle">42岁, 莫斯科</div>
 
         <p>拥有20年经验的IT工程师：从底层开发（C/C++、Rust、ESP32）和系统管理（Linux、KVM、Postfix）到本地AI解决方案（Ollama、RAG）。</p>
         <p>自动化框架 <strong>PiTools</strong> 专利的作者。</p>
+            </div>
+        </div>
+
 
         <h2>关键项目</h2>
         <ul>
@@ -242,20 +291,29 @@
             <li><strong>俄罗斯内务部</strong> — 高级IT与信息安全工程师 (2007–2020, 乌兰乌德)。设计并投入运行区域视频监控系统<strong>“安全城市”</strong>。设计数字无线电通信并与模拟系统集成。为<strong>1500多名用户</strong>开发安全的电信基础设施。领导3-5人的团队，准备技术规范并管理实施。投入运行并验证硬件、<strong>密码学工具 (CIPF)</strong> 和设施分类。管理受限访问文件的全生命周期；进行信息安全审计和非授权访问控制。</li>
         </ul>
 
-        <div class="contacts">
+        <div class="contacts-layout">
+            <div class="contacts">
             <p><strong>网站:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>联系方式:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
+        </div>
+            <img class="contact-illustration" src="./assets/author-cartoon-contact.jpg" alt="" width="720" height="960" loading="lazy" decoding="async">
         </div>
     </div>
 
     <!-- ================= DEUTSCH ================= -->
     <div id="de" class="lang-content">
+        <div class="resume-hero">
+            <img class="portrait-illustration" src="./assets/author-cartoon-portrait.jpg" alt="" width="400" height="488" loading="lazy" decoding="async">
+            <div class="resume-hero-copy">
         <h1>Fedor Gerassimow</h1>
         <div class="subtitle">42 Jahre alt, Moskau</div>
 
         <p>IT-Ingenieur mit 20 Jahren Erfahrung: von der Low-Level-Entwicklung (C/C++, Rust, ESP32) und Systemadministration (Linux, KVM, Postfix) bis hin zu lokalen KI-Lösungen (Ollama, RAG).</p>
         <p>Autor des Patents für das Automatisierungsframework <strong>PiTools</strong>.</p>
+            </div>
+        </div>
+
 
         <h2>Wichtige Projekte</h2>
         <ul>
@@ -274,20 +332,29 @@
             <li><strong>MVD Russlands</strong> — Senior IT & InfoSec Engineer (2007–2020, Ulan-Ude). Entwurf und Inbetriebnahme des regionalen Videoüberwachungssystems <strong>„Safe City“</strong>. Entwurf der digitalen Funkkommunikation und Integration in analoge Systeme. Aufbau einer sicheren Telekommunikationsinfrastruktur für <strong>1500+ Benutzer</strong>. Leitung eines Teams von 3-5 Spezialisten, Erstellung von Spezifikationen und Steuerung der Implementierung. Inbetriebnahme und Prüfung von Hardware, <strong>kryptografischen Werkzeugen (CIPF)</strong> und Kategorisierung von Räumen. Verwaltung von Dokumenten mit eingeschränktem Zugriff; InfoSec-Audits und Kontrolle des unbefugten Zugriffs.</li>
         </ul>
 
-        <div class="contacts">
+        <div class="contacts-layout">
+            <div class="contacts">
             <p><strong>Webseite:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>Kontakt:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
+        </div>
+            <img class="contact-illustration" src="./assets/author-cartoon-contact.jpg" alt="" width="720" height="960" loading="lazy" decoding="async">
         </div>
     </div>
 
     <!-- ================= हिन्दी ================= -->
     <div id="hi" class="lang-content">
+        <div class="resume-hero">
+            <img class="portrait-illustration" src="./assets/author-cartoon-portrait.jpg" alt="" width="400" height="488" loading="lazy" decoding="async">
+            <div class="resume-hero-copy">
         <h1>फ्योडोर गेरासिमोव</h1>
         <div class="subtitle">42 वर्ष, मॉस्को</div>
 
         <p>20 साल के अनुभव के साथ आईटी इंजीनियर: निम्न-स्तरीय विकास (C/C++, Rust, ESP32) और सिस्टम प्रशासन (Linux, KVM, Postfix) से लेकर स्थानीय AI समाधान (Ollama, RAG) तक।</p>
         <p>स्वचालन ढांचे <strong>PiTools</strong> के पेटेंट के लेखक।</p>
+            </div>
+        </div>
+
 
         <h2>मुख्य परियोजनाएं</h2>
         <ul>
@@ -306,20 +373,29 @@
             <li><strong>रूस का MVD</strong> — वरिष्ठ आईटी और सूचना सुरक्षा इंजीनियर (2007–2020, उलान-उडे)। क्षेत्रीय वीडियो निगरानी प्रणाली <strong>"सेफ सिटी"</strong> का डिजाइन और कमीशनिंग। डिजिटल रेडियो संचार का डिजाइन और एनालॉग प्रणालियों के साथ एकीकरण। <strong>1500+ उपयोगकर्ताओं</strong> के लिए सुरक्षित टेलीकॉम बुनियादी ढांचे का विकास। 3-5 विशेषज्ञों की टीम का नेतृत्व, तकनीकी विशिष्टताओं की तैयारी और कार्यान्वयन की निगरानी। हार्डवेयर, <strong>क्रिप्टोग्राफिक टूल्स (CIPF)</strong> और सुविधा वर्गीकरण का कमीशनिंग और सत्यापन। प्रतिबंधित-पहुंच दस्तावेज़ों का पूर्ण जीवनचक्र प्रबंधन; सूचना सुरक्षा ऑडिट और अनधिकृत पहुंच नियंत्रण।</li>
         </ul>
 
-        <div class="contacts">
+        <div class="contacts-layout">
+            <div class="contacts">
             <p><strong>वेबसाइट:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>संपर्क:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
+        </div>
+            <img class="contact-illustration" src="./assets/author-cartoon-contact.jpg" alt="" width="720" height="960" loading="lazy" decoding="async">
         </div>
     </div>
 
     <!-- ================= FRANÇAIS ================= -->
     <div id="fr" class="lang-content">
+        <div class="resume-hero">
+            <img class="portrait-illustration" src="./assets/author-cartoon-portrait.jpg" alt="" width="400" height="488" loading="lazy" decoding="async">
+            <div class="resume-hero-copy">
         <h1>Fedor Guerassimov</h1>
         <div class="subtitle">42 ans, Moscou</div>
 
         <p>Ingénieur IT avec 20 ans d'expérience : du développement bas niveau (C/C++, Rust, ESP32) et de l'administration système (Linux, KVM, Postfix) aux solutions d'IA locales (Ollama, RAG).</p>
         <p>Auteur du brevet du framework d'automatisation <strong>PiTools</strong>.</p>
+            </div>
+        </div>
+
 
         <h2>Projets clés</h2>
         <ul>
@@ -338,20 +414,29 @@
             <li><strong>MVD de Russie</strong> — Ingénieur IT & Sécurité (2007–2020, Oulan-Oudé). Conception et mise en service du système régional de vidéosurveillance <strong>« Safe City »</strong>. Conception des communications radio numériques et intégration avec les systèmes analogiques. Développement d'une infrastructure télécom sécurisée pour <strong>1500+ utilisateurs</strong>. Gestion d'une équipe de 3 à 5 spécialistes, préparation des cahiers des charges et contrôle du déploiement. Mise en service et vérification du matériel, des <strong>outils cryptographiques (CIPF)</strong> et du classement des locaux. Gestion du cycle complet des documents à accès restreint ; audits de sécurité et contrôle des accès non autorisés.</li>
         </ul>
 
-        <div class="contacts">
+        <div class="contacts-layout">
+            <div class="contacts">
             <p><strong>Site web :</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
             <p><strong>GitHub :</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>Contact :</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
+        </div>
+            <img class="contact-illustration" src="./assets/author-cartoon-contact.jpg" alt="" width="720" height="960" loading="lazy" decoding="async">
         </div>
     </div>
 
     <!-- ================= SUOMI ================= -->
     <div id="fi" class="lang-content">
+        <div class="resume-hero">
+            <img class="portrait-illustration" src="./assets/author-cartoon-portrait.jpg" alt="" width="400" height="488" loading="lazy" decoding="async">
+            <div class="resume-hero-copy">
         <h1>Fedor Gerasimov</h1>
         <div class="subtitle">42-vuotias, Moskova</div>
 
         <p>IT-insinööri, jolla on 20 vuoden kokemus: matalan tason kehityksestä (C/C++, Rust, ESP32) ja järjestelmänvalvonnasta (Linux, KVM, Postfix) paikallisiin tekoälyratkaisuihin (Ollama, RAG).</p>
         <p>Automaatiokehyksen <strong>PiTools</strong> patentin haltija.</p>
+            </div>
+        </div>
+
 
         <h2>Avainprojektit</h2>
         <ul>
@@ -370,20 +455,29 @@
             <li><strong>Venäjän sisäministeriö</strong> — Vanhempi IT- ja tietoturvainsinööri (2007–2020, Ulan-Ude). Alueellisen videovalvontajärjestelmän <strong>"Safe City"</strong> suunnittelu ja käyttöönotto. Digitaalisen radioviestinnän suunnittelu ja integrointi analogisiin järjestelmiin. Turvallisen televiestintäinfrastruktuurin kehittäminen <strong>yli 1500 käyttäjälle</strong>. 3–5 hengen tiimin johtaminen, teknisten eritelmien valmistelu ja käyttöönoton valvonta. Laitteistojen, <strong>salausvälineiden (CIPF)</strong> ja tilojen luokittelun käyttöönotto ja tarkastus. Rajoitetun pääsyn asiakirjojen koko elinkaaren hallinta; tietoturva-auditoinnit ja luvattoman pääsyn valvonta.</li>
         </ul>
 
-        <div class="contacts">
+        <div class="contacts-layout">
+            <div class="contacts">
             <p><strong>Verkkosivusto:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>Yhteystiedot:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
+        </div>
+            <img class="contact-illustration" src="./assets/author-cartoon-contact.jpg" alt="" width="720" height="960" loading="lazy" decoding="async">
         </div>
     </div>
 
     <!-- ================= 한국어 ================= -->
     <div id="ko" class="lang-content">
+        <div class="resume-hero">
+            <img class="portrait-illustration" src="./assets/author-cartoon-portrait.jpg" alt="" width="400" height="488" loading="lazy" decoding="async">
+            <div class="resume-hero-copy">
         <h1>표도르 게라시모프</h1>
         <div class="subtitle">42세, 모스크바</div>
 
         <p>20년 경력의 IT 엔지니어: 저수준 개발(C/C++, Rust, ESP32) 및 시스템 관리(Linux, KVM, Postfix)부터 로컬 AI 솔루션(Ollama, RAG)까지.</p>
         <p>자동화 프레임워크 <strong>PiTools</strong> 특허 보유자.</p>
+            </div>
+        </div>
+
 
         <h2>주요 프로젝트</h2>
         <ul>
@@ -402,20 +496,29 @@
             <li><strong>러시아 내무부</strong> — 선임 IT 및 정보 보안 엔지니어 (2007–2020, 울란우데). 지역 영상 감시 시스템 <strong>"세이프 시티"</strong> 설계 및 시운전. 디지털 무선 통신 설계 및 아날로그 시스템과의 통합. <strong>1500명 이상의 사용자</strong>를 위한 보안 통신 인프라 개발. 3-5명의 전문가 팀 리드, 기술 사양 준비 및 구현 관리. 하드웨어, <strong>암호화 도구(CIPF)</strong> 및 시설 분류의 시운전 및 검증. 제한된 접근 문서의 전체 수명 주기 관리; 정보 보안 감사 및 무단 접근 통제.</li>
         </ul>
 
-        <div class="contacts">
+        <div class="contacts-layout">
+            <div class="contacts">
             <p><strong>웹사이트:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>연락처:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
+        </div>
+            <img class="contact-illustration" src="./assets/author-cartoon-contact.jpg" alt="" width="720" height="960" loading="lazy" decoding="async">
         </div>
     </div>
 
     <!-- ================= 日本語 ================= -->
     <div id="ja" class="lang-content">
+        <div class="resume-hero">
+            <img class="portrait-illustration" src="./assets/author-cartoon-portrait.jpg" alt="" width="400" height="488" loading="lazy" decoding="async">
+            <div class="resume-hero-copy">
         <h1>フョードル・ゲラシモフ</h1>
         <div class="subtitle">42歳、モスクワ</div>
 
         <p>20年の経験を持つITエンジニア：低レベル開発（C/C++、Rust、ESP32）やシステム管理（Linux、KVM、Postfix）から、ローカルAIソリューション（Ollama、RAG）まで。</p>
         <p>自動化フレームワーク <strong>PiTools</strong> の特許保有者。</p>
+            </div>
+        </div>
+
 
         <h2>主要プロジェクト</h2>
         <ul>
@@ -434,20 +537,29 @@
             <li><strong>ロシア内務省</strong> — シニアIT・情報セキュリティエンジニア (2007–2020, ウラン・ウデ). 地域ビデオ監視システム<strong>「セーフシティ」</strong>の設計と試運転。デジタル無線通信の設計とアナログシステムとの統合。<strong>1500人以上のユーザー</strong>向けの安全な通信インフラの開発。3〜5名の専門家チームのリード、技術仕様書の作成、導入管理。ハードウェア、<strong>暗号化ツール（CIPF）</strong>、施設の分類の試運転と検証。制限付きアクセス文書の全ライフサイクル管理、情報セキュリティ監査、不正アクセス制御。</li>
         </ul>
 
-        <div class="contacts">
+        <div class="contacts-layout">
+            <div class="contacts">
             <p><strong>ウェブサイト:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>連絡先:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
+        </div>
+            <img class="contact-illustration" src="./assets/author-cartoon-contact.jpg" alt="" width="720" height="960" loading="lazy" decoding="async">
         </div>
     </div>
 
     <!-- ================= ITALIANO ================= -->
     <div id="it" class="lang-content">
+        <div class="resume-hero">
+            <img class="portrait-illustration" src="./assets/author-cartoon-portrait.jpg" alt="" width="400" height="488" loading="lazy" decoding="async">
+            <div class="resume-hero-copy">
         <h1>Fedor Gerasimov</h1>
         <div class="subtitle">42 anni, Mosca</div>
 
         <p>Ingegnere IT con 20 anni di esperienza: dallo sviluppo a basso livello (C/C++, Rust, ESP32) e amministrazione di sistema (Linux, KVM, Postfix) alle soluzioni AI locali (Ollama, RAG).</p>
         <p>Autore del brevetto del framework di automazione <strong>PiTools</strong>.</p>
+            </div>
+        </div>
+
 
         <h2>Progetti Chiave</h2>
         <ul>
@@ -466,20 +578,29 @@
             <li><strong>MVD russo</strong> — Ingegnere IT & Sicurezza (2007–2020, Ulan-Ude). Progettazione e messa in servizio del sistema regionale di videosorveglianza <strong>"Safe City"</strong>. Progettazione di comunicazioni radio digitali e integrazione con sistemi analogici. Sviluppo di infrastrutture telecom sicure per <strong>oltre 1500 utenti</strong>. Gestione di un team di 3-5 specialisti, preparazione di specifiche tecniche e controllo dell'implementazione. Messa in servizio e verifica di hardware, <strong>strumenti crittografici (CIPF)</strong> e classificazione delle strutture. Gestione del ciclo di vita completo dei documenti ad accesso limitato; audit di sicurezza e controllo degli accessi non autorizzati.</li>
         </ul>
 
-        <div class="contacts">
+        <div class="contacts-layout">
+            <div class="contacts">
             <p><strong>Sito web:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>Contatto:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
+        </div>
+            <img class="contact-illustration" src="./assets/author-cartoon-contact.jpg" alt="" width="720" height="960" loading="lazy" decoding="async">
         </div>
     </div>
 
     <!-- ================= БЕЛАРУСКАЯ ================= -->
     <div id="be" class="lang-content">
+        <div class="resume-hero">
+            <img class="portrait-illustration" src="./assets/author-cartoon-portrait.jpg" alt="" width="400" height="488" loading="lazy" decoding="async">
+            <div class="resume-hero-copy">
         <h1>Фёдар Герасімаў</h1>
         <div class="subtitle">42 гады, г. Масква</div>
 
         <p>IT-інжынер з 20-гадовым вопытам: ад нізкаўзроўневай распрацоўкі (C/C++, Rust, ESP32) і сістэмнага адміністравання (Linux, KVM, Postfix) да лакальных AI-рашэнняў (Ollama, RAG).</p>
         <p>Аўтар патэнта на фрэймворк аўтаматызацыі <strong>PiTools</strong> (пасведчанне №2026610793).</p>
+            </div>
+        </div>
+
 
         <h2>Ключавыя праекты</h2>
         <ul>
@@ -498,10 +619,13 @@
             <li><strong>МУС Расіі</strong> — Старшы інжынер ІТ, сувязі і аховы інфармацыі (2007–2020, Улан-Удэ). Праектаванне і ўвод у эксплуатацыю рэгіянальнай сістэмы відэафіксацыі <strong>«Бяспечны горад»</strong>. Праектаванне лічбавай радыёсувязі і інтэграцыя з аналагавымі сістэмамі. Развіццё сервернай, сеткавай і абароненай тэлекамунікацыйнай інфраструктуры на <strong>1500+ карыстальнікаў</strong>. Кіраванне камандай 3–5 спецыялістаў, падрыхтоўка ТЗ і кантроль ўкаранення. Увод у эксплуатацыю і праверка СВТ, <strong>СКЗІ</strong> і катэгарызаванне памяшканняў. Поўны цыкл ведамаснага дакументаабароту (уключаючы дакументы абмежаванага доступу); аўдыт ІБ у складзе КРО, кантроль НСД.</li>
         </ul>
 
-        <div class="contacts">
+        <div class="contacts-layout">
+            <div class="contacts">
             <p><strong>Сайт:</strong> <a href="https://peginelab.ru" class="accent-link">peginelab.ru</a></p>
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>Сувязь:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
+        </div>
+            <img class="contact-illustration" src="./assets/author-cartoon-contact.jpg" alt="" width="720" height="960" loading="lazy" decoding="async">
         </div>
     </div>
 
