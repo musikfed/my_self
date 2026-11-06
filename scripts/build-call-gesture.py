@@ -85,7 +85,10 @@ def generate() -> tuple[int, int, int]:
         GIF, save_all=True, append_images=indexed[1:], loop=0,
         duration=90, optimize=True, disposal=2
     )
-    # Lossless animated WebP is essential: lossy delta-frame compression makes\n    # the otherwise stationary torso appear to shimmer between frames.\n    frames[0].save(\n        WEBP, save_all=True, append_images=frames[1:], loop=0,
+    # Lossless animated WebP is essential: lossy delta-frame compression makes
+    # the otherwise stationary torso appear to shimmer between frames.
+    frames[0].save(
+        WEBP, save_all=True, append_images=frames[1:], loop=0,
         duration=90, lossless=True, quality=90, method=6
     )
 
