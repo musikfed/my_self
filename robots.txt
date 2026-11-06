@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://musikfed.github.io/my_self/sitemap.xml
