@@ -58,6 +58,8 @@ def localized_head(source: str, lang: str, name: str, summary: str) -> str:
     head = re.sub(r'<meta name="description" content="[^"]*">', f'<meta name="description" content="{attr(description)}">', head, count=1)
     head = re.sub(r'<title>[^<]*</title>', f'<title>{html.escape(name)} — {html.escape(RESUME[lang])} | PEGINELAB</title>', head, count=1)
     head = re.sub(r'<link rel="canonical" href="[^"]+">', f'<link rel="canonical" href="{BASE}{lang}/">', head, count=1)
+    # Root landing page already declares a hreflang cluster; generated children need only one.
+    head = re.sub(r'\s*<link rel="alternate" hreflang="[^"]+" href="[^"]+">', "", head)
     alternates = "\n".join(f'<link rel="alternate" hreflang="{code}" href="{BASE}{code}/">' for code in LANGS)
     alternates += f'\n<link rel="alternate" hreflang="x-default" href="{BASE}">'
     social = ('<meta property="og:type" content="profile">\n'
