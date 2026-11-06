@@ -78,12 +78,8 @@ def build(*, check: bool = False) -> None:
         raise SystemExit("Outer resume layout no longer matches safe extraction pattern")
     header = source[source.index("<body>"): matches[0].start()]
     footer = source[footer_pos : source.index("</footer>", footer_pos) + len("</footer>")]
-    label_data = re.search(r'const labels = (\{[^\n]+\});', source)
-    if not label_data:
-        raise SystemExit("Translation labels are unavailable")
-    translations = json.loads(label_data.group(1))
-    if set(translations) != set(LANGS):
-        raise SystemExit("Header translation count differs from eleven languages")
+    # Explicit static translations also survive removal of legacy JS at the root.
+    translations = {"ru":{"projects":"Проекты","caption":"Инженерное портфолио и резюме","foot":"Персональное резюме · PEGINELAB"},"en":{"projects":"Projects","caption":"Engineering portfolio and résumé","foot":"Personal résumé · PEGINELAB"},"zh":{"projects":"项目","caption":"工程项目与个人简历","foot":"个人简历 · PEGINELAB"},"de":{"projects":"Projekte","caption":"Technikportfolio und Lebenslauf","foot":"Persönlicher Lebenslauf · PEGINELAB"},"hi":{"projects":"परियोजनाएँ","caption":"इंजीनियरिंग पोर्टफ़ोलियो और रिज़्यूमे","foot":"व्यक्तिगत रिज़्यूमे · PEGINELAB"},"fr":{"projects":"Projets","caption":"Portfolio technique et CV","foot":"CV personnel · PEGINELAB"},"fi":{"projects":"Projektit","caption":"Tekninen portfolio ja ansioluettelo","foot":"Ansioluettelo · PEGINELAB"},"ko":{"projects":"프로젝트","caption":"엔지니어링 포트폴리오와 이력서","foot":"개인 이력서 · PEGINELAB"},"ja":{"projects":"プロジェクト","caption":"技術ポートフォリオと経歴書","foot":"経歴書 · PEGINELAB"},"it":{"projects":"Progetti","caption":"Portfolio tecnico e curriculum","foot":"Curriculum personale · PEGINELAB"},"be":{"projects":"Праекты","caption":"Інжынернае партфоліа і рэзюмэ","foot":"Асабістае рэзюмэ · PEGINELAB"}}
 
     for i, match in enumerate(matches):
         lang = match.group(1)
