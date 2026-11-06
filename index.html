@@ -6,7 +6,19 @@
     <meta name="description" content="Фёдор Герасимов — инженер, системный архитектор и разработчик. Опыт работы, проекты и контакты на 11 языках.">
     <meta name="theme-color" content="#c61029">
     <meta name="robots" content="index,follow">
-    <link rel="canonical" href="https://musikfed.github.io/my_self/">
+    <link rel="canonical" href="https://musikfed.github.io/my_self/ru/">
+    <link rel="alternate" hreflang="ru" href="https://musikfed.github.io/my_self/ru/">
+    <link rel="alternate" hreflang="en" href="https://musikfed.github.io/my_self/en/">
+    <link rel="alternate" hreflang="zh" href="https://musikfed.github.io/my_self/zh/">
+    <link rel="alternate" hreflang="de" href="https://musikfed.github.io/my_self/de/">
+    <link rel="alternate" hreflang="hi" href="https://musikfed.github.io/my_self/hi/">
+    <link rel="alternate" hreflang="fr" href="https://musikfed.github.io/my_self/fr/">
+    <link rel="alternate" hreflang="fi" href="https://musikfed.github.io/my_self/fi/">
+    <link rel="alternate" hreflang="ko" href="https://musikfed.github.io/my_self/ko/">
+    <link rel="alternate" hreflang="ja" href="https://musikfed.github.io/my_self/ja/">
+    <link rel="alternate" hreflang="it" href="https://musikfed.github.io/my_self/it/">
+    <link rel="alternate" hreflang="be" href="https://musikfed.github.io/my_self/be/">
+    <link rel="alternate" hreflang="x-default" href="https://musikfed.github.io/my_self/">
     <title>Фёдор Герасимов — резюме · Fedor Gerasimov — résumé</title>
     <style>
 
@@ -111,7 +123,7 @@ a.accent-link:hover{color:#731023}
             <a href="https://musikfed.github.io/view_my_prj/" data-ui="projects">Проекты</a>
             <a href="https://github.com/musikfed" target="_blank" rel="noopener noreferrer">GitHub</a>
             <label class="lang-wrap" for="resume-language">
-                <span class="lang-label" data-ui="language">Язык резюме</span>
+                <span class="lang-label" data-ui="language">Выбрать язык</span>
                 <select id="resume-language" class="lang-select" aria-label="Язык резюме">
                     <option value="ru">Русский</option>
                     <option value="en">English</option>
@@ -715,41 +727,40 @@ a.accent-link:hover{color:#731023}
 <footer class="site-footer" data-ui="foot">Персональное резюме · PEGINELAB</footer>
 <script>
 (() => {
-    "use strict";
-    const labels = {"ru":{"projects":"Проекты","language":"Язык резюме","caption":"Инженерное портфолио и резюме","foot":"Персональное резюме · PEGINELAB"},"en":{"projects":"Projects","language":"Resume language","caption":"Engineering portfolio and résumé","foot":"Personal résumé · PEGINELAB"},"zh":{"projects":"项目","language":"简历语言","caption":"工程项目与个人简历","foot":"个人简历 · PEGINELAB"},"de":{"projects":"Projekte","language":"Sprache des Lebenslaufs","caption":"Technikportfolio und Lebenslauf","foot":"Persönlicher Lebenslauf · PEGINELAB"},"hi":{"projects":"परियोजनाएँ","language":"रिज़्यूमे की भाषा","caption":"इंजीनियरिंग पोर्टफ़ोलियो और रिज़्यूमे","foot":"व्यक्तिगत रिज़्यूमे · PEGINELAB"},"fr":{"projects":"Projets","language":"Langue du CV","caption":"Portfolio technique et CV","foot":"CV personnel · PEGINELAB"},"fi":{"projects":"Projektit","language":"Ansioluettelon kieli","caption":"Tekninen portfolio ja ansioluettelo","foot":"Ansioluettelo · PEGINELAB"},"ko":{"projects":"프로젝트","language":"이력서 언어","caption":"엔지니어링 포트폴리오와 이력서","foot":"개인 이력서 · PEGINELAB"},"ja":{"projects":"プロジェクト","language":"履歴書の言語","caption":"技術ポートフォリオと経歴書","foot":"経歴書 · PEGINELAB"},"it":{"projects":"Progetti","language":"Lingua del CV","caption":"Portfolio tecnico e curriculum","foot":"Curriculum personale · PEGINELAB"},"be":{"projects":"Праекты","language":"Мова рэзюмэ","caption":"Інжынернае партфоліа і рэзюмэ","foot":"Асабістае рэзюмэ · PEGINELAB"}};
-    const select = document.getElementById("resume-language");
-    const sections = Array.from(document.querySelectorAll(".lang-content"));
-    const defaultLanguage = "ru";
-    function fromAddress() {
-        const code = decodeURIComponent(window.location.hash.slice(1)).toLowerCase();
-        return Object.prototype.hasOwnProperty.call(labels, code) ? code : defaultLanguage;
-    }
-    function applyLanguage() {
-        const language = fromAddress();
-        for (const section of sections) {
-            const active = section.id === language;
-            section.hidden = !active;
-            section.classList.toggle("is-active", active);
-        }
-        select.value = language;
-        document.documentElement.lang = language === "zh" ? "zh-Hans" : language;
-        const projectsLink = document.querySelector('a[data-ui="projects"]');
-        if (projectsLink) projectsLink.href = "https://musikfed.github.io/view_my_prj/" + (language === "ru" ? "" : "?lang=" + encodeURIComponent(language));
-        for (const node of document.querySelectorAll("[data-ui]")) {
-            node.textContent = labels[language][node.dataset.ui] || labels.ru[node.dataset.ui];
-        }
-        document.title = (document.getElementById(language).querySelector("h1")?.textContent || "Fedor Gerasimov") + " — CV";
-    }
-    select.addEventListener("change", () => {
-        const url = new URL(window.location.href);
-        url.hash = select.value;
-        // pushState avoids jumping to a hidden section when changing language.
-        window.history.pushState(null, "", url);
-        applyLanguage();
+  "use strict";
+  const supported = ["ru","en","zh","de","hi","fr","fi","ko","ja","it","be"];
+  const picker = document.getElementById("resume-language");
+  const hashLanguage = location.hash.slice(1).toLowerCase();
+  // Preserve existing links like /my_self/?utm_source=chatgpt.com#en
+  if (supported.includes(hashLanguage)) {
+    location.replace("/my_self/" + hashLanguage + "/" + location.search);
+    return;
+  }
+  // Existing root URL is a readable Russian landing page for crawlers.
+  // Detect the preferred browser LANGUAGE, not IP geolocation (often a VPN).
+  // Suggest rather than force redirect: Google requires bots and users to see each locale.
+  const preferences = navigator.languages?.length ? navigator.languages : [navigator.language || "ru"];
+  const preferred = preferences.map(v => v.toLowerCase().split("-")[0]).find(v => supported.includes(v)) || "ru";
+  if (picker) {
+    picker.value = preferred;
+    picker.addEventListener("change", () => {
+      if (supported.includes(picker.value)) location.assign("/my_self/" + picker.value + "/");
     });
-    window.addEventListener("hashchange", applyLanguage);
-    window.addEventListener("popstate", applyLanguage);
-    applyLanguage();
+  }
+  if (preferred !== "ru") {
+    const selectedLabel = picker?.selectedOptions?.[0]?.textContent || preferred.toUpperCase();
+    const banner = document.createElement("div");
+    banner.className = "locale-suggestion";
+    banner.style.cssText = "margin:12px 34px 0;padding:10px 14px;background:#fff8f9;border:1px solid #efc6cd;border-radius:8px;font:14px Arial,sans-serif";
+    const a = document.createElement("a");
+    a.href = "/my_self/" + preferred + "/";
+    a.textContent = "🌐 " + selectedLabel + " — " + (preferred === "en" ? "Open resume in English" : "Открыть резюме на вашем языке");
+    banner.appendChild(a);
+    const header = document.querySelector(".header-bar");
+    if (header) header.insertAdjacentElement("afterend", banner);
+  }
+  document.querySelectorAll("a[data-ui='projects']").forEach(a => a.href =
+    "https://musikfed.github.io/view_my_prj/" + preferred + "/");
 })();
 </script>
 </body>

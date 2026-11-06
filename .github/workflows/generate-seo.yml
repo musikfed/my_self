@@ -1,0 +1,63 @@
+name: Generate 11 indexable resume languages
+on:
+  push:
+    branches: [main]
+    paths:
+      - index.html
+      - scripts/generate-seo-pages.py
+      - .github/workflows/generate-seo.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: resume-seo-generation
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Generate 11 fully static translations and sitemaps
+        run: |
+          python3 scripts/generate-seo-pages.py
+          python3 scripts/generate-seo-pages.py --check
+      - name: Validate canonical and reciprocal hreflang
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from html.parser import HTMLParser
+          languages = "ru en zh de hi fr fi ko ja it be".split()
+          root = Path(".")
+          class Parser(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.alternates = []
+              def handle_starttag(self, tag, attrs):
+                  a = dict(attrs)
+                  if tag == "link" and a.get("rel") == "alternate":
+                      self.alternates.append((a.get("hreflang"), a.get("href")))
+          for language in languages:
+              p = root/language/"index.html"
+              content = p.read_text()
+              parser = Parser(); parser.feed(content)
+              assert len(parser.alternates) == 12, (language, parser.alternates)
+              assert sum(content.count('class="lang-content is-active"') for _ in range(1)) == 1
+              assert f'<link rel="canonical" href="https://musikfed.github.io/my_self/{language}/">' in content
+              for other in languages:
+                  assert (other, f"https://musikfed.github.io/my_self/{other}/") in parser.alternates
+          print("All 11 unique translated SSR pages and hreflang clusters verified")
+          PY
+      - name: Commit generated static pages only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ru/index.html en/index.html zh/index.html de/index.html hi/index.html fr/index.html fi/index.html ko/index.html ja/index.html it/index.html be/index.html sitemap.xml robots.txt
+          if git diff --cached --quiet; then
+            echo "SEO pages unchanged"
+          else
+            git commit -m "Publish static SEO pages for 11 resume languages"
+            git push origin HEAD:main
+          fi
