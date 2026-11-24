@@ -94,6 +94,14 @@ a.accent-link:hover{color:#731023}
 @media print{.portrait-wrap{width:150px}.resume-hero{grid-template-columns:150px minmax(0,1fr)}.contacts-layout{grid-template-columns:minmax(0,1fr) 140px 160px}.contact-figure{max-width:140px}.qr-card{width:160px}.call-me-animation{animation:none!important}}
 @media(prefers-reduced-motion:reduce){.call-me-animation{animation:none!important}}
 
+    
+/* Contacts without the cartoon: readable links and QR only. */
+.contacts-layout{grid-template-columns:minmax(0,1fr) 180px;align-items:center}
+.contacts{grid-column:auto}
+.qr-card{grid-column:auto;grid-row:auto;justify-self:end;width:100%;max-width:180px}
+@media(max-width:650px){.contacts-layout{grid-template-columns:minmax(0,1fr);gap:14px}.contacts{grid-column:1}.qr-card{grid-column:1;grid-row:auto;justify-self:start;width:155px;max-width:100%}}
+@media print{.contacts-layout{grid-template-columns:minmax(0,1fr) 160px}}
+
     </style>
 <link rel="alternate" hreflang="ru" href="https://musikfed.github.io/my_self/ru/">
 <link rel="alternate" hreflang="en" href="https://musikfed.github.io/my_self/en/">
@@ -184,11 +192,6 @@ a.accent-link:hover{color:#731023}
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>연락처:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
             </div>
-            <div class="contact-figure"><picture class="call-me-picture">
-                    <source media="(prefers-reduced-motion: reduce)" type="image/jpeg" srcset="/my_self/assets/author-fullbody-call-me.jpg">
-                    <source type="image/webp" srcset="/my_self/assets/author-call-me.gif.webp">
-                    <img class="call-me-animation" src="/my_self/assets/author-call-me.gif" width="500" height="995" alt="전화해 줘 손짓 애니메이션" loading="lazy" decoding="async">
-                </picture></div>
             <a class="qr-card" href="https://musikfed.github.io/view_my_prj/ko/" target="_blank" rel="noopener noreferrer" aria-label="PEGINELAB 모든 프로젝트">
                 <img src="/my_self/assets/qr-peginelab-sharp.svg" alt="QR PEGINELAB" width="600" height="600" loading="lazy">
                 <span class="qr-caption">PEGINELAB 모든 프로젝트</span>
