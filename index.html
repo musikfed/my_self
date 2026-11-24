@@ -106,6 +106,14 @@ a.accent-link:hover{color:#731023}
 @media print{.portrait-wrap{width:150px}.resume-hero{grid-template-columns:150px minmax(0,1fr)}.contacts-layout{grid-template-columns:minmax(0,1fr) 140px 160px}.contact-figure{max-width:140px}.qr-card{width:160px}.call-me-animation{animation:none!important}}
 @media(prefers-reduced-motion:reduce){.call-me-animation{animation:none!important}}
 
+    
+/* Contacts without the cartoon: readable links and QR only. */
+.contacts-layout{grid-template-columns:minmax(0,1fr) 180px;align-items:center}
+.contacts{grid-column:auto}
+.qr-card{grid-column:auto;grid-row:auto;justify-self:end;width:100%;max-width:180px}
+@media(max-width:650px){.contacts-layout{grid-template-columns:minmax(0,1fr);gap:14px}.contacts{grid-column:1}.qr-card{grid-column:1;grid-row:auto;justify-self:start;width:155px;max-width:100%}}
+@media print{.contacts-layout{grid-template-columns:minmax(0,1fr) 160px}}
+
     </style>
 </head>
 <body>
@@ -195,11 +203,6 @@ a.accent-link:hover{color:#731023}
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>Связь:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
             </div>
-            <div class="contact-figure"><picture class="call-me-picture">
-                    <source media="(prefers-reduced-motion: reduce)" type="image/jpeg" srcset="./assets/author-fullbody-call-me.jpg">
-                    <source type="image/webp" srcset="./assets/author-call-me.gif.webp">
-                    <img class="call-me-animation" src="./assets/author-call-me.gif" width="500" height="995" alt="Анимированный жест «позвони мне»" loading="lazy" decoding="async">
-                </picture></div>
             <a class="qr-card" href="https://musikfed.github.io/view_my_prj/" target="_blank" rel="noopener noreferrer" aria-label="Все проекты PEGINELAB">
                 <img src="./assets/qr-peginelab-sharp.svg" alt="QR PEGINELAB" width="600" height="600" loading="lazy">
                 <span class="qr-caption">Все проекты PEGINELAB</span>
@@ -261,11 +264,6 @@ a.accent-link:hover{color:#731023}
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>Contact:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
             </div>
-            <div class="contact-figure"><picture class="call-me-picture">
-                    <source media="(prefers-reduced-motion: reduce)" type="image/jpeg" srcset="./assets/author-fullbody-call-me.jpg">
-                    <source type="image/webp" srcset="./assets/author-call-me.gif.webp">
-                    <img class="call-me-animation" src="./assets/author-call-me.gif" width="500" height="995" alt="Animated call-me hand gesture" loading="lazy" decoding="async">
-                </picture></div>
             <a class="qr-card" href="https://musikfed.github.io/view_my_prj/" target="_blank" rel="noopener noreferrer" aria-label="All PEGINELAB projects">
                 <img src="./assets/qr-peginelab-sharp.svg" alt="QR PEGINELAB" width="600" height="600" loading="lazy">
                 <span class="qr-caption">All PEGINELAB projects</span>
@@ -311,11 +309,6 @@ a.accent-link:hover{color:#731023}
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>联系方式:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
             </div>
-            <div class="contact-figure"><picture class="call-me-picture">
-                    <source media="(prefers-reduced-motion: reduce)" type="image/jpeg" srcset="./assets/author-fullbody-call-me.jpg">
-                    <source type="image/webp" srcset="./assets/author-call-me.gif.webp">
-                    <img class="call-me-animation" src="./assets/author-call-me.gif" width="500" height="995" alt="动态的打电话手势" loading="lazy" decoding="async">
-                </picture></div>
             <a class="qr-card" href="https://musikfed.github.io/view_my_prj/" target="_blank" rel="noopener noreferrer" aria-label="PEGINELAB 全部项目">
                 <img src="./assets/qr-peginelab-sharp.svg" alt="QR PEGINELAB" width="600" height="600" loading="lazy">
                 <span class="qr-caption">PEGINELAB 全部项目</span>
@@ -361,11 +354,6 @@ a.accent-link:hover{color:#731023}
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>Kontakt:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
             </div>
-            <div class="contact-figure"><picture class="call-me-picture">
-                    <source media="(prefers-reduced-motion: reduce)" type="image/jpeg" srcset="./assets/author-fullbody-call-me.jpg">
-                    <source type="image/webp" srcset="./assets/author-call-me.gif.webp">
-                    <img class="call-me-animation" src="./assets/author-call-me.gif" width="500" height="995" alt="Animierte Ruf-mich-an-Geste" loading="lazy" decoding="async">
-                </picture></div>
             <a class="qr-card" href="https://musikfed.github.io/view_my_prj/" target="_blank" rel="noopener noreferrer" aria-label="Alle PEGINELAB-Projekte">
                 <img src="./assets/qr-peginelab-sharp.svg" alt="QR PEGINELAB" width="600" height="600" loading="lazy">
                 <span class="qr-caption">Alle PEGINELAB-Projekte</span>
@@ -411,11 +399,6 @@ a.accent-link:hover{color:#731023}
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>संपर्क:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
             </div>
-            <div class="contact-figure"><picture class="call-me-picture">
-                    <source media="(prefers-reduced-motion: reduce)" type="image/jpeg" srcset="./assets/author-fullbody-call-me.jpg">
-                    <source type="image/webp" srcset="./assets/author-call-me.gif.webp">
-                    <img class="call-me-animation" src="./assets/author-call-me.gif" width="500" height="995" alt="कॉल मी का एनिमेटेड इशारा" loading="lazy" decoding="async">
-                </picture></div>
             <a class="qr-card" href="https://musikfed.github.io/view_my_prj/" target="_blank" rel="noopener noreferrer" aria-label="सभी PEGINELAB प्रोजेक्ट">
                 <img src="./assets/qr-peginelab-sharp.svg" alt="QR PEGINELAB" width="600" height="600" loading="lazy">
                 <span class="qr-caption">सभी PEGINELAB प्रोजेक्ट</span>
@@ -461,11 +444,6 @@ a.accent-link:hover{color:#731023}
             <p><strong>GitHub :</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>Contact :</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
             </div>
-            <div class="contact-figure"><picture class="call-me-picture">
-                    <source media="(prefers-reduced-motion: reduce)" type="image/jpeg" srcset="./assets/author-fullbody-call-me.jpg">
-                    <source type="image/webp" srcset="./assets/author-call-me.gif.webp">
-                    <img class="call-me-animation" src="./assets/author-call-me.gif" width="500" height="995" alt="Geste animé « appelle-moi »" loading="lazy" decoding="async">
-                </picture></div>
             <a class="qr-card" href="https://musikfed.github.io/view_my_prj/" target="_blank" rel="noopener noreferrer" aria-label="Tous les projets PEGINELAB">
                 <img src="./assets/qr-peginelab-sharp.svg" alt="QR PEGINELAB" width="600" height="600" loading="lazy">
                 <span class="qr-caption">Tous les projets PEGINELAB</span>
@@ -511,11 +489,6 @@ a.accent-link:hover{color:#731023}
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>Yhteystiedot:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
             </div>
-            <div class="contact-figure"><picture class="call-me-picture">
-                    <source media="(prefers-reduced-motion: reduce)" type="image/jpeg" srcset="./assets/author-fullbody-call-me.jpg">
-                    <source type="image/webp" srcset="./assets/author-call-me.gif.webp">
-                    <img class="call-me-animation" src="./assets/author-call-me.gif" width="500" height="995" alt="Animoitu soita minulle -ele" loading="lazy" decoding="async">
-                </picture></div>
             <a class="qr-card" href="https://musikfed.github.io/view_my_prj/" target="_blank" rel="noopener noreferrer" aria-label="Kaikki PEGINELAB-projektit">
                 <img src="./assets/qr-peginelab-sharp.svg" alt="QR PEGINELAB" width="600" height="600" loading="lazy">
                 <span class="qr-caption">Kaikki PEGINELAB-projektit</span>
@@ -561,11 +534,6 @@ a.accent-link:hover{color:#731023}
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>연락처:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
             </div>
-            <div class="contact-figure"><picture class="call-me-picture">
-                    <source media="(prefers-reduced-motion: reduce)" type="image/jpeg" srcset="./assets/author-fullbody-call-me.jpg">
-                    <source type="image/webp" srcset="./assets/author-call-me.gif.webp">
-                    <img class="call-me-animation" src="./assets/author-call-me.gif" width="500" height="995" alt="전화해 줘 손짓 애니메이션" loading="lazy" decoding="async">
-                </picture></div>
             <a class="qr-card" href="https://musikfed.github.io/view_my_prj/" target="_blank" rel="noopener noreferrer" aria-label="PEGINELAB 모든 프로젝트">
                 <img src="./assets/qr-peginelab-sharp.svg" alt="QR PEGINELAB" width="600" height="600" loading="lazy">
                 <span class="qr-caption">PEGINELAB 모든 프로젝트</span>
@@ -611,11 +579,6 @@ a.accent-link:hover{color:#731023}
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>連絡先:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
             </div>
-            <div class="contact-figure"><picture class="call-me-picture">
-                    <source media="(prefers-reduced-motion: reduce)" type="image/jpeg" srcset="./assets/author-fullbody-call-me.jpg">
-                    <source type="image/webp" srcset="./assets/author-call-me.gif.webp">
-                    <img class="call-me-animation" src="./assets/author-call-me.gif" width="500" height="995" alt="「電話して」の動くジェスチャー" loading="lazy" decoding="async">
-                </picture></div>
             <a class="qr-card" href="https://musikfed.github.io/view_my_prj/" target="_blank" rel="noopener noreferrer" aria-label="PEGINELABの全プロジェクト">
                 <img src="./assets/qr-peginelab-sharp.svg" alt="QR PEGINELAB" width="600" height="600" loading="lazy">
                 <span class="qr-caption">PEGINELABの全プロジェクト</span>
@@ -661,11 +624,6 @@ a.accent-link:hover{color:#731023}
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>Contatto:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
             </div>
-            <div class="contact-figure"><picture class="call-me-picture">
-                    <source media="(prefers-reduced-motion: reduce)" type="image/jpeg" srcset="./assets/author-fullbody-call-me.jpg">
-                    <source type="image/webp" srcset="./assets/author-call-me.gif.webp">
-                    <img class="call-me-animation" src="./assets/author-call-me.gif" width="500" height="995" alt="Gesto animato « chiamami »" loading="lazy" decoding="async">
-                </picture></div>
             <a class="qr-card" href="https://musikfed.github.io/view_my_prj/" target="_blank" rel="noopener noreferrer" aria-label="Tutti i progetti PEGINELAB">
                 <img src="./assets/qr-peginelab-sharp.svg" alt="QR PEGINELAB" width="600" height="600" loading="lazy">
                 <span class="qr-caption">Tutti i progetti PEGINELAB</span>
@@ -711,11 +669,6 @@ a.accent-link:hover{color:#731023}
             <p><strong>GitHub:</strong> <a href="https://github.com/musikfed" class="accent-link">github.com/musikfed</a></p>
             <p><strong>Сувязь:</strong> Telegram <a href="https://t.me/Feudorlab1" class="accent-link" target="_blank" rel="noopener noreferrer">@Feudorlab1</a> · Email <a href="mailto:feudor.lab@yandex.ru" class="accent-link">feudor.lab@yandex.ru</a></p>
             </div>
-            <div class="contact-figure"><picture class="call-me-picture">
-                    <source media="(prefers-reduced-motion: reduce)" type="image/jpeg" srcset="./assets/author-fullbody-call-me.jpg">
-                    <source type="image/webp" srcset="./assets/author-call-me.gif.webp">
-                    <img class="call-me-animation" src="./assets/author-call-me.gif" width="500" height="995" alt="Анімаваны жэст «патэлефануй мне»" loading="lazy" decoding="async">
-                </picture></div>
             <a class="qr-card" href="https://musikfed.github.io/view_my_prj/" target="_blank" rel="noopener noreferrer" aria-label="Усе праекты PEGINELAB">
                 <img src="./assets/qr-peginelab-sharp.svg" alt="QR PEGINELAB" width="600" height="600" loading="lazy">
                 <span class="qr-caption">Усе праекты PEGINELAB</span>
